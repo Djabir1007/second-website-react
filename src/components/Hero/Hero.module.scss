@@ -1,0 +1,24 @@
+.hero {
+  background-color: #101010;
+  border-radius: 30px;
+  margin-bottom: 44px;
+}
+
+.hero:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-height: 227px;
+}
+
+.desc {
+  font-weight: 600;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+}

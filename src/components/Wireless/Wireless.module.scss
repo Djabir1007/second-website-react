@@ -1,0 +1,66 @@
+@use "../../styles//base/mixins.scss" as *;
+
+.wireless {
+  margin-bottom: 60px;
+}
+.title {
+  @include block-title;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 30px;
+  position: relative;
+}
+
+.card:hover {
+  @include card-hover;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 54px;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  @include card-title;
+}
+
+.rating {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ratingValue {
+  @include card-rating;
+}
+
+.price {
+  @include card-price;
+}
+
+.heart {
+  @include card-heart;
+}
+
+.apple {
+  position: absolute;
+  top: 23px;
+  right: 21px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}

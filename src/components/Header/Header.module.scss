@@ -1,0 +1,63 @@
+.header {
+  margin-bottom: 22px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.content {
+  display: flex;
+  gap: 65px;
+}
+
+.list {
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.wrapperHeader {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.wrapperDesc {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.arrowMain {
+  transition: transform 0.3s ease;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.btn {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+// Список моделей телефонов
+.modelsList {
+  border: 1px solid #000;
+  padding: 19px 27px;
+  border-radius: 0 0 30px 30px;
+}
+
+.modelsListNone {
+  display: none;
+}
+
+.modelsListContent {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,35 @@
+@use "../../styles/base/mixins.scss" as *;
+@use "../../styles/base/variables.scss" as *;
+
+.covers {
+  margin-bottom: 30px;
+}
+
+.title {
+  @include block-title;
+}
+
+.flex {
+  display: flex;
+  gap: 30px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 25px 100px;
+}
+
+.card:hover {
+  @include card-hover;
+}
+
+.cardImg {
+  margin-bottom: 20px;
+}
+
+.cardDesc {
+  font-weight: 600;
+  color: $color-text;
+  text-align: center;
+}

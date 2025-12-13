@@ -1,0 +1,13 @@
+@use "../../../styles/base/mixins.scss" as *;
+
+.languageItem {
+  font-size: 15px;
+  color: #101010;
+  background-color: #fff;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.languageItem:hover {
+  @include language-hover;
+}

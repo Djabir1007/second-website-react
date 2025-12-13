@@ -1,0 +1,99 @@
+@use "../../styles/base/mixins.scss" as *;
+
+.headphones {
+  margin-bottom: 50px;
+}
+
+.title {
+  @include block-title;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  position: relative;
+}
+
+.card:hover {
+  @include card-hover;
+}
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cardImg {
+  height: 230px;
+  max-width: 219px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.cardInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.cardTitle {
+  @include card-title;
+}
+.cardRating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardRatingStar {
+  @include card-rating-star;
+}
+.cardRatingValue {
+  @include card-rating;
+}
+
+.cardPrices {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardPrice {
+  @include card-price;
+}
+
+.cardPriceRed {
+  @include value-sale;
+}
+
+.cardPriceOld {
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: line-through;
+  color: #ffce7f;
+  text-align: center;
+}
+
+.cardPriceSale {
+  font-weight: 600;
+  font-size: 14px;
+  color: #aaa;
+  text-align: center;
+  text-decoration: line-through;
+  text-decoration-color: #df6464;
+}
+
+.cardSaleValue {
+  font-weight: 600;
+  color: #df6464;
+}
+
+.heart {
+  @include card-heart;
+}
