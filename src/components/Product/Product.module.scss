@@ -1,0 +1,153 @@
+@use "../../styles/base/mixins.scss" as *;
+
+.productTitle {
+  @include block-title;
+}
+
+.productCard {
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 19px 25px 27px 35px;
+  margin-bottom: 23px;
+}
+
+.productElements {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productHeart {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.productHeart svg {
+  stroke: #1c1c27;
+  fill: transparent;
+  transition: 0.5s;
+}
+
+.productHeart svg:hover {
+  stroke: none;
+  fill: #1c1c27;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin-bottom: 30px;
+}
+
+.productContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.productName {
+  font-weight: 600;
+  font-size: 25px;
+  color: #1c1c27;
+}
+
+.productPrices {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.productPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.priceNow {
+  font-weight: 600;
+  font-size: 28px;
+  color: #df6464;
+}
+
+.priceOld {
+  font-weight: 600;
+  font-size: 20px;
+  color: #aaa;
+  text-decoration-line: line-through;
+  text-decoration-color: #df6464;
+}
+
+.percentage {
+  font-weight: 600;
+  font-size: 20px;
+  color: #df6464;
+}
+
+.details {
+  margin-bottom: 19px;
+}
+
+.detailsFlex {
+  display: flex;
+  gap: 31px;
+}
+
+.detailsContent {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  max-width: 824px;
+  width: 100%;
+}
+
+.detailsTitleBlock {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 21px;
+  padding-left: 22px;
+  border-radius: 15px;
+}
+
+.detailsTitle {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.detailsListBlock {
+  padding-top: 20px;
+  padding-bottom: 24px;
+  padding-left: 22px;
+}
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detailsBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.detailsBtn {
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 10px;
+  background-color: #101010;
+  border: none;
+  font-family: inherit;
+  padding: 8px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+  height: 45px;
+}
+
+.detailsBtn:hover {
+  @include btn-hover;
+}

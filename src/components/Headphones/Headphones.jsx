@@ -19,7 +19,6 @@ const Headphones = () => {
               price={el.price}
               oldPrice={el.oldPrice}
               sale={el.sale}
-              heart={el.icon}
               star={el.rating}
               altStar={el.altStar}
               salePrice={el.salePrice}

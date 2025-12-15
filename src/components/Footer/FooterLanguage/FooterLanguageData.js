@@ -1,4 +1,4 @@
-const FooterLanguageData = [
+const footerLanguageData = [
   {
     id: 1,
     language: "Каз",
@@ -7,4 +7,4 @@ const FooterLanguageData = [
   { id: 3, language: "Eng" },
 ];
 
-export default FooterLanguageData;
+export default footerLanguageData;

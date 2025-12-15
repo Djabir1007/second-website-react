@@ -1,4 +1,4 @@
-import styles from "./Covers.module.scss";
+import styles from "./CoversCard.module.scss";
 
 const CoversCard = ({ src, alt, desc }) => {
   return (

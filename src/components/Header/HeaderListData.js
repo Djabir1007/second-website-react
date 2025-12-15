@@ -1,4 +1,4 @@
-const HeaderListdata = [
+const headerListData = [
   {
     id: 1,
     brand: "Apple",
@@ -101,4 +101,4 @@ const HeaderListdata = [
     ],
   },
 ];
-export default HeaderListdata;
+export default headerListData;

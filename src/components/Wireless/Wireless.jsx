@@ -18,7 +18,6 @@ const Wireless = () => {
               altStar={el.altStar}
               ratingValue={el.value}
               price={el.price}
-              favorite={el.favorite}
               apple={el.apple}
             />
           );

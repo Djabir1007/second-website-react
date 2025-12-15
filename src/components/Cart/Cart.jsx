@@ -1,5 +1,6 @@
 import styles from "./Cart.module.scss";
 import cart from "../../assets/img/cart/cart.svg";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   return (
@@ -12,7 +13,9 @@ const Cart = () => {
           <h2 className={styles.title}>Корзина пуста</h2>
           <p className={styles.desc}>Но это никогда не поздно исправить :)</p>
         </div>
-        <button className={styles.btn}>В каталог товаров</button>
+        <Link className={styles.btn} to={"/"}>
+          В каталог товаров
+        </Link>
       </div>
     </section>
   );

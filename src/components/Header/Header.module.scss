@@ -60,4 +60,26 @@
 .modelsListContent {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+}
+
+.brandList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  background-color: #eaeaea;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+
+.brandName {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.models {
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: 19px;
 }

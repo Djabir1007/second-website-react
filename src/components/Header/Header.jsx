@@ -1,13 +1,25 @@
+// React
 import { useState } from "react";
+
+// Router
+import { Link } from "react-router-dom";
+
+// Styles
 import styles from "./Header.module.scss";
-import Logo from "../ui/Logo/Logo";
+
+// Components
+import Logo from "../Logo/Logo";
+import HeaderList from "./HeaderList";
+
+// Data
+import headerListdata from "./HeaderListData";
+
+// Assets
 import phone from "../../assets/img/header/Phone.svg";
 import tick from "../../assets/img/header/tick.svg";
 import heart from "../../assets/img/header/heart.svg";
 import basket from "../../assets/img/header/basket.svg";
 import modelIcon from "../../assets/img/icons/model.svg";
-import HeaderListdata from "./HeaderListData";
-import { Link } from "react-router-dom";
 
 // Для кнопок 'избранное' и 'корзина'
 const IconButton = ({ className, src, alt, href }) => {
@@ -20,10 +32,10 @@ const IconButton = ({ className, src, alt, href }) => {
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeBrandId, setActiveBrandId] = useState(null);
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
-    console.log(isOpen);
   };
 
   return (
@@ -32,7 +44,11 @@ function Header() {
         <div className={styles.content}>
           <Logo />
           <div className={styles.list}>
-            <a className={styles.phoneLink} href="#">
+            <a
+              className={styles.phoneLink}
+              onClick={(el) => el.preventDefault()}
+              href="#"
+            >
               <img
                 className={styles.phoneIcon}
                 src={phone}
@@ -61,13 +77,36 @@ function Header() {
                 }}
               >
                 {isOpen &&
-                  HeaderListdata.map((el) => {
+                  headerListdata.map((brand) => {
+                    const isActive = activeBrandId === brand.id;
                     return (
-                      <div className={styles.modelsListContent}>
-                        <ul className={styles.brandList} key={el.id}>
-                          <a className={styles.brandLink}>{el.brand}</a>
-                        </ul>
-                        <img src={modelIcon} alt="" />
+                      <div className={styles.modelsListContent} key={brand.id}>
+                        <button
+                          className={styles.brandList}
+                          type="button"
+                          onClick={() =>
+                            setActiveBrandId(isActive ? null : brand.id)
+                          }
+                        >
+                          <span className={styles.brandName}>
+                            {brand.brand}
+                          </span>
+                          <img
+                            className={`${styles.arrowMain} ${
+                              activeBrandId === brand.id ? styles.arrowOpen : ""
+                            }`}
+                            src={modelIcon}
+                            alt=""
+                          />
+                        </button>
+
+                        {isActive && (
+                          <ul className={styles.models}>
+                            {brand.models.map((m) => (
+                              <HeaderList key={m.id} model={m.model} />
+                            ))}
+                          </ul>
+                        )}
                       </div>
                     );
                   })}
@@ -76,7 +115,12 @@ function Header() {
           </div>
         </div>
         <div className={styles.btn}>
-          <IconButton className={styles.btnHeart} src={heart} alt="Избранное" />
+          <IconButton
+            className={styles.btnHeart}
+            src={heart}
+            alt="Избранное"
+            href="/favorites"
+          />
           <IconButton
             className={styles.btnBasket}
             src={basket}

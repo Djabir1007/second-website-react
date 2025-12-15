@@ -56,6 +56,17 @@
   @include card-heart;
 }
 
+.heart svg {
+  stroke: #1c1c27;
+  fill: transparent;
+  transition: 0.5s;
+}
+
+.heart svg:hover {
+  stroke: none;
+  fill: #1c1c27;
+}
+
 .apple {
   position: absolute;
   top: 23px;

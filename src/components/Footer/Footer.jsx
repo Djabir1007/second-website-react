@@ -1,5 +1,5 @@
 import styles from "./Footer.module.scss";
-import Logo from "../ui/Logo/Logo";
+import Logo from "../Logo/Logo.jsx";
 import FooterLink from "./FooterLink/FooterLink.jsx";
 import FooterLinkData from "./FooterLink/FooterLinkData.js";
 import FooterLanguage from "./FooterLanguage/FooterLanguage";
@@ -12,9 +12,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.flex}>
-        <div className={styles.logo}>
-          <Logo />
-        </div>
+        <Logo />
         <div className={styles.info}>
           <div className={styles.infoList}>
             {FooterLinkData.map((el) => {

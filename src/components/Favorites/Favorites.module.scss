@@ -1,0 +1,16 @@
+@use "../../styles//base/mixins.scss" as *;
+
+.title {
+  margin-bottom: 21px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.headphonesTitle {
+  @include block-title;
+  margin-bottom: 47px;
+}
+
+.wirelessTitle {
+  @include block-title;
+}

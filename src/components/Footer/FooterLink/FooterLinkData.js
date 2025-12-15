@@ -1,7 +1,7 @@
-const FooterLinkData = [
-  { id: 1, href: "/", text: "Избранное" },
+const footerLinkData = [
+  { id: 1, href: "/favorites", text: "Избранное" },
   { id: 2, href: "/cart", text: "Корзина" },
   { id: 3, href: "/", text: "Контакты" },
 ];
 
-export default FooterLinkData;
+export default footerLinkData;

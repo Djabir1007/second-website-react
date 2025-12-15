@@ -1,8 +1,8 @@
 import vk from "../../../assets/img/footer/VK.svg";
 import inst from "../../../assets/img/footer/Instagram.svg";
 import tg from "../../../assets/img/footer/Telegram.svg";
-import Whatsapp from "../../../assets/img/footer/Whatsapp.svg";
-const FooterSocialsData = [
+import whatsapp from "../../../assets/img/footer/Whatsapp.svg";
+const footerSocialsData = [
   {
     id: 1,
     link: "https://vk.com/",
@@ -24,9 +24,9 @@ const FooterSocialsData = [
   {
     id: 4,
     link: "https://api.whatsapp.com/",
-    icon: Whatsapp,
+    icon: whatsapp,
     alt: "Ватсапп",
   },
 ];
 
-export default FooterSocialsData;
+export default footerSocialsData;
