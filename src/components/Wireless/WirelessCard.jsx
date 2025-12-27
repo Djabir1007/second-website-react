@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Wireless.module.scss";
 
 const WirelessCard = ({
+  id,
   img,
   alt,
   title,
@@ -9,9 +10,11 @@ const WirelessCard = ({
   altStar,
   ratingValue,
   price,
-  favorite,
   apple,
+  favorites,
+  toggleFavorite,
 }) => {
+  const isFavoritez = favorites.includes(id);
   return (
     <article className={styles.card}>
       <div className={styles.content}>
@@ -33,7 +36,10 @@ const WirelessCard = ({
           </div>
         </div>
       </div>
-      <button className={styles.heart}>
+      <button
+        className={`${styles.heart} ${isFavoritez ? styles.active : ""}`}
+        onClick={() => toggleFavorite(id)}
+      >
         <svg
           width="20"
           height="19"

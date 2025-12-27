@@ -10,10 +10,14 @@ const HeadphonesCard = ({
   price,
   oldPrice,
   sale,
-  star,
+  rating,
   altStar,
   salePrice,
+  favorites,
+  toggleFavorite,
 }) => {
+  const isFavorite = favorites.includes(id);
+
   return (
     <article className={styles.card}>
       <div className={styles.cardContent}>
@@ -26,7 +30,11 @@ const HeadphonesCard = ({
           <div className={styles.cardInfoLeft}>
             <h3 className={styles.cardTitle}>{title}</h3>
             <div className={styles.cardRating}>
-              <img className={styles.cardRatingStar} src={star} alt={altStar} />
+              <img
+                className={styles.cardRatingStar}
+                src={rating}
+                alt={altStar}
+              />
               <span className={styles.cardRatingValue}>{value}</span>
             </div>
           </div>
@@ -52,7 +60,10 @@ const HeadphonesCard = ({
           )}
         </div>
       </div>
-      <button className={styles.heart}>
+      <button
+        className={`${styles.heart} ${isFavorite ? styles.active : ""}`}
+        onClick={() => toggleFavorite(id)}
+      >
         <svg
           width="20"
           height="19"

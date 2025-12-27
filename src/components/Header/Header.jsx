@@ -30,7 +30,7 @@ const IconButton = ({ className, src, alt, href }) => {
   );
 };
 
-function Header() {
+function Header({ favorites }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeBrandId, setActiveBrandId] = useState(null);
 
@@ -115,18 +115,25 @@ function Header() {
           </div>
         </div>
         <div className={styles.btn}>
-          <IconButton
-            className={styles.btnHeart}
-            src={heart}
-            alt="Избранное"
-            href="/favorites"
-          />
-          <IconButton
-            className={styles.btnBasket}
-            src={basket}
-            alt="Корзина"
-            href="/cart"
-          />
+          <div className={styles.btnHeartWrapper}>
+            <IconButton
+              className={styles.btnHeart}
+              src={heart}
+              alt="Избранное"
+              href="/favorites"
+            />
+            {favorites.length > 0 && (
+              <span className={styles.btnHeartValue}>{favorites.length}</span>
+            )}
+          </div>
+          <div className={styles.btnHeartWrapper}>
+            <IconButton
+              className={styles.btnBasket}
+              src={basket}
+              alt="Корзина"
+              href="/cart"
+            />
+          </div>
         </div>
       </div>
     </header>

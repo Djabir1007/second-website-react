@@ -2,7 +2,7 @@ import HeadphonesCard from "./HeadphonesCard";
 import HeadphonesData from "./HeadphonesData";
 import styles from "./Headphones.module.scss";
 
-const Headphones = () => {
+const Headphones = ({ favorites, toggleFavorite }) => {
   return (
     <section className={styles.headphones}>
       <h2 className={styles.title}>Наушники</h2>
@@ -11,17 +11,9 @@ const Headphones = () => {
           return (
             <HeadphonesCard
               key={el.id}
-              id={el.id}
-              src={el.src}
-              alt={el.alt}
-              title={el.title}
-              value={el.value}
-              price={el.price}
-              oldPrice={el.oldPrice}
-              sale={el.sale}
-              star={el.rating}
-              altStar={el.altStar}
-              salePrice={el.salePrice}
+              {...el}
+              favorites={favorites}
+              toggleFavorite={toggleFavorite}
             />
           );
         })}

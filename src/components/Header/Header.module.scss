@@ -21,6 +21,10 @@
   cursor: pointer;
 }
 
+.listWrapper {
+  position: relative;
+}
+
 .wrapperHeader {
   display: flex;
   align-items: center;
@@ -44,6 +48,19 @@
   display: flex;
   gap: 25px;
   align-items: center;
+  position: relative;
+}
+
+.btnHeartValue {
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 100%;
+  background-color: #ffa542;
+  padding: 0 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
 }
 
 // Список моделей телефонов
@@ -51,6 +68,12 @@
   border: 1px solid #000;
   padding: 19px 27px;
   border-radius: 0 0 30px 30px;
+  position: absolute;
+  position: absolute;
+  max-width: 100%;
+  width: 100%;
+  background-color: #eaeaea;
+  z-index: 1;
 }
 
 .modelsListNone {

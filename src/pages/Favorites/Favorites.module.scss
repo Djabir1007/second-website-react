@@ -6,9 +6,19 @@
   font-size: 20px;
 }
 
+.cardMargin {
+  margin-bottom: 50px;
+}
+
 .headphonesTitle {
   @include block-title;
   margin-bottom: 47px;
+}
+
+.headphonesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
 .wirelessTitle {

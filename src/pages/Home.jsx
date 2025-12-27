@@ -3,13 +3,13 @@ import Covers from "../components/Covers/Covers";
 import Headphones from "../components/Headphones/Headphones";
 import Wireless from "../components/Wireless/Wireless";
 
-const Home = () => {
+const Home = ({ favorites, toggleFavorite }) => {
   return (
     <>
       <Hero />
       <Covers />
-      <Headphones />
-      <Wireless />
+      <Headphones favorites={favorites} toggleFavorite={toggleFavorite} />
+      <Wireless favorites={favorites} toggleFavorite={toggleFavorite} />
     </>
   );
 };
