@@ -14,13 +14,15 @@ function App() {
     return saved ? JSON.parse(saved) : [];
   });
 
-  function toggleFavorite(id) {
+  function toggleFavorite(id, type) {
     setFavorites((prev) => {
-      if (prev.includes(id)) {
-        return prev.filter((element) => element !== id);
-      } else {
-        return [...prev, id];
+      const exists = prev.some((item) => item.id === id && item.type === type);
+
+      if (exists) {
+        return prev.filter((item) => !(item.id === id && item.type === type));
       }
+
+      return [...prev, { id, type }];
     });
   }
 

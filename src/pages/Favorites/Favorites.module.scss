@@ -21,6 +21,16 @@
   gap: 30px;
 }
 
+.wireless {
+  margin-bottom: 50px;
+}
+
 .wirelessTitle {
   @include block-title;
+}
+
+.wirelessGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }

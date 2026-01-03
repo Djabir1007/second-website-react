@@ -1,10 +1,16 @@
-import headphonesData from "../../components/Headphones/HeadphonesData";
-import HeadphonesCard from "../../components/Headphones/HeadphonesCard";
+import headphonesCardData from "../../components/Headphones/HeadphonesCard/headphonesCardData";
+import HeadphonesCard from "../../components/Headphones/HeadphonesCard/HeadphonesCard";
+import WirelessCard from "../../components/Wireless/WirelessCard/WirelessCard";
+import wirelessCardData from "../../components/Wireless/WirelessCard/wirelessCardData";
 import styles from "./Favorites.module.scss";
 
 const Favorites = ({ favorites, toggleFavorite }) => {
-  const favoriteHeadphones = headphonesData.filter((el) =>
-    favorites.includes(el.id)
+  const favoriteHeadphones = headphonesCardData.filter((el) =>
+    favorites.some((f) => f.id === el.id && f.type === el.type)
+  );
+
+  const favoriteWireless = wirelessCardData.filter((el) =>
+    favorites.some((f) => f.id === el.id && f.type === el.type)
   );
 
   return (
@@ -31,7 +37,18 @@ const Favorites = ({ favorites, toggleFavorite }) => {
       </section>
       <section className={styles.wireless}>
         <h2 className={styles.wirelessTitle}>Беспроводные наушники</h2>
-        <div className={styles.wirelessGrid}></div>
+        <div className={styles.wirelessGrid}>
+          {favoriteWireless.length > 0
+            ? favoriteWireless.map((el) => (
+                <WirelessCard
+                  key={el.id}
+                  {...el}
+                  favorites={favorites}
+                  toggleFavorite={toggleFavorite}
+                />
+              ))
+            : ""}
+        </div>
       </section>
     </>
   );

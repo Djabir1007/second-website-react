@@ -9,10 +9,10 @@ import styles from "./Header.module.scss";
 
 // Components
 import Logo from "../Logo/Logo";
-import HeaderList from "./HeaderList";
+import HeaderList from "./HeaderList/HeaderList";
 
 // Data
-import headerListdata from "./HeaderListData";
+import headerListData from "./HeaderList/headerListData";
 
 // Assets
 import phone from "../../assets/img/header/Phone.svg";
@@ -77,7 +77,7 @@ function Header({ favorites }) {
                 }}
               >
                 {isOpen &&
-                  headerListdata.map((brand) => {
+                  headerListData.map((brand) => {
                     const isActive = activeBrandId === brand.id;
                     return (
                       <div className={styles.modelsListContent} key={brand.id}>

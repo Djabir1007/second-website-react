@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import styles from "./Headphones.module.scss";
+import styles from "./HeadphonesCard.module.scss";
 
 const HeadphonesCard = ({
   id,
+  type,
   src,
   alt,
   title,
@@ -16,7 +17,7 @@ const HeadphonesCard = ({
   favorites,
   toggleFavorite,
 }) => {
-  const isFavorite = favorites.includes(id);
+  const isFavorite = favorites.some((el) => el.id === id && el.type === type);
 
   return (
     <article className={styles.card}>
@@ -62,7 +63,7 @@ const HeadphonesCard = ({
       </div>
       <button
         className={`${styles.heart} ${isFavorite ? styles.active : ""}`}
-        onClick={() => toggleFavorite(id)}
+        onClick={() => toggleFavorite(id, type)}
       >
         <svg
           width="20"

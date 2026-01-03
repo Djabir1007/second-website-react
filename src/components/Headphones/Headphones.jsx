@@ -1,5 +1,5 @@
-import HeadphonesCard from "./HeadphonesCard";
-import HeadphonesData from "./HeadphonesData";
+import HeadphonesCard from "./HeadphonesCard/HeadphonesCard";
+import headphonesCardData from "./HeadphonesCard/headphonesCardData";
 import styles from "./Headphones.module.scss";
 
 const Headphones = ({ favorites, toggleFavorite }) => {
@@ -7,7 +7,7 @@ const Headphones = ({ favorites, toggleFavorite }) => {
     <section className={styles.headphones}>
       <h2 className={styles.title}>Наушники</h2>
       <div className={styles.grid}>
-        {HeadphonesData.map((el) => {
+        {headphonesCardData.map((el) => {
           return (
             <HeadphonesCard
               key={el.id}
