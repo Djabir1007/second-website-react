@@ -1,4 +1,10 @@
-const productListData = [
+export interface ProductListModel {
+  id: number;
+  description: string;
+  characteristic: string;
+}
+
+const productListData: ProductListModel[] = [
   { id: 1, description: "Активное шумоподавление:", characteristic: "Нет" },
   { id: 2, description: "Вес:", characteristic: "10 гр" },
   { id: 3, description: "Влагозащита:", characteristic: "Нет" },

@@ -4,7 +4,20 @@ import wirelessThree from "../../../assets/img/wireless/wireless-3.png";
 import star from "../../../assets/img/icons/star.svg";
 import apple from "../../../assets/img/icons/apple.svg";
 
-const wirelessCardData = [
+export interface WirelessCardModel {
+  id: number;
+  type: string;
+  img: string;
+  alt: string;
+  title: string;
+  star: string;
+  altStar: string;
+  ratingValue: number;
+  price: string;
+  apple?: string;
+}
+
+const wirelessCardData: WirelessCardModel[] = [
   {
     id: 1,
     type: "wireless",

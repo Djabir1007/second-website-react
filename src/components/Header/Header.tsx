@@ -21,8 +21,21 @@ import heart from "../../assets/img/header/heart.svg";
 import basket from "../../assets/img/header/basket.svg";
 import modelIcon from "../../assets/img/icons/model.svg";
 
+import type { Favorite } from "../../types/favorite";
+
+type HeaderProps = {
+  favorites: Favorite[];
+};
+
+type IconButtonProps = {
+  className: string;
+  src: string;
+  alt: string;
+  href: string;
+};
+
 // Для кнопок 'избранное' и 'корзина'
-const IconButton = ({ className, src, alt, href }) => {
+const IconButton = ({ className, src, alt, href }: IconButtonProps) => {
   return (
     <Link className={className} to={href}>
       <img src={src} alt={alt} />
@@ -30,10 +43,9 @@ const IconButton = ({ className, src, alt, href }) => {
   );
 };
 
-function Header({ favorites }) {
+function Header({ favorites }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeBrandId, setActiveBrandId] = useState(null);
-
+  const [activeBrandId, setActiveBrandId] = useState<number | null>(null);
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
   };

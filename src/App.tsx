@@ -6,15 +6,21 @@ import Product from "./pages/Product/Product";
 import NotFound from "./pages/NotFound/NotFound";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import type { Favorite } from "./types/favorite";
 
 function App() {
   // Массив id избранных товаров
-  const [favorites, setFavorites] = useState(() => {
+  const [favorites, setFavorites] = useState<Favorite[]>(() => {
     const saved = localStorage.getItem("favorites");
-    return saved ? JSON.parse(saved) : [];
+
+    if (!saved) {
+      return [];
+    }
+
+    return JSON.parse(saved) as Favorite[];
   });
 
-  function toggleFavorite(id, type) {
+  function toggleFavorite(id: Favorite["id"], type: Favorite["type"]) {
     setFavorites((prev) => {
       const exists = prev.some((item) => item.id === id && item.type === type);
 

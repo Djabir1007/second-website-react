@@ -4,7 +4,12 @@ import product3 from "../../../assets/img/product/product-3.png";
 import product4 from "../../../assets/img/product/product-4.png";
 import product5 from "../../../assets/img/product/product-5.png";
 
-const productImgData = [
+export interface ProductImgModel {
+  id: number;
+  img: string;
+}
+
+const productImgData: ProductImgModel[] = [
   {
     id: 1,
     img: product1,

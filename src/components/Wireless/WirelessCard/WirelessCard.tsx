@@ -1,5 +1,25 @@
 import { Link } from "react-router-dom";
 import styles from "./WirelessCard.module.scss";
+import type { Favorite } from "../../../types/favorite";
+import type { ToggleFavorite } from "../../../types/favorite";
+import type { WirelessCardModel } from "./wirelessCardData";
+
+type WirelessCardProps = Pick<
+  WirelessCardModel,
+  | "id"
+  | "type"
+  | "img"
+  | "alt"
+  | "title"
+  | "star"
+  | "altStar"
+  | "ratingValue"
+  | "price"
+  | "apple"
+> & {
+  favorites: Favorite[];
+  toggleFavorite: ToggleFavorite;
+};
 
 const WirelessCard = ({
   id,
@@ -14,7 +34,7 @@ const WirelessCard = ({
   apple,
   favorites,
   toggleFavorite,
-}) => {
+}: WirelessCardProps) => {
   const isFavorite = favorites.some((el) => el.id === id && el.type === type);
   return (
     <article className={styles.card}>

@@ -3,8 +3,15 @@ import HeadphonesCard from "../../components/Headphones/HeadphonesCard/Headphone
 import WirelessCard from "../../components/Wireless/WirelessCard/WirelessCard";
 import wirelessCardData from "../../components/Wireless/WirelessCard/wirelessCardData";
 import styles from "./Favorites.module.scss";
+import type { Favorite } from "../../types/favorite";
+import type { ToggleFavorite } from "../../types/favorite";
 
-const Favorites = ({ favorites, toggleFavorite }) => {
+type FavoritesProps = {
+  favorites: Favorite[];
+  toggleFavorite: ToggleFavorite;
+};
+
+const Favorites = ({ favorites, toggleFavorite }: FavoritesProps) => {
   const favoriteHeadphones = headphonesCardData.filter((el) =>
     favorites.some((f) => f.id === el.id && f.type === el.type)
   );

@@ -1,4 +1,15 @@
-const headerListData = [
+export interface HeaderModel {
+  id: number;
+  model: string;
+}
+
+interface HeaderBrand {
+  id: number;
+  brand: string;
+  models: HeaderModel[];
+}
+
+const headerListData: HeaderBrand[] = [
   {
     id: 1,
     brand: "Apple",

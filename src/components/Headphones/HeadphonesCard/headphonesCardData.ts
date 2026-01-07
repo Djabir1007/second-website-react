@@ -3,7 +3,22 @@ import headphonesTwo from "../../../assets/img/headphones/headphones-2.png";
 import headphonesThree from "../../../assets/img/headphones/headphones-3.png";
 import star from "../../../assets/img/icons/star.svg";
 
-const headphonesCardData = [
+export interface HeadphonesCardModel {
+  id: number;
+  type: "headphones";
+  src: string;
+  alt: string;
+  title: string;
+  value: number;
+  price: string;
+  oldPrice?: string;
+  sale?: string;
+  salePrice?: string;
+  rating: string;
+  altStar: string;
+}
+
+const headphonesCardData: HeadphonesCardModel[] = [
   {
     id: 1,
     type: "headphones",

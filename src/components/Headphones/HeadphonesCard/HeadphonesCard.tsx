@@ -1,5 +1,27 @@
 import { Link } from "react-router-dom";
 import styles from "./HeadphonesCard.module.scss";
+import type { Favorite } from "../../../types/favorite";
+import type { ToggleFavorite } from "../../../types/favorite";
+import type { HeadphonesCardModel } from "./headphonesCardData";
+
+type HeadphonesCardProps = Pick<
+  HeadphonesCardModel,
+  | "id"
+  | "type"
+  | "src"
+  | "alt"
+  | "title"
+  | "value"
+  | "price"
+  | "oldPrice"
+  | "sale"
+  | "salePrice"
+  | "rating"
+  | "altStar"
+> & {
+  favorites: Favorite[];
+  toggleFavorite: ToggleFavorite;
+};
 
 const HeadphonesCard = ({
   id,
@@ -16,7 +38,7 @@ const HeadphonesCard = ({
   salePrice,
   favorites,
   toggleFavorite,
-}) => {
+}: HeadphonesCardProps) => {
   const isFavorite = favorites.some((el) => el.id === id && el.type === type);
 
   return (

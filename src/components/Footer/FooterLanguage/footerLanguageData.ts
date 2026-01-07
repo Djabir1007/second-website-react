@@ -1,4 +1,9 @@
-const footerLanguageData = [
+export interface FooterLanguageModel {
+  id: number;
+  language: string;
+}
+
+const footerLanguageData: FooterLanguageModel[] = [
   {
     id: 1,
     language: "Каз",

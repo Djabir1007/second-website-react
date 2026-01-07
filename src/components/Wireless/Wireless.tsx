@@ -1,8 +1,15 @@
 import styles from "./Wireless.module.scss";
 import WirelessCard from "./WirelessCard/WirelessCard";
 import wirelessCardData from "./WirelessCard/wirelessCardData";
+import type { Favorite } from "../../types/favorite";
+import type { ToggleFavorite } from "../../types/favorite";
 
-const Wireless = ({ favorites, toggleFavorite }) => {
+type WirelessProps = {
+  favorites: Favorite[];
+  toggleFavorite: ToggleFavorite;
+};
+
+const Wireless = ({ favorites, toggleFavorite }: WirelessProps) => {
   return (
     <section className={styles.wireless}>
       <h2 className={styles.title}>Беспроводные наушники</h2>
