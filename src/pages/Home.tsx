@@ -1,7 +1,10 @@
+// Components
 import Hero from "@/components/Hero/Hero";
 import Covers from "@/components/Covers/Covers";
 import Headphones from "@/components/Headphones/Headphones";
 import Wireless from "@/components/Wireless/Wireless";
+
+// Types
 import type { Favorite, ToggleFavorite } from "@/types/favorite";
 
 type HomeProps = {

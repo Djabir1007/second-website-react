@@ -1,9 +1,16 @@
-import headphonesCardData from "@/components/Headphones/HeadphonesCard/headphonesCardData";
+// Components
 import HeadphonesCard from "@/components/Headphones/HeadphonesCard/HeadphonesCard";
 import WirelessCard from "@/components/Wireless/WirelessCard/WirelessCard";
+
+// Data
+import headphonesCardData from "@/components/Headphones/HeadphonesCard/headphonesCardData";
 import wirelessCardData from "@/components/Wireless/WirelessCard/wirelessCardData";
-import styles from "./Favorites.module.scss";
+
+// Types
 import type { Favorite, ToggleFavorite } from "@/types/favorite";
+
+// Styles
+import styles from "./Favorites.module.scss";
 
 type FavoritesProps = {
   favorites: Favorite[];
@@ -29,7 +36,7 @@ const Favorites = ({ favorites, toggleFavorite }: FavoritesProps) => {
       >
         <h2 className={styles.headphonesTitle}>Наушники</h2>
         <div className={styles.headphonesGrid}>
-          {favoriteHeadphones.length > 0
+          {!!favoriteHeadphones.length
             ? favoriteHeadphones.map((el) => (
                 <HeadphonesCard
                   key={el.id}
@@ -44,7 +51,7 @@ const Favorites = ({ favorites, toggleFavorite }: FavoritesProps) => {
       <section className={styles.wireless}>
         <h2 className={styles.wirelessTitle}>Беспроводные наушники</h2>
         <div className={styles.wirelessGrid}>
-          {favoriteWireless.length > 0
+          {!!favoriteWireless.length
             ? favoriteWireless.map((el) => (
                 <WirelessCard
                   key={el.id}

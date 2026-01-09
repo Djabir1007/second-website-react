@@ -1,6 +1,11 @@
-import styles from "./Cart.module.scss";
+// React
 import { Link } from "react-router-dom";
+
+//Assets
 import { cart } from "@/assets/img";
+
+//Styles
+import styles from "./Cart.module.scss";
 
 const Cart = () => {
   return (

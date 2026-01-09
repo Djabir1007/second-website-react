@@ -1,5 +1,8 @@
-import styles from "./FooterLanguage.module.scss";
+// Types
 import type { FooterLanguageModel } from "./footerLanguageData";
+
+// Styles
+import styles from "./FooterLanguage.module.scss";
 
 type FooterLanguageProps = Pick<FooterLanguageModel, "language">;
 

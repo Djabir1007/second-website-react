@@ -1,5 +1,8 @@
-import styles from "./ProductList.module.scss";
+// Types
 import type { ProductListModel } from "./productListData";
+
+// Styles
+import styles from "./ProductList.module.scss";
 
 type ProductListProps = Pick<
   ProductListModel,

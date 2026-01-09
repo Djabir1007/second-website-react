@@ -1,5 +1,8 @@
-import styles from "./Hero.module.scss";
+// Assets
 import { iphone13ProMaxSilver } from "@/assets/img";
+
+// Styles
+import styles from "./Hero.module.scss";
 
 const Hero = () => {
   return (

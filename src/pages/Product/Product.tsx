@@ -1,9 +1,16 @@
+// Components
 import ProductImg from "./ProductImg/ProductImg";
-import productImgData from "./ProductImg/productImgData";
 import ProductList from "./ProductList/ProductList";
+
+// Data
+import productImgData from "./ProductImg/productImgData";
 import productListData from "./ProductList/productListData";
-import styles from "./Product.module.scss";
+
+// Assets
 import { addToCartIcon, productBrandLogo } from "@/assets/img";
+
+// Styles
+import styles from "./Product.module.scss";
 
 const Product = () => {
   return (

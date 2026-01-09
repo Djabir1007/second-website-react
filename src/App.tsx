@@ -1,11 +1,20 @@
+// React
+import { useEffect, useState } from "react";
+
+// Router
+import { Routes, Route } from "react-router-dom";
+
+// Layouts
 import MainLayout from "./layouts/MainLayout";
+
+// Pages
 import Home from "./pages/Home";
 import Cart from "./pages/Cart/Cart";
 import Favorites from "./pages/Favorites/Favorites";
 import Product from "./pages/Product/Product";
 import NotFound from "./pages/NotFound/NotFound";
-import { Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+
+// Types
 import type { Favorite } from "./types/favorite";
 
 function App() {

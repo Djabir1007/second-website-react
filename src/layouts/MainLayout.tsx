@@ -1,7 +1,12 @@
+// React
 import { Outlet } from "react-router-dom";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import type { Favorite } from "../types/favorite";
+
+// Components
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
+
+// Types
+import type { Favorite } from "@/types/favorite";
 
 type MainLayoutProps = {
   favorites: Favorite[];

@@ -1,7 +1,12 @@
+// Router
 import { Link } from "react-router-dom";
-import styles from "./WirelessCard.module.scss";
+
+// Types
 import type { Favorite, ToggleFavorite } from "@/types/favorite";
 import type { WirelessCardModel } from "./wirelessCardData";
+
+// Styles
+import styles from "./WirelessCard.module.scss";
 
 type WirelessCardProps = Pick<
   WirelessCardModel,

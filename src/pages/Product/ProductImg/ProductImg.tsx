@@ -1,3 +1,4 @@
+// Types
 import type { ProductImgModel } from "./productImgData";
 
 type ProductImgProps = Pick<ProductImgModel, "img">;
