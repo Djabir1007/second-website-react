@@ -1,8 +1,7 @@
 import styles from "./Wireless.module.scss";
 import WirelessCard from "./WirelessCard/WirelessCard";
 import wirelessCardData from "./WirelessCard/wirelessCardData";
-import type { Favorite } from "../../types/favorite";
-import type { ToggleFavorite } from "../../types/favorite";
+import type { Favorite, ToggleFavorite } from "@/types/favorite";
 
 type WirelessProps = {
   favorites: Favorite[];

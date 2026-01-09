@@ -1,10 +1,9 @@
-import headphonesCardData from "../../components/Headphones/HeadphonesCard/headphonesCardData";
-import HeadphonesCard from "../../components/Headphones/HeadphonesCard/HeadphonesCard";
-import WirelessCard from "../../components/Wireless/WirelessCard/WirelessCard";
-import wirelessCardData from "../../components/Wireless/WirelessCard/wirelessCardData";
+import headphonesCardData from "@/components/Headphones/HeadphonesCard/headphonesCardData";
+import HeadphonesCard from "@/components/Headphones/HeadphonesCard/HeadphonesCard";
+import WirelessCard from "@/components/Wireless/WirelessCard/WirelessCard";
+import wirelessCardData from "@/components/Wireless/WirelessCard/wirelessCardData";
 import styles from "./Favorites.module.scss";
-import type { Favorite } from "../../types/favorite";
-import type { ToggleFavorite } from "../../types/favorite";
+import type { Favorite, ToggleFavorite } from "@/types/favorite";
 
 type FavoritesProps = {
   favorites: Favorite[];

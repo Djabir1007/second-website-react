@@ -1,12 +1,12 @@
 import styles from "./Footer.module.scss";
-import Logo from "../Logo/Logo.js";
-import FooterLink from "./FooterLink/FooterLink.jsx";
+import Logo from "../Logo/Logo";
+import FooterLink from "./FooterLink/FooterLink";
 import footerLinkData from "./FooterLink/footerLinkData";
 import FooterLanguage from "./FooterLanguage/FooterLanguage";
 import footerLanguageData from "./FooterLanguage/footerLanguageData";
-import FooterSocials from "./FooterSocials/FooterSocials.jsx";
+import FooterSocials from "./FooterSocials/FooterSocials";
 import footerSocialsData from "./FooterSocials/footerSocialsData";
-import group from "../../assets/img/footer/Group.svg";
+import { languageIcon } from "@/assets/img";
 
 const Footer = () => {
   return (
@@ -25,7 +25,7 @@ const Footer = () => {
             </a>
             <div className={styles.language}>
               <button className={styles.languageBtn}>
-                <img src={group} alt="выбор языка" />
+                <img src={languageIcon} alt="выбор языка" />
               </button>
               {footerLanguageData.map((el) => {
                 return <FooterLanguage key={el.id} language={el.language} />;

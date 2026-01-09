@@ -3,8 +3,7 @@ import productImgData from "./ProductImg/productImgData";
 import ProductList from "./ProductList/ProductList";
 import productListData from "./ProductList/productListData";
 import styles from "./Product.module.scss";
-import productLogo from "../../assets/img/product/product-logo.svg";
-import productCart from "../../assets/img/product/product-cart.svg";
+import { addToCartIcon, productBrandLogo } from "@/assets/img";
 
 const Product = () => {
   return (
@@ -23,7 +22,7 @@ const Product = () => {
                 <path d="M10.001 1.52898C12.35 -0.58002 15.98 -0.51002 18.243 1.75698C20.505 4.02498 20.583 7.63698 18.479 9.99298L9.999 18.485L1.52101 9.99298C-0.582994 7.63698 -0.503994 4.01898 1.75701 1.75698C4.02201 -0.50702 7.64501 -0.58302 10.001 1.52898Z" />
               </svg>
             </button>
-            <img src={productLogo} alt="" />
+            <img src={productBrandLogo} alt="" />
           </div>
           <div className={styles.productGrid}>
             {productImgData.map((el) => {
@@ -67,7 +66,7 @@ const Product = () => {
           <div className={styles.detailsBtns}>
             <button className={styles.detailsBtn}>Купить</button>
             <button className={styles.detailsBtn}>
-              <img src={productCart} alt="Корзина" />
+              <img src={addToCartIcon} alt="Корзина" />
               добавить в корзину
             </button>
           </div>

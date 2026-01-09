@@ -1,7 +1,4 @@
-import vk from "../../../assets/img/footer/VK.svg";
-import inst from "../../../assets/img/footer/Instagram.svg";
-import tg from "../../../assets/img/footer/Telegram.svg";
-import whatsapp from "../../../assets/img/footer/Whatsapp.svg";
+import { vk, instagram, telegram, whatsapp } from "@/assets/img";
 
 export interface FooterSocialsModel {
   id: number;
@@ -20,13 +17,13 @@ const footerSocialsData: FooterSocialsModel[] = [
   {
     id: 2,
     link: "https://www.instagram.com/",
-    icon: inst,
+    icon: instagram,
     alt: "Инстаграм",
   },
   {
     id: 3,
     link: "https://web.telegram.org/",
-    icon: tg,
+    icon: telegram,
     alt: "Телеграм",
   },
   {

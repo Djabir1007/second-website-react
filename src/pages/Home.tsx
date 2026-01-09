@@ -1,9 +1,8 @@
-import Hero from "../components/Hero/Hero";
-import Covers from "../components/Covers/Covers";
-import Headphones from "../components/Headphones/Headphones";
-import Wireless from "../components/Wireless/Wireless";
-import type { Favorite } from "../types/favorite";
-import type { ToggleFavorite } from "../types/favorite";
+import Hero from "@/components/Hero/Hero";
+import Covers from "@/components/Covers/Covers";
+import Headphones from "@/components/Headphones/Headphones";
+import Wireless from "@/components/Wireless/Wireless";
+import type { Favorite, ToggleFavorite } from "@/types/favorite";
 
 type HomeProps = {
   favorites: Favorite[];

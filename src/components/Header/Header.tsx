@@ -15,13 +15,10 @@ import HeaderList from "./HeaderList/HeaderList";
 import headerListData from "./HeaderList/headerListData";
 
 // Assets
-import phone from "../../assets/img/header/Phone.svg";
-import tick from "../../assets/img/header/tick.svg";
-import heart from "../../assets/img/header/heart.svg";
-import basket from "../../assets/img/header/basket.svg";
-import modelIcon from "../../assets/img/icons/model.svg";
+import { basket, heart, phone, dropdownArrow, chevronDown } from "@/assets/img";
 
-import type { Favorite } from "../../types/favorite";
+// types
+import type { Favorite } from "@/types/favorite";
 
 type HeaderProps = {
   favorites: Favorite[];
@@ -75,7 +72,7 @@ function Header({ favorites }: HeaderProps) {
                     className={`${styles.arrowMain} ${
                       isOpen ? styles.arrowOpen : ""
                     }`}
-                    src={tick}
+                    src={dropdownArrow}
                     alt="галочка"
                   />
                 </button>
@@ -107,7 +104,7 @@ function Header({ favorites }: HeaderProps) {
                             className={`${styles.arrowMain} ${
                               activeBrandId === brand.id ? styles.arrowOpen : ""
                             }`}
-                            src={modelIcon}
+                            src={chevronDown}
                             alt=""
                           />
                         </button>

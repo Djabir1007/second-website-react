@@ -1,6 +1,6 @@
 import styles from "./Cart.module.scss";
-import cart from "../../assets/img/cart/cart.svg";
 import { Link } from "react-router-dom";
+import { cart } from "@/assets/img";
 
 const Cart = () => {
   return (

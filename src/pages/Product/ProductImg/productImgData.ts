@@ -1,8 +1,10 @@
-import product1 from "../../../assets/img/product/product-1.png";
-import product2 from "../../../assets/img/product/product-2.png";
-import product3 from "../../../assets/img/product/product-3.png";
-import product4 from "../../../assets/img/product/product-4.png";
-import product5 from "../../../assets/img/product/product-5.png";
+import {
+  productImg1,
+  productImg2,
+  productImg3,
+  productImg4,
+  productImg5,
+} from "@/assets/img";
 
 export interface ProductImgModel {
   id: number;
@@ -12,23 +14,23 @@ export interface ProductImgModel {
 const productImgData: ProductImgModel[] = [
   {
     id: 1,
-    img: product1,
+    img: productImg1,
   },
   {
     id: 2,
-    img: product2,
+    img: productImg2,
   },
   {
     id: 3,
-    img: product3,
+    img: productImg3,
   },
   {
     id: 4,
-    img: product4,
+    img: productImg4,
   },
   {
     id: 5,
-    img: product5,
+    img: productImg5,
   },
 ];
 

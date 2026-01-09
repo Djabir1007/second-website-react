@@ -1,8 +1,7 @@
 import HeadphonesCard from "./HeadphonesCard/HeadphonesCard";
 import headphonesCardData from "./HeadphonesCard/headphonesCardData";
 import styles from "./Headphones.module.scss";
-import type { Favorite } from "../../types/favorite";
-import type { ToggleFavorite } from "../../types/favorite";
+import type { Favorite, ToggleFavorite } from "@/types/favorite";
 
 type HeadphonesProps = {
   favorites: Favorite[];

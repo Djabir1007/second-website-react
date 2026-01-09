@@ -1,9 +1,4 @@
-import wireless from "../../../assets/img/wireless/wireless.png";
-import wirelessTwo from "../../../assets/img/wireless/wireless-2.png";
-import wirelessThree from "../../../assets/img/wireless/wireless-3.png";
-import star from "../../../assets/img/icons/star.svg";
-import apple from "../../../assets/img/icons/apple.svg";
-
+import { wireless1, wireless2, wireless3, star, apple } from "@/assets/img";
 export interface WirelessCardModel {
   id: number;
   type: string;
@@ -21,7 +16,7 @@ const wirelessCardData: WirelessCardModel[] = [
   {
     id: 1,
     type: "wireless",
-    img: wireless,
+    img: wireless1,
     alt: "Наушники",
     title: "Apple AirPods",
     star: star,
@@ -33,7 +28,7 @@ const wirelessCardData: WirelessCardModel[] = [
   {
     id: 2,
     type: "wireless",
-    img: wirelessTwo,
+    img: wireless2,
     alt: "Наушники",
     title: "GERLAX GH-04",
     star: star,
@@ -44,7 +39,7 @@ const wirelessCardData: WirelessCardModel[] = [
   {
     id: 3,
     type: "wireless",
-    img: wirelessThree,
+    img: wireless3,
     alt: "Наушники",
     title: "BOROFONE BO4",
     star: star,
