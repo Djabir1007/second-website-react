@@ -7,15 +7,17 @@ import Footer from "@/components/Footer/Footer";
 
 // Types
 import type { Favorite } from "@/types/favorite";
+import type { CartItem } from "@/types/cart";
 
 type MainLayoutProps = {
   favorites: Favorite[];
+  cart: CartItem[];
 };
 
-const MainLayout = ({ favorites }: MainLayoutProps) => {
+const MainLayout = ({ favorites, cart }: MainLayoutProps) => {
   return (
     <div className="container">
-      <Header favorites={favorites} />
+      <Header favorites={favorites} cart={cart} />
       <main>
         <Outlet />
       </main>

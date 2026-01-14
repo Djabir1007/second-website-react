@@ -1,27 +1,38 @@
-// React
-import { Link } from "react-router-dom";
+// Components
+import EmptyCart from "./EmptyCart/EmptyCart";
+import CartAdd from "./CartAdd/CartAdd";
 
-//Assets
-import { cart } from "@/assets/img";
+// Types
+import type {
+  CartItem,
+  RemoveCart,
+  IncreaseQty,
+  DecreaseQty,
+} from "@/types/cart";
 
 //Styles
 import styles from "./Cart.module.scss";
 
-const Cart = () => {
+type CartProps = {
+  cart: CartItem[];
+  removeCart: RemoveCart;
+  increaseQty: IncreaseQty;
+  decreaseQty: DecreaseQty;
+};
+
+const Cart = ({ cart, removeCart, increaseQty, decreaseQty }: CartProps) => {
   return (
     <section className={styles.cart}>
-      <div className={styles.flex}>
-        <div className={styles.icon}>
-          <img src={cart} alt="Корзина" />
-        </div>
-        <div className={styles.content}>
-          <h2 className={styles.title}>Корзина пуста</h2>
-          <p className={styles.desc}>Но это никогда не поздно исправить :)</p>
-        </div>
-        <Link className={styles.btn} to={"/"}>
-          В каталог товаров
-        </Link>
-      </div>
+      {!!cart.length ? (
+        <CartAdd
+          cart={cart}
+          removeCart={removeCart}
+          increaseQty={increaseQty}
+          decreaseQty={decreaseQty}
+        />
+      ) : (
+        <EmptyCart />
+      )}
     </section>
   );
 };

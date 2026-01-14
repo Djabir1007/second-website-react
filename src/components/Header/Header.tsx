@@ -19,9 +19,11 @@ import { basket, heart, phone, dropdownArrow, chevronDown } from "@/assets/img";
 
 // types
 import type { Favorite } from "@/types/favorite";
+import type { CartItem } from "@/types/cart";
 
 type HeaderProps = {
   favorites: Favorite[];
+  cart: CartItem[];
 };
 
 type IconButtonProps = {
@@ -40,7 +42,7 @@ const IconButton = ({ className, src, alt, href }: IconButtonProps) => {
   );
 };
 
-function Header({ favorites }: HeaderProps) {
+function Header({ favorites, cart }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeBrandId, setActiveBrandId] = useState<number | null>(null);
   const handleToggle = () => {
@@ -142,6 +144,9 @@ function Header({ favorites }: HeaderProps) {
               alt="Корзина"
               href="/cart"
             />
+            {cart.length > 0 && (
+              <span className={styles.btnCartValue}>{cart.length}</span>
+            )}
           </div>
         </div>
       </div>

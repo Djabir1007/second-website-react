@@ -1,14 +1,14 @@
 import { wireless1, wireless2, wireless3, star, apple } from "@/assets/img";
 export interface WirelessCardModel {
   id: number;
-  type: string;
+  type: "wireless";
   img: string;
   alt: string;
   title: string;
   star: string;
   altStar: string;
   ratingValue: number;
-  price: string;
+  price: number;
   apple?: string;
 }
 
@@ -22,7 +22,7 @@ const wirelessCardData: WirelessCardModel[] = [
     star: star,
     altStar: "Рейтинг",
     ratingValue: 4.7,
-    price: "9527 ₸",
+    price: 9527,
     apple: apple,
   },
   {
@@ -34,7 +34,7 @@ const wirelessCardData: WirelessCardModel[] = [
     star: star,
     altStar: "Рейтинг",
     ratingValue: 4.7,
-    price: "6527 KZT",
+    price: 6527,
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const wirelessCardData: WirelessCardModel[] = [
     star: star,
     altStar: "Рейтинг",
     ratingValue: 4.7,
-    price: "7527 KZT",
+    price: 7527,
   },
 ];
 

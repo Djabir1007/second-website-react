@@ -1,6 +1,11 @@
 // cart
 
 import cart from "./cart/cart.svg";
+import map from "./cart/map.png";
+import deleteItem from "./cart/delete.svg";
+import cartHeadphones from "./cart/cartHeadphones.png";
+import delivery from "./cart/delivery.svg";
+import deliveryChoice from "./cart/delivery-choice.svg";
 
 // covers
 
@@ -60,7 +65,11 @@ import wireless3 from "./wireless/wireless-3.png";
 export {
   // cart
   cart,
-
+  map,
+  deleteItem,
+  cartHeadphones,
+  deliveryChoice,
+  delivery,
   // covers
   glassCase,
   leatherCase,

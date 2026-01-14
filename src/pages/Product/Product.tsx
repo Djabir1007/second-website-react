@@ -1,3 +1,6 @@
+// React
+import { useParams } from "react-router-dom";
+
 // Components
 import ProductImg from "./ProductImg/ProductImg";
 import ProductList from "./ProductList/ProductList";
@@ -5,18 +8,40 @@ import ProductList from "./ProductList/ProductList";
 // Data
 import productImgData from "./ProductImg/productImgData";
 import productListData from "./ProductList/productListData";
+import wirelessCardData from "@/components/Wireless/WirelessCard/wirelessCardData";
+import headphonesCardData from "@/components/Headphones/HeadphonesCard/headphonesCardData";
 
 // Assets
 import { addToCartIcon, productBrandLogo } from "@/assets/img";
 
+// Types
+import type { ToggleCart } from "@/types/cart";
+
 // Styles
 import styles from "./Product.module.scss";
 
-const Product = () => {
+type ProductProps = {
+  toggleCart: ToggleCart;
+};
+
+const Product = ({ toggleCart }: ProductProps) => {
+  const { id, type } = useParams();
+
+  const products =
+    type === "headphones" ? headphonesCardData : wirelessCardData;
+
+  const product = products.find(
+    (el) => el.id === Number(id) && el.type === type
+  );
+
+  if (!product) {
+    return null;
+  }
+
   return (
     <>
       <section className={styles.product}>
-        <h2 className={styles.productTitle}>Автодержатель</h2>
+        <h2 className={styles.productTitle}>{product.type}</h2>
         <article className={styles.productCard}>
           <div className={styles.productElements}>
             <button className={styles.productHeart}>
@@ -37,7 +62,7 @@ const Product = () => {
             })}
           </div>
           <div className={styles.productContent}>
-            <h2 className={styles.productName}>BOROFONE BH32</h2>
+            <h2 className={styles.productName}>{product.title}</h2>
             <div className={styles.productPrices}>
               <div className={styles.productPrice}>
                 <span className={styles.priceNow}>2 927 ₸</span>
@@ -72,8 +97,19 @@ const Product = () => {
           </div>
           <div className={styles.detailsBtns}>
             <button className={styles.detailsBtn}>Купить</button>
-            <button className={styles.detailsBtn}>
-              <img src={addToCartIcon} alt="Корзина" />
+            <button
+              className={styles.detailsBtn}
+              onClick={() => {
+                toggleCart(
+                  product.id,
+                  product.type,
+                  product.title,
+                  product.price,
+                  product.img
+                );
+              }}
+            >
+              <img src={addToCartIcon} alt="добавить в корзину" />
               добавить в корзину
             </button>
           </div>

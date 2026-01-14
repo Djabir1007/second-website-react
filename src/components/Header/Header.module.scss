@@ -63,6 +63,18 @@
   right: 40px;
 }
 
+.btnCartValue {
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 100%;
+  background-color: #ffa542;
+  padding: 0 5px;
+  position: absolute;
+  bottom: 10px;
+  left: 58px;
+}
+
 // Список моделей телефонов
 .modelsList {
   border: 1px solid #000;

@@ -12,7 +12,7 @@ type HeadphonesCardProps = Pick<
   HeadphonesCardModel,
   | "id"
   | "type"
-  | "src"
+  | "img"
   | "alt"
   | "title"
   | "value"
@@ -30,7 +30,7 @@ type HeadphonesCardProps = Pick<
 const HeadphonesCard = ({
   id,
   type,
-  src,
+  img,
   alt,
   title,
   value,
@@ -49,8 +49,8 @@ const HeadphonesCard = ({
     <article className={styles.card}>
       <div className={styles.cardContent}>
         <div className={styles.cardImage}>
-          <Link to={"/product"}>
-            <img className={styles.cardImg} src={src} alt={alt} />
+          <Link to={`/product/${type}/${id}`}>
+            <img className={styles.cardImg} src={img} alt={alt} />
           </Link>
         </div>
         <div className={styles.cardInfo}>
@@ -71,18 +71,18 @@ const HeadphonesCard = ({
                 id === 4 ? styles.cardPriceRed : ""
               }`}
             >
-              {price}
+              {`${price} ₸`}
             </span>
             {oldPrice && (
-              <span className={styles.cardPriceOld}>{oldPrice}</span>
+              <span className={styles.cardPriceOld}>{`${oldPrice} ₸`}</span>
             )}
             {salePrice && (
-              <span className={styles.cardPriceSale}>{salePrice}</span>
+              <span className={styles.cardPriceSale}>{`${salePrice} ₸`}</span>
             )}
           </div>
           {sale && (
             <div className={styles.cardSale}>
-              <span className={styles.cardSaleValue}>{sale}</span>
+              <span className={styles.cardSaleValue}>{`${sale}%`}</span>
             </div>
           )}
         </div>

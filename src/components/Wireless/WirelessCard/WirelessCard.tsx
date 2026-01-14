@@ -44,7 +44,7 @@ const WirelessCard = ({
     <article className={styles.card}>
       <div className={styles.content}>
         <div className={styles.image}>
-          <Link to={"/product"}>
+          <Link to={`/product/${type}/${id}`}>
             <img src={img} alt={alt} />
           </Link>
         </div>
@@ -57,7 +57,9 @@ const WirelessCard = ({
             </div>
           </div>
           <div className={styles.prices}>
-            <span className={styles.price}>{price}</span>
+            <span className={styles.price}>{`${price} ${
+              id === 1 ? "₸" : "KZT"
+            }`}</span>
           </div>
         </div>
       </div>

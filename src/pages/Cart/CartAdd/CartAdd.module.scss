@@ -1,0 +1,203 @@
+@use "@basestyles/base/mixins.scss" as *;
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 13px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.content {
+  background-color: #eaeaea;
+}
+
+.card {
+  padding: 18px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  @include card-hover;
+}
+
+.cardDelete {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.deleteBtn {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.cardInfo {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  margin-bottom: 17px;
+}
+
+.cardImage {
+  height: 136px;
+  max-width: 146px;
+}
+
+.cardTitle {
+  font-weight: 500;
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.cardPrice {
+  font-weight: 600;
+  font-size: 15px;
+  color: #aaa;
+}
+
+.cardControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardCounter {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.counterBtn {
+  background-color: #ffce7f;
+  border: none;
+  border-radius: 100%;
+  color: #ffffff;
+  width: 36px;
+  height: 30px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.counterBtn:hover {
+  background-color: #f0b86b;
+}
+.counterValue {
+  font-weight: 600;
+  font-size: 17px;
+  color: #000;
+}
+
+.priceValue {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.delivery {
+  background-color: #fff;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  gap: 18px;
+  margin-bottom: 10px; /* Убрать */
+}
+
+.delivery:hover {
+  @include card-hover;
+}
+
+.deliveryTitle {
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+}
+
+.deliveryInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deliveryChoice {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+
+.deliveryDesc {
+  margin-right: 40px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}
+
+.deliveryBtn {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.deliveryPrice {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.summary {
+  max-width: 348px;
+  width: 100%;
+}
+
+.summaryContent {
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+.summaryContent:hover {
+  @include card-hover;
+}
+
+.summaryFlex {
+  display: flex;
+  justify-content: space-between;
+  padding: 21px;
+}
+
+.summaryResult {
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+}
+
+.summaryPrice {
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+}
+
+.summaryBtn {
+  font-weight: 600;
+  font-size: 17px;
+  text-align: center;
+  color: #fff;
+  background-color: #101010;
+  max-width: 348px;
+  width: 100%;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 22px;
+}
+
+.summaryBtn:hover {
+  @include btn-hover;
+}
