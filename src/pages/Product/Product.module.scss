@@ -1,5 +1,9 @@
 @use "@basestyles/base/mixins.scss" as *;
 
+.favorites {
+  text-align: center;
+}
+
 .productTitle {
   @include block-title;
 }
@@ -150,4 +154,34 @@
 
 .detailsBtn:hover {
   @include btn-hover;
+}
+
+.cardCounter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 15px;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  padding: 0 16px;
+}
+
+.counterValue {
+  color: #000;
+}
+
+.counterBtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: #101010;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.counterBtn:hover {
+  color: #6c6c6c;
 }

@@ -15,16 +15,29 @@ import headphonesCardData from "@/components/Headphones/HeadphonesCard/headphone
 import { addToCartIcon, productBrandLogo } from "@/assets/img";
 
 // Types
-import type { ToggleCart } from "@/types/cart";
+import type {
+  ToggleCart,
+  CartItem,
+  IncreaseQty,
+  DecreaseQty,
+} from "@/types/cart";
 
 // Styles
 import styles from "./Product.module.scss";
 
 type ProductProps = {
   toggleCart: ToggleCart;
+  cart: CartItem[];
+  increaseQty: IncreaseQty;
+  decreaseQty: DecreaseQty;
 };
 
-const Product = ({ toggleCart }: ProductProps) => {
+const Product = ({
+  toggleCart,
+  cart,
+  increaseQty,
+  decreaseQty,
+}: ProductProps) => {
   const { id, type } = useParams();
 
   const products =
@@ -35,8 +48,12 @@ const Product = ({ toggleCart }: ProductProps) => {
   );
 
   if (!product) {
-    return null;
+    return <h1 className={styles.favorites}> Такого товара нет!</h1>;
   }
+
+  const cartItem = cart.find(
+    (item) => item.id === product.id && item.type === product.type
+  );
 
   return (
     <>
@@ -46,7 +63,7 @@ const Product = ({ toggleCart }: ProductProps) => {
           <div className={styles.productElements}>
             <button className={styles.productHeart}>
               <svg
-                width="20"
+                width="24"
                 height="19"
                 viewBox="0 0 20 19"
                 xmlns="http://www.w3.org/2000/svg"
@@ -97,21 +114,43 @@ const Product = ({ toggleCart }: ProductProps) => {
           </div>
           <div className={styles.detailsBtns}>
             <button className={styles.detailsBtn}>Купить</button>
-            <button
-              className={styles.detailsBtn}
-              onClick={() => {
-                toggleCart(
-                  product.id,
-                  product.type,
-                  product.title,
-                  product.price,
-                  product.img
-                );
-              }}
-            >
-              <img src={addToCartIcon} alt="добавить в корзину" />
-              добавить в корзину
-            </button>
+            {cartItem ? (
+              <div className={styles.cardCounter}>
+                <button
+                  className={`${styles.counterBtn} `}
+                  onClick={() => {
+                    decreaseQty(product.id, product.type);
+                  }}
+                >
+                  -
+                </button>
+                <span className={styles.counterValue}>{cartItem.qty}</span>
+                <button
+                  className={styles.counterBtn}
+                  onClick={() => {
+                    increaseQty(product.id, product.type);
+                  }}
+                >
+                  +
+                </button>
+              </div>
+            ) : (
+              <button
+                className={styles.detailsBtn}
+                onClick={() => {
+                  toggleCart(
+                    product.id,
+                    product.type,
+                    product.title,
+                    product.price,
+                    product.img
+                  );
+                }}
+              >
+                <img src={addToCartIcon} alt="добавить в корзину" />
+                добавить в корзину
+              </button>
+            )}
           </div>
         </div>
       </section>
