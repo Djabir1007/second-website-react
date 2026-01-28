@@ -1,0 +1,39 @@
+@use "@basestyles/base/mixins.scss" as *;
+
+.title {
+  margin-bottom: 21px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.headphones {
+  margin-bottom: 50px;
+}
+
+.card {
+  margin-bottom: 10px;
+}
+
+.headphonesTitle {
+  @include block-title;
+}
+
+.headphonesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.wireless {
+  margin-bottom: 50px;
+}
+
+.wirelessTitle {
+  @include block-title;
+}
+
+.wirelessGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}

@@ -1,36 +1,10 @@
-@use "@basestyles/base/mixins.scss" as *;
-
-.title {
-  margin-bottom: 21px;
-  font-weight: 600;
-  font-size: 20px;
+.favoritesInfo {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.cardMargin {
-  margin-bottom: 50px;
-}
-
-.headphonesTitle {
-  @include block-title;
-  margin-bottom: 47px;
-}
-
-.headphonesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.wireless {
-  margin-bottom: 50px;
-}
-
-.wirelessTitle {
-  @include block-title;
-}
-
-.wirelessGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+.infoTitle {
+  color: #838383;
 }
