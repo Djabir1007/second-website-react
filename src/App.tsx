@@ -13,6 +13,7 @@ import Cart from "./pages/Cart/Cart";
 import Favorites from "./pages/Favorites/Favorites";
 import Product from "./pages/Product/Product";
 import NotFound from "./pages/NotFound/NotFound";
+import Checkout from "./pages/Checkout/Checkout";
 
 // Types
 import type { Favorite, ToggleFavorite } from "./types/favorite";
@@ -25,11 +26,23 @@ import type {
 } from "./types/cart";
 
 function App() {
-  // Массив id избранных товаров
   const [favorites, setFavorites] = useState<Favorite[]>(() => {
     const saved = localStorage.getItem("favorites");
     return saved ? JSON.parse(saved) : [];
   });
+
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    const saved = localStorage.getItem("cart");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const toggleFavorite: ToggleFavorite = (id, type) => {
     setFavorites((prev) => {
@@ -43,21 +56,6 @@ function App() {
     });
   };
 
-  useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
-
-  // корзина
-
-  const [cart, setCart] = useState<CartItem[]>(() => {
-    const saved = localStorage.getItem("cart");
-    return saved ? JSON.parse(saved) : [];
-  });
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
   const toggleCart: ToggleCart = (id, type, title, price, img) => {
     setCart((prev) => {
       const exists = prev.some((item) => item.id === id && item.type === type);
@@ -69,14 +67,12 @@ function App() {
     });
   };
 
-  // удаление товара из корзины
   const removeCart: RemoveCart = (id, type) => {
     setCart((prev) => {
       return prev.filter((item) => !(item.id === id && item.type === type));
     });
   };
 
-  // Счетчик увеличения одного товара
   const increaseQty: IncreaseQty = (id, type) => {
     setCart((prev) => {
       return prev.map((item) => {
@@ -89,7 +85,6 @@ function App() {
     });
   };
 
-  // Счетчик уменьшения одного товара
   const decreaseQty: DecreaseQty = (id, type) => {
     setCart((prev) => {
       return prev.map((item) => {
@@ -130,8 +125,16 @@ function App() {
         />
         <Route
           path="/product/:type/:id"
-          element={<Product toggleCart={toggleCart} />}
+          element={
+            <Product
+              toggleCart={toggleCart}
+              cart={cart}
+              increaseQty={increaseQty}
+              decreaseQty={decreaseQty}
+            />
+          }
         />
+        <Route path="/checkout" element={<Checkout />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />
