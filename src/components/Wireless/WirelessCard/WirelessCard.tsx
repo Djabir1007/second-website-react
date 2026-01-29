@@ -1,6 +1,8 @@
 // Router
 import { Link } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 // Types
 import type { Favorite, ToggleFavorite } from "@/types/favorite";
 import type { WirelessCardModel } from "./wirelessCardData";
@@ -40,6 +42,17 @@ const WirelessCard = ({
   toggleFavorite,
 }: WirelessCardProps) => {
   const isFavorite = favorites.some((el) => el.id === id && el.type === type);
+
+  const handleFavClick = () => {
+    if (isFavorite) {
+      toast.info("Удалено из избранного");
+    } else {
+      toast.success("Добавлено в избранное");
+    }
+
+    toggleFavorite(id, type);
+  };
+
   return (
     <article className={styles.card}>
       <div className={styles.content}>
@@ -66,11 +79,11 @@ const WirelessCard = ({
       <button
         className={`${styles.heart} ${isFavorite ? styles.active : ""}`}
         onClick={() => {
-          toggleFavorite(id, type);
+          handleFavClick();
         }}
       >
         <svg
-          width="20"
+          width="24"
           height="19"
           viewBox="0 0 20 19"
           xmlns="http://www.w3.org/2000/svg"

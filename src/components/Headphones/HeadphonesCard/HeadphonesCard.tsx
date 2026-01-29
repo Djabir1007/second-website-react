@@ -1,6 +1,8 @@
 // Router
 import { Link } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 // Types
 import type { Favorite, ToggleFavorite } from "@/types/favorite";
 import type { HeadphonesCardModel } from "./headphonesCardData";
@@ -44,6 +46,16 @@ const HeadphonesCard = ({
   toggleFavorite,
 }: HeadphonesCardProps) => {
   const isFavorite = favorites.some((el) => el.id === id && el.type === type);
+
+  const handleFavClick = () => {
+    if (isFavorite) {
+      toast.info("Удалено из избранного");
+    } else {
+      toast.success("Добавлено в избранное");
+    }
+
+    toggleFavorite(id, type);
+  };
 
   return (
     <article className={styles.card}>
@@ -89,7 +101,9 @@ const HeadphonesCard = ({
       </div>
       <button
         className={`${styles.heart} ${isFavorite ? styles.active : ""}`}
-        onClick={() => toggleFavorite(id, type)}
+        onClick={() => {
+          handleFavClick();
+        }}
       >
         <svg
           width="20"
