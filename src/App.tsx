@@ -1,13 +1,10 @@
-// React
 import { useEffect, useState } from "react";
 
-// Router
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
-// Layouts
 import MainLayout from "./layouts/MainLayout";
 
-// Pages
 import Home from "./pages/Home";
 import Cart from "./pages/Cart/Cart";
 import Favorites from "./pages/Favorites/Favorites";
@@ -15,7 +12,6 @@ import Product from "./pages/Product/Product";
 import NotFound from "./pages/NotFound/NotFound";
 import Checkout from "./pages/Checkout/Checkout";
 
-// Types
 import type { Favorite, ToggleFavorite } from "./types/favorite";
 import type {
   CartItem,
@@ -98,47 +94,59 @@ function App() {
   };
 
   return (
-    <Routes>
-      <Route element={<MainLayout favorites={favorites} cart={cart} />}>
-        <Route
-          path="/"
-          element={
-            <Home favorites={favorites} toggleFavorite={toggleFavorite} />
-          }
-        />
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              cart={cart}
-              removeCart={removeCart}
-              increaseQty={increaseQty}
-              decreaseQty={decreaseQty}
-            />
-          }
-        />
-        <Route
-          path="/favorites"
-          element={
-            <Favorites favorites={favorites} toggleFavorite={toggleFavorite} />
-          }
-        />
-        <Route
-          path="/product/:type/:id"
-          element={
-            <Product
-              toggleCart={toggleCart}
-              cart={cart}
-              increaseQty={increaseQty}
-              decreaseQty={decreaseQty}
-            />
-          }
-        />
-        <Route path="/checkout" element={<Checkout />} />
-      </Route>
+    <>
+      <Routes>
+        <Route element={<MainLayout favorites={favorites} cart={cart} />}>
+          <Route
+            path="/"
+            element={
+              <Home favorites={favorites} toggleFavorite={toggleFavorite} />
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                cart={cart}
+                removeCart={removeCart}
+                increaseQty={increaseQty}
+                decreaseQty={decreaseQty}
+              />
+            }
+          />
+          <Route
+            path="/favorites"
+            element={
+              <Favorites
+                favorites={favorites}
+                toggleFavorite={toggleFavorite}
+              />
+            }
+          />
+          <Route
+            path="/product/:type/:id"
+            element={
+              <Product
+                toggleCart={toggleCart}
+                cart={cart}
+                increaseQty={increaseQty}
+                decreaseQty={decreaseQty}
+              />
+            }
+          />
+          <Route path="/checkout" element={<Checkout />} />
+        </Route>
 
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        closeOnClick
+        pauseOnHover
+      />
+    </>
   );
 }
 
