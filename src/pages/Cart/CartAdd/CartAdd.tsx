@@ -102,9 +102,14 @@ const CartAdd = ({
             <div className={styles.deliveryHeader}>
               <h2 className={styles.deliveryTitle}>Доставка</h2>
             </div>
-            <div className={styles.deliveryMaps}>
-              <img src={map} alt="карта" />
-            </div>
+
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3Aabf3dffc6eac8deda1f3c62e4edff0cadf79a3d1c1175c4fe22dcfd1945e94b1&amp;source=constructor"
+              width={585}
+              height={240}
+              className={styles.deliveryMap}
+            ></iframe>
+
             <div className={styles.deliveryInfo}>
               <div className={styles.deliveryChoice}>
                 <img src={delivery} alt="" />
