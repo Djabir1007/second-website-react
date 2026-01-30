@@ -1,11 +1,7 @@
+import { toast } from "react-toastify";
+
 // Assets
-import {
-  deleteItem,
-  cartHeadphones,
-  map,
-  delivery,
-  deliveryChoice,
-} from "@/assets/img";
+import { deleteItem, delivery, deliveryChoice } from "@/assets/img";
 
 // Types
 import type {
@@ -51,6 +47,7 @@ const CartAdd = ({
                     className={styles.deleteBtn}
                     onClick={() => {
                       removeCart(el.id, el.type);
+                      toast.info("Удалено из корзины");
                     }}
                   >
                     <img src={deleteItem} alt="удалить товар" />
@@ -74,6 +71,9 @@ const CartAdd = ({
                     <button
                       className={styles.counterBtn}
                       onClick={() => {
+                        if (el.qty === 1) {
+                          toast.info("Удалено из корзины");
+                        }
                         decreaseQty(el.id, el.type);
                       }}
                     >
