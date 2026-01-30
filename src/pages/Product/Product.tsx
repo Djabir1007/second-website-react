@@ -1,6 +1,8 @@
 // React
 import { useParams } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 // Components
 import ProductImg from "./ProductImg/ProductImg";
 import ProductList from "./ProductList/ProductList";
@@ -119,6 +121,9 @@ const Product = ({
                 <button
                   className={`${styles.counterBtn} `}
                   onClick={() => {
+                    if (cartItem.qty === 1) {
+                      toast.info("Удалено из корзины");
+                    }
                     decreaseQty(product.id, product.type);
                   }}
                 >
@@ -138,6 +143,7 @@ const Product = ({
               <button
                 className={styles.detailsBtn}
                 onClick={() => {
+                  toast.success("Добавлено в корзину");
                   toggleCart(
                     product.id,
                     product.type,
