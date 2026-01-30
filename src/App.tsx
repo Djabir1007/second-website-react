@@ -83,12 +83,17 @@ function App() {
 
   const decreaseQty: DecreaseQty = (id, type) => {
     setCart((prev) => {
-      return prev.map((item) => {
+      const updated = prev.map((item) => {
         const isTarget = item.id === id && item.type === type;
 
-        if (!isTarget) return item;
-
-        return { ...item, qty: Math.max(1, item.qty - 1) };
+        if (!isTarget) {
+          return item;
+        } else {
+          return { ...item, qty: item.qty - 1 };
+        }
+      });
+      return updated.filter((item) => {
+        return item.qty > 0;
       });
     });
   };
