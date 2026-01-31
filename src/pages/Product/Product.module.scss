@@ -37,6 +37,11 @@
   fill: #1c1c27;
 }
 
+.active svg {
+  stroke: none;
+  fill: #1c1c27;
+}
+
 .productGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

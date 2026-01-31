@@ -136,6 +136,8 @@ function App() {
                 cart={cart}
                 increaseQty={increaseQty}
                 decreaseQty={decreaseQty}
+                toggleFavorite={toggleFavorite}
+                favorites={favorites}
               />
             }
           />

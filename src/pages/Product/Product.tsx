@@ -24,6 +24,8 @@ import type {
   DecreaseQty,
 } from "@/types/cart";
 
+import type { ToggleFavorite, Favorite } from "@/types/favorite";
+
 // Styles
 import styles from "./Product.module.scss";
 
@@ -32,6 +34,8 @@ type ProductProps = {
   cart: CartItem[];
   increaseQty: IncreaseQty;
   decreaseQty: DecreaseQty;
+  toggleFavorite: ToggleFavorite;
+  favorites: Favorite[];
 };
 
 const Product = ({
@@ -39,6 +43,8 @@ const Product = ({
   cart,
   increaseQty,
   decreaseQty,
+  toggleFavorite,
+  favorites,
 }: ProductProps) => {
   const { id, type } = useParams();
 
@@ -46,7 +52,7 @@ const Product = ({
     type === "headphones" ? headphonesCardData : wirelessCardData;
 
   const product = products.find(
-    (el) => el.id === Number(id) && el.type === type
+    (el) => el.id === Number(id) && el.type === type,
   );
 
   if (!product) {
@@ -54,8 +60,20 @@ const Product = ({
   }
 
   const cartItem = cart.find(
-    (item) => item.id === product.id && item.type === product.type
+    (item) => item.id === product.id && item.type === product.type,
   );
+
+  const isFavorite = favorites.some(
+    (el) => el.id === product.id && el.type === product.type,
+  );
+
+  const handleFavClick = () => {
+    if (isFavorite) {
+      toast.info("Удалено из избранного");
+    } else {
+      toast.success("Добавлено в избранное");
+    }
+  };
 
   return (
     <>
@@ -63,7 +81,13 @@ const Product = ({
         <h2 className={styles.productTitle}>{product.type}</h2>
         <article className={styles.productCard}>
           <div className={styles.productElements}>
-            <button className={styles.productHeart}>
+            <button
+              className={`${styles.productHeart} ${isFavorite ? styles.active : ""}`}
+              onClick={() => {
+                handleFavClick();
+                toggleFavorite(product.id, product.type);
+              }}
+            >
               <svg
                 width="24"
                 height="19"
@@ -149,7 +173,7 @@ const Product = ({
                     product.type,
                     product.title,
                     product.price,
-                    product.img
+                    product.img,
                   );
                 }}
               >
