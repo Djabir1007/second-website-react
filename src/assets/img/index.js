@@ -1,11 +1,20 @@
 // cart
 
 import cart from "./cart/cart.svg";
-import map from "./cart/map.png";
 import deleteItem from "./cart/delete.svg";
 import cartHeadphones from "./cart/cartHeadphones.png";
 import delivery from "./cart/delivery.svg";
 import deliveryChoice from "./cart/delivery-choice.svg";
+
+// Checkout
+
+import citySelection from "./checkout/city-selection.svg";
+import addressLabel from "./checkout/label.svg";
+import promoCode from "./checkout/promotional-code.svg";
+import editIcon from "./checkout/write.svg";
+import visaIcon from "./checkout/visa-icon.svg";
+import checkIcon from "./checkout/check-icon.svg";
+import arrowRightIcon from "./checkout/arrow-right-icon.svg";
 
 // covers
 
@@ -65,11 +74,20 @@ import wireless3 from "./wireless/wireless-3.png";
 export {
   // cart
   cart,
-  map,
   deleteItem,
   cartHeadphones,
   deliveryChoice,
   delivery,
+
+  // checkout
+  citySelection,
+  addressLabel,
+  promoCode,
+  editIcon,
+  visaIcon,
+  checkIcon,
+  arrowRightIcon,
+
   // covers
   glassCase,
   leatherCase,
