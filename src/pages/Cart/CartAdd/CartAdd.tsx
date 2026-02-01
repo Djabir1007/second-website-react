@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { toast } from "react-toastify";
 
 // Assets
@@ -132,7 +134,11 @@ const CartAdd = ({
               <span className={styles.summaryResult}>ИТОГО</span>
               <span className={styles.summaryPrice}>{`${total} ₸`}</span>
             </div>
-            <button className={styles.summaryBtn}> Перейти к оформлению</button>
+            <Link to="/checkout">
+              <button className={styles.summaryBtn}>
+                Перейти к оформлению
+              </button>
+            </Link>
           </div>
         </div>
       </div>
