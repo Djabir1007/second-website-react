@@ -1,0 +1,331 @@
+@use "@basestyles/base/mixins.scss" as *;
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  max-width: 934px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
+.checkout {
+  display: flex;
+  gap: 30px;
+  max-width: 934px;
+  margin: 0 auto;
+  margin-bottom: 112px;
+}
+
+.address {
+  background-color: white;
+  max-width: 445px;
+  width: 100%;
+  padding: 23px 31px 32px 38px;
+  border-radius: 30px;
+}
+
+.address:hover {
+  @include card-hover;
+  cursor: auto;
+}
+
+.addressContainer {
+  max-width: 376px;
+  width: 100%;
+}
+
+.addressDelivery {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.deliveryTitle {
+  font-weight: 600;
+  font-size: 17px;
+  color: #000;
+}
+
+.deliveryPrice {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}
+
+.addressMap {
+  height: 146px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.addressForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.addressInfo {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.infoImg {
+  margin-right: 12px;
+}
+
+.infoText {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}
+
+.addressWrapper {
+  display: flex;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.input {
+  @include input-style;
+  width: 100%;
+}
+.cityInputImg {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+
+.streetInputImg {
+  position: absolute;
+  right: 14px;
+  bottom: 13px;
+}
+
+.addressRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.addressRowItem {
+  position: relative;
+}
+
+.houseInput {
+  @include input-style;
+}
+
+.houseInputImg {
+  position: absolute;
+  right: 14px;
+  bottom: 13px;
+}
+
+.entranceInput {
+  @include input-style;
+}
+
+.entranceInputImg {
+  position: absolute;
+  right: 14px;
+  bottom: 13px;
+}
+
+.addressFlat {
+  display: flex;
+  position: relative;
+  width: 50%;
+}
+
+.flatInput {
+  @include input-style;
+}
+
+.flatInputImg {
+  position: absolute;
+  right: 31px;
+  bottom: 13px;
+}
+
+.result {
+  max-width: 450px;
+  width: 100%;
+}
+
+.orderCard {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 13px;
+  padding-right: 14px;
+  border-radius: 30px;
+  margin-bottom: 14px;
+}
+
+.orderCard:hover {
+  @include card-hover;
+  cursor: auto;
+}
+
+.orderNameTitle {
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 25px;
+}
+
+.orderRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.orderRow:last-child {
+  margin-bottom: 0;
+}
+
+.orderQty {
+  position: absolute;
+}
+
+.orderLabel {
+  margin-left: 34px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}
+
+.orderValue {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}
+
+.payment {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 13px;
+  padding-right: 14px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.payment:hover {
+  @include card-hover;
+  cursor: auto;
+}
+
+.paymentTitle {
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 17px;
+}
+
+.paymentMethods {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.paymentMethod {
+  display: flex;
+}
+
+.paymentIcon {
+  margin-right: 8px;
+}
+
+.paymentText {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}
+
+.paymentBtn {
+  background-color: #fff;
+}
+
+.promoCode {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.promoCodeInfo {
+  display: flex;
+}
+
+.promoCodeIcon {
+  margin-right: 11px;
+}
+
+.promoCodeValue {
+  font-weight: 500;
+  font-size: 15px;
+  color: #838383;
+  border: none;
+  outline: none;
+}
+
+.promoCodeBtn {
+  background-color: #fff;
+  margin-right: 5px;
+}
+
+.recipientPhone {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 13px;
+  padding-right: 14px;
+  border-radius: 30px;
+  margin-bottom: 28px;
+}
+
+.recipientPhone:hover {
+  @include card-hover;
+  cursor: auto;
+}
+
+.recipientPhoneTitle {
+  font-weight: 600;
+  font-size: 17px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.recipientPhoneInfo {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.recipientPhoneValue {
+  max-width: 100%;
+  width: 100%;
+  @include input-style;
+}
+
+.editIcon {
+  position: absolute;
+  right: 14px;
+  bottom: 13px;
+}
+
+.submitBtn {
+  max-width: 100%;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+  background-color: #101010;
+  padding: 14px 0;
+  border-radius: 10px;
+}
+
+.submitBtn:hover {
+  box-shadow: 0 0 20px 0 rgba(67, 216, 84, 0.25);
+}
