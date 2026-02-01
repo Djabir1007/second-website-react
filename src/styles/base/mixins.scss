@@ -72,3 +72,14 @@
 @mixin main-flex {
   flex: 1 1 auto;
 }
+
+@mixin input-style {
+  padding-left: 14px;
+  padding-top: 14px;
+  padding-bottom: 13px;
+  border-radius: 15px;
+  border: none;
+  background-color: #d6d6d6;
+  font-size: 15px;
+  outline: none;
+}
