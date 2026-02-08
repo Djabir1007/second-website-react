@@ -10,42 +10,19 @@ import type { HeadphonesCardModel } from "./headphonesCardData";
 // Styles
 import styles from "./HeadphonesCard.module.scss";
 
-type HeadphonesCardProps = Pick<
-  HeadphonesCardModel,
-  | "id"
-  | "type"
-  | "img"
-  | "alt"
-  | "title"
-  | "value"
-  | "price"
-  | "oldPrice"
-  | "sale"
-  | "salePrice"
-  | "rating"
-  | "altStar"
-> & {
+type HeadphonesCardProps = HeadphonesCardModel & {
   favorites: Favorite[];
   toggleFavorite: ToggleFavorite;
 };
 
 const HeadphonesCard = ({
-  id,
-  type,
-  img,
-  alt,
-  title,
-  value,
-  price,
-  oldPrice,
-  sale,
-  rating,
-  altStar,
-  salePrice,
   favorites,
   toggleFavorite,
+  ...card
 }: HeadphonesCardProps) => {
-  const isFavorite = favorites.some((el) => el.id === id && el.type === type);
+  const isFavorite = favorites.some(
+    (el) => el.id === card.id && el.type === card.type,
+  );
 
   const handleFavClick = () => {
     if (isFavorite) {
@@ -54,47 +31,51 @@ const HeadphonesCard = ({
       toast.success("Добавлено в избранное");
     }
 
-    toggleFavorite(id, type);
+    toggleFavorite(card.id, card.type);
   };
 
   return (
     <article className={styles.card}>
       <div className={styles.cardContent}>
         <div className={styles.cardImage}>
-          <Link to={`/product/${type}/${id}`}>
-            <img className={styles.cardImg} src={img} alt={alt} />
+          <Link to={`/product/${card.type}/${card.id}`}>
+            <img className={styles.cardImg} src={card.img} alt={card.alt} />
           </Link>
         </div>
         <div className={styles.cardInfo}>
           <div className={styles.cardInfoLeft}>
-            <h3 className={styles.cardTitle}>{title}</h3>
+            <h3 className={styles.cardTitle}>{card.title}</h3>
             <div className={styles.cardRating}>
               <img
                 className={styles.cardRatingStar}
-                src={rating}
-                alt={altStar}
+                src={card.rating}
+                alt={card.altStar}
               />
-              <span className={styles.cardRatingValue}>{value}</span>
+              <span className={styles.cardRatingValue}>{card.value}</span>
             </div>
           </div>
           <div className={styles.cardPrices}>
             <span
               className={`${styles.cardPrice} ${
-                id === 4 ? styles.cardPriceRed : ""
+                card.id === 4 ? styles.cardPriceRed : ""
               }`}
             >
-              {`${price} ₸`}
+              {`${card.price} ₸`}
             </span>
-            {oldPrice && (
-              <span className={styles.cardPriceOld}>{`${oldPrice} ₸`}</span>
+            {card.oldPrice && (
+              <span
+                className={styles.cardPriceOld}
+              >{`${card.oldPrice} ₸`}</span>
             )}
-            {salePrice && (
-              <span className={styles.cardPriceSale}>{`${salePrice} ₸`}</span>
+            {card.salePrice && (
+              <span
+                className={styles.cardPriceSale}
+              >{`${card.salePrice} ₸`}</span>
             )}
           </div>
-          {sale && (
+          {card.sale && (
             <div className={styles.cardSale}>
-              <span className={styles.cardSaleValue}>{`${sale}%`}</span>
+              <span className={styles.cardSaleValue}>{`${card.sale}%`}</span>
             </div>
           )}
         </div>
