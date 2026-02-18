@@ -1,5 +1,5 @@
 // React
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Router
 import { Link } from "react-router-dom";
@@ -26,25 +26,23 @@ type HeaderProps = {
   cart: CartItem[];
 };
 
-type IconButtonProps = {
-  className: string;
-  src: string;
-  alt: string;
-  href: string;
-};
-
-// Для кнопок 'избранное' и 'корзина'
-const IconButton = ({ className, src, alt, href }: IconButtonProps) => {
-  return (
-    <Link className={className} to={href}>
-      <img src={src} alt={alt} />
-    </Link>
-  );
-};
-
 function Header({ favorites, cart }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeBrandId, setActiveBrandId] = useState<number | null>(null);
+  const boxRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      const target = e.target as Node;
+
+      if (boxRef.current && !boxRef.current.contains(target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("click", handler);
+    return () => document.removeEventListener("click", handler);
+  }, []);
+
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
   };
@@ -66,7 +64,11 @@ function Header({ favorites, cart }: HeaderProps) {
                 alt="Телефонный иконка"
               />
             </a>
-            <div className={styles.listWrapper} onClick={handleToggle}>
+            <div
+              className={styles.listWrapper}
+              ref={boxRef}
+              onClick={handleToggle}
+            >
               <div className={styles.wrapperHeader}>
                 <p className={styles.wrapperDesc}>Выбрать модель телефона</p>
                 <button className={styles.listWrapperItemBtn}>
@@ -104,7 +106,7 @@ function Header({ favorites, cart }: HeaderProps) {
                           </span>
                           <img
                             className={`${styles.arrowMain} ${
-                              activeBrandId === brand.id ? styles.arrowOpen : ""
+                              isActive ? styles.arrowOpen : ""
                             }`}
                             src={chevronDown}
                             alt=""
@@ -127,26 +129,20 @@ function Header({ favorites, cart }: HeaderProps) {
         </div>
         <div className={styles.btn}>
           <div className={styles.btnHeartWrapper}>
-            <IconButton
-              className={styles.btnHeart}
-              src={heart}
-              alt="Избранное"
-              href="/favorites"
-            />
-            {favorites.length > 0 && (
-              <span className={styles.btnHeartValue}>{favorites.length}</span>
-            )}
+            <Link className={styles.btnHeart} to="/favorites">
+              <img src={heart} alt="Избранное" />
+              {favorites.length > 0 && (
+                <span className={styles.btnHeartValue}>{favorites.length}</span>
+              )}
+            </Link>
           </div>
           <div className={styles.btnHeartWrapper}>
-            <IconButton
-              className={styles.btnBasket}
-              src={basket}
-              alt="Корзина"
-              href="/cart"
-            />
-            {cart.length > 0 && (
-              <span className={styles.btnCartValue}>{cart.length}</span>
-            )}
+            <Link className={styles.btnBasket} to="/cart">
+              <img src={basket} alt="Корзина" />
+              {cart.length > 0 && (
+                <button className={styles.btnCartValue}>{cart.length}</button>
+              )}
+            </Link>
           </div>
         </div>
       </div>
