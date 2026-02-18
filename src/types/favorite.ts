@@ -1,3 +1,5 @@
+export type FavoriteType = "headphones" | "wireless";
+
 export type Favorite = {
   id: number;
   type: string;
