@@ -9,10 +9,29 @@ import {
   arrowRightIcon,
 } from "@/assets/img";
 
+import type { CartItem } from "@/types/cart";
+
+import {
+  calculateTotalSum,
+  calculateTotal,
+  calculateDelivery,
+} from "@/utils/cartUtils";
+
 // Styles
 import styles from "./Checkout.module.scss";
+import { useRef } from "react";
 
-const Checkout = () => {
+type CheckoutProps = {
+  cart: CartItem[];
+};
+
+const Checkout = ({ cart }: CheckoutProps) => {
+  const focusInput = useRef<HTMLInputElement | null>(null);
+
+  const total = calculateTotal(cart);
+  const delivery = calculateDelivery(cart);
+  const totalSum = calculateTotalSum(cart);
+
   return (
     <div>
       <h2 className={styles.title}>Оформление заказа</h2>
@@ -25,8 +44,6 @@ const Checkout = () => {
             </div>
             <iframe
               src="https://yandex.ru/map-widget/v1/?um=constructor%3A54ed4fdd38b933e935bc7dfc39a655b503bab30f057134b144ef7afedc7c7754&amp;source=constructor"
-              width={375}
-              height={240}
               className={styles.addressMap}
             ></iframe>
             <div className={styles.addressForm}>
@@ -106,23 +123,31 @@ const Checkout = () => {
         <aside className={styles.result}>
           <section className={styles.orderCard}>
             <h3 className={styles.orderNameTitle}>Ваш заказ</h3>
-
             <div className={styles.orderInfo}>
-              <div className={styles.orderRow}>
-                <span className={styles.orderQty}>1x</span>
+              {cart.map((el) => (
+                <div className={styles.orderRow} key={el.id}>
+                  <span className={styles.orderQty}>{`${el.qty}x`}</span>
+                  <span className={styles.orderLabel}>{el.title}</span>
+                  <span
+                    className={styles.orderValue}
+                  >{`₸ ${el.qty * el.price}`}</span>
+                </div>
+              ))}
+              {/* <div className={styles.orderRow}>
+                <span className={styles.orderQty}>1</span>
                 <span className={styles.orderLabel}>
                   Наушники Apple BYZ S852I
                 </span>
-                <span className={styles.orderValue}>₸ 2 927</span>
-              </div>
+                <span className={styles.orderValue}>29</span>
+              </div> */}
               <div className={styles.orderRow}>
                 <span className={styles.orderLabel}>Доставка</span>
-                <span className={styles.orderValue}>₸ 2 927</span>
+                <span className={styles.orderValue}>₸ 499</span>
               </div>
 
               <div className={styles.orderRow}>
                 <span className={styles.orderLabel}>К оплате</span>
-                <span className={styles.orderValue}>₸ 2 927</span>
+                <span className={styles.orderValue}>{`₸ ${totalSum}`}</span>
               </div>
             </div>
           </section>
@@ -148,9 +173,15 @@ const Checkout = () => {
                   className={styles.promoCodeValue}
                   type="text"
                   placeholder="Есть промокод?"
+                  ref={focusInput}
                 />
               </div>
-              <button className={styles.promoCodeBtn}>
+              <button
+                className={styles.promoCodeBtn}
+                onClick={() => {
+                  focusInput.current?.focus();
+                }}
+              >
                 <img src={arrowRightIcon} alt="" />
               </button>
             </div>
