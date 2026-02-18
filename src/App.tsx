@@ -12,7 +12,7 @@ import Product from "./pages/Product/Product";
 import NotFound from "./pages/NotFound/NotFound";
 import Checkout from "./pages/Checkout/Checkout";
 
-import type { Favorite, ToggleFavorite } from "./types/favorite";
+import type { Favorite, ToggleFavorite, FavoriteType } from "./types/favorite";
 import type {
   CartItem,
   ToggleCart,
@@ -141,7 +141,7 @@ function App() {
               />
             }
           />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkout" element={<Checkout cart={cart} />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
