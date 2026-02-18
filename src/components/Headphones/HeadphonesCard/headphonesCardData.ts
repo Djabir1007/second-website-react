@@ -1,8 +1,17 @@
-import { headphones1, headphones2, headphones3, star } from "@/assets/img";
+import {
+  headphones1,
+  headphones2,
+  headphones3,
+  wireless1,
+  wireless2,
+  wireless3,
+  star,
+  apple,
+} from "@/assets/img";
 
 export interface HeadphonesCardModel {
   id: number;
-  type: "headphones";
+  type: "headphones" | "wireless";
   img: string;
   alt: string;
   title: string;
@@ -13,6 +22,7 @@ export interface HeadphonesCardModel {
   salePrice?: number;
   rating: string;
   altStar: string;
+  apple?: string;
 }
 
 const headphonesCardData: HeadphonesCardModel[] = [
@@ -84,6 +94,40 @@ const headphonesCardData: HeadphonesCardModel[] = [
     price: 2327,
     rating: star,
     altStar: "Рейтинг",
+  },
+  {
+    id: 7,
+    type: "wireless",
+    img: wireless1,
+    alt: "Наушники",
+    title: "Apple AirPods",
+    rating: star,
+    altStar: "Рейтинг",
+    value: 4.7,
+    price: 9527,
+    apple: apple,
+  },
+  {
+    id: 8,
+    type: "wireless",
+    img: wireless2,
+    alt: "Наушники",
+    title: "GERLAX GH-04",
+    rating: star,
+    altStar: "Рейтинг",
+    value: 4.7,
+    price: 6527,
+  },
+  {
+    id: 9,
+    type: "wireless",
+    img: wireless3,
+    alt: "Наушники",
+    title: "BOROFONE BO4",
+    rating: star,
+    altStar: "Рейтинг",
+    value: 4.7,
+    price: 7527,
   },
 ];
 
