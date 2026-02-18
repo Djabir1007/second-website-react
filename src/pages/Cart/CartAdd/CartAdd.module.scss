@@ -26,10 +26,10 @@
   background-color: #ffffff;
   border-radius: 30px;
   margin-bottom: 10px;
-}
 
-.card:hover {
-  @include card-hover;
+  &:hover {
+    @include card-hover;
+  }
 }
 
 .cardDelete {
@@ -88,11 +88,12 @@
   height: 30px;
   font-family: inherit;
   cursor: pointer;
+
+  &:hover {
+    background-color: #f0b86b;
+  }
 }
 
-.counterBtn:hover {
-  background-color: #f0b86b;
-}
 .counterValue {
   font-weight: 600;
   font-size: 17px;
@@ -111,11 +112,10 @@
   flex-direction: column;
   padding: 18px;
   gap: 18px;
-  margin-bottom: 10px; /* Убрать */
-}
 
-.delivery:hover {
-  @include card-hover;
+  &:hover {
+    @include card-hover;
+  }
 }
 
 .deliveryTitle {
@@ -167,10 +167,10 @@
 .summaryContent {
   background-color: #fff;
   border-radius: 30px;
-}
 
-.summaryContent:hover {
-  @include card-hover;
+  &:hover {
+    @include card-hover;
+  }
 }
 
 .summaryFlex {
@@ -202,8 +202,8 @@
   border-radius: 20px;
   cursor: pointer;
   padding: 22px;
-}
 
-.summaryBtn:hover {
-  @include btn-hover;
+  &:hover {
+    @include btn-hover;
+  }
 }

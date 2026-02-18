@@ -1,7 +1,8 @@
 .listItem {
   margin-bottom: 10px;
-}
-.listItem:hover {
-  color: #ffa542;
-  cursor: pointer;
+
+  &:hover {
+    color: #ffa542;
+    cursor: pointer;
+  }
 }

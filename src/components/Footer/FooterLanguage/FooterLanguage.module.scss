@@ -1,13 +1,14 @@
 @use "@basestyles/base/mixins.scss" as *;
 
 .languageItem {
+  flex: 1;
   font-size: 15px;
   color: #101010;
   background-color: #fff;
   font-family: inherit;
   font-weight: 500;
-}
 
-.languageItem:hover {
-  @include language-hover;
+  &:hover {
+    @include language-hover;
+  }
 }

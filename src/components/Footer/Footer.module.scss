@@ -21,19 +21,24 @@
   gap: 10px;
 }
 
+.infoTerms {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .termsDesc {
   display: block;
-  margin-bottom: 34px;
   font-size: 17px;
   color: #000;
-}
-.termsDesc:hover {
-  @include text-hover;
+
+  &:hover {
+    @include text-hover;
+  }
 }
 
 .language {
   display: flex;
-  gap: 17px;
 }
 
 .languageBtn {

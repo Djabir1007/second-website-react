@@ -5,11 +5,12 @@
   border-radius: 30px;
   padding: 20px;
   position: relative;
+
+  &:hover {
+    @include card-hover;
+  }
 }
 
-.card:hover {
-  @include card-hover;
-}
 .cardContent {
   display: flex;
   flex-direction: column;
@@ -88,14 +89,23 @@
   stroke: #1c1c27;
   fill: transparent;
   transition: 0.5s;
-}
 
-.heart svg:hover {
-  stroke: none;
-  fill: #1c1c27;
+  &:hover {
+    stroke: none;
+    fill: #1c1c27;
+  }
 }
 
 .active svg {
   stroke: none;
   fill: #1c1c27;
+}
+
+.apple {
+  position: absolute;
+  top: 23px;
+  right: 21px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
 }

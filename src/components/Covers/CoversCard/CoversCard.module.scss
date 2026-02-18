@@ -10,10 +10,10 @@
   background-color: #fff;
   border-radius: 30px;
   padding: 25px;
-}
 
-.card:hover {
-  @include card-hover;
+  &:hover {
+    @include card-hover;
+  }
 }
 
 .cardImg {
