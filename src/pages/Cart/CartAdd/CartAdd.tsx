@@ -13,6 +13,12 @@ import type {
   DecreaseQty,
 } from "@/types/cart";
 
+import {
+  calculateTotalSum,
+  calculateTotal,
+  calculateDelivery,
+} from "@/utils/cartUtils";
+
 // Styles
 import styles from "./CartAdd.module.scss";
 
@@ -29,12 +35,9 @@ const CartAdd = ({
   increaseQty,
   decreaseQty,
 }: CartAddProps) => {
-  const result = cart.reduce((sum, item) => {
-    return sum + item.qty * item.price;
-  }, 0);
-
-  const deliverySum = !!cart.length ? 499 : 0;
-  const total = result + deliverySum;
+  const total = calculateTotal(cart);
+  const deliverys = calculateDelivery(cart);
+  const totalSum = calculateTotalSum(cart);
 
   return (
     <>
@@ -92,9 +95,9 @@ const CartAdd = ({
                     </button>
                   </div>
                   <div className={styles.CardPrices}>
-                    <span className={styles.priceValue}>
-                      {`${el.qty * el.price} ₸`}
-                    </span>
+                    <span
+                      className={styles.priceValue}
+                    >{`${el.qty * el.price} ₸`}</span>
                   </div>
                 </div>
               </article>
@@ -121,9 +124,7 @@ const CartAdd = ({
                 </button>
               </div>
               <div className={styles.deliveryPrices}>
-                <span
-                  className={styles.deliveryPrice}
-                >{`${deliverySum} ₸`}</span>
+                <span className={styles.deliveryPrice}>{`${deliverys} ₸`}</span>
               </div>
             </div>
           </article>
@@ -132,7 +133,7 @@ const CartAdd = ({
           <div className={styles.summaryContent}>
             <div className={styles.summaryFlex}>
               <span className={styles.summaryResult}>ИТОГО</span>
-              <span className={styles.summaryPrice}>{`${total} ₸`}</span>
+              <span className={styles.summaryPrice}>{`${totalSum} ₸`}</span>
             </div>
             <Link to="/checkout">
               <button className={styles.summaryBtn}>
