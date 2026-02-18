@@ -1,8 +1,5 @@
 import HeadphonesCard from "@/components/Headphones/HeadphonesCard/HeadphonesCard";
-import WirelessCard from "@/components/Wireless/WirelessCard/WirelessCard";
-
 import headphonesCardData from "@/components/Headphones/HeadphonesCard/headphonesCardData";
-import wirelessCardData from "@/components/Wireless/WirelessCard/wirelessCardData";
 
 import type { Favorite, ToggleFavorite } from "@/types/favorite";
 
@@ -17,12 +14,19 @@ const FavoritesSection = ({
   favorites,
   toggleFavorite,
 }: FavoritesSectionProps) => {
-  const favoriteHeadphones = headphonesCardData.filter((el) =>
-    favorites.some((f) => f.id === el.id && f.type === el.type)
+  const headphonesItems = headphonesCardData.filter(
+    (el) => el.type === "headphones",
+  );
+  const wirelessItem = headphonesCardData.filter(
+    (el) => el.type === "wireless",
   );
 
-  const favoriteWireless = wirelessCardData.filter((el) =>
-    favorites.some((f) => f.id === el.id && f.type === el.type)
+  const favoriteHeadphones = headphonesItems.filter((el) =>
+    favorites.some((f) => f.id === el.id && f.type === el.type),
+  );
+
+  const favoriteWireless = wirelessItem.filter((el) =>
+    favorites.some((f) => f.id === el.id && f.type === el.type),
   );
 
   return (
@@ -47,7 +51,9 @@ const FavoritesSection = ({
             : ""}
         </div>
       </section>
-      <section className={styles.wireless}>
+      <section
+        className={`${!!favoriteWireless.length ? styles.wireless : ""}`}
+      >
         {!!favoriteWireless.length ? (
           <h2 className={styles.wirelessTitle}>Беспроводные наушники</h2>
         ) : null}
@@ -55,7 +61,7 @@ const FavoritesSection = ({
         <div className={styles.wirelessGrid}>
           {!!favoriteWireless.length
             ? favoriteWireless.map((el) => (
-                <WirelessCard
+                <HeadphonesCard
                   key={el.id}
                   {...el}
                   favorites={favorites}
