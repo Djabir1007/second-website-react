@@ -1,5 +1,7 @@
 // React
-import { useParams } from "react-router-dom";
+import { useEffect, useRef } from "react";
+
+import { useParams, useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
 
@@ -10,7 +12,6 @@ import ProductList from "./ProductList/ProductList";
 // Data
 import productImgData from "./ProductImg/productImgData";
 import productListData from "./ProductList/productListData";
-import wirelessCardData from "@/components/Wireless/WirelessCard/wirelessCardData";
 import headphonesCardData from "@/components/Headphones/HeadphonesCard/headphonesCardData";
 
 // Assets
@@ -48,8 +49,18 @@ const Product = ({
 }: ProductProps) => {
   const { id, type } = useParams();
 
-  const products =
-    type === "headphones" ? headphonesCardData : wirelessCardData;
+  const navigate = useNavigate();
+
+  const scrollRef = useRef<HTMLElement | null>(null);
+
+  const headphonesItems = headphonesCardData.filter(
+    (el) => el.type === "headphones",
+  );
+  const wirelessItem = headphonesCardData.filter(
+    (el) => el.type === "wireless",
+  );
+
+  const products = type === "headphones" ? headphonesItems : wirelessItem;
 
   const product = products.find(
     (el) => el.id === Number(id) && el.type === type,
@@ -75,10 +86,20 @@ const Product = ({
     }
   };
 
+  useEffect(() => {
+    const scroll = scrollRef.current;
+
+    if (scroll !== null) {
+      scroll.scrollIntoView({ block: "start" });
+    }
+  }, [id, type]);
+
   return (
     <>
-      <section className={styles.product}>
-        <h2 className={styles.productTitle}>{product.type}</h2>
+      <section className={styles.product} ref={scrollRef}>
+        <h2 className={styles.productTitle}>
+          {product.type === "headphones" ? "Наушники" : "Беспроводные наушники"}
+        </h2>
         <article className={styles.productCard}>
           <div className={styles.productElements}>
             <button
@@ -139,7 +160,36 @@ const Product = ({
             </div>
           </div>
           <div className={styles.detailsBtns}>
-            <button className={styles.detailsBtn}>Купить</button>
+            {cartItem ? (
+              <div
+                className={styles.detailsCartStatus}
+                onClick={() => {
+                  navigate("/cart");
+                }}
+              >
+                <span className={styles.detailsCartStatusText}>
+                  Товар добавлен в корзину!
+                </span>
+              </div>
+            ) : (
+              <button
+                className={styles.detailsBtn}
+                onClick={() => {
+                  toast.success("Добавлено в корзину");
+                  toggleCart(
+                    product.id,
+                    product.type,
+                    product.title,
+                    product.price,
+                    product.img,
+                  );
+                  navigate("/cart");
+                }}
+              >
+                Купить
+              </button>
+            )}
+
             {cartItem ? (
               <div className={styles.cardCounter}>
                 <button
