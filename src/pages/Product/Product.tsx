@@ -51,8 +51,6 @@ const Product = ({
 
   const navigate = useNavigate();
 
-  const scrollRef = useRef<HTMLElement | null>(null);
-
   const headphonesItems = headphonesCardData.filter(
     (el) => el.type === "headphones",
   );
@@ -86,17 +84,9 @@ const Product = ({
     }
   };
 
-  useEffect(() => {
-    const scroll = scrollRef.current;
-
-    if (scroll !== null) {
-      scroll.scrollIntoView({ block: "start" });
-    }
-  }, [id, type]);
-
   return (
     <>
-      <section className={styles.product} ref={scrollRef}>
+      <section className={styles.product}>
         <h2 className={styles.productTitle}>
           {product.type === "headphones" ? "Наушники" : "Беспроводные наушники"}
         </h2>
@@ -129,12 +119,33 @@ const Product = ({
             <h2 className={styles.productName}>{product.title}</h2>
             <div className={styles.productPrices}>
               <div className={styles.productPrice}>
-                <span className={styles.priceNow}>2 927 ₸</span>
-                <span className={styles.priceOld}>3 527 ₸</span>
+                {/* <span className={styles.priceNow}>2 927 ₸</span>
+                <span className={styles.priceOld}>3 527 ₸</span> */}
+                <span
+                  className={`${styles.priceWithoutSales} ${product.id === 4 ? styles.cardPriceRed : ""}`}
+                >
+                  {`${product.price} ₸`}
+                </span>
+
+                {product.oldPrice && (
+                  <span
+                    className={styles.cardPriceOld}
+                  >{`${product.oldPrice} ₸`}</span>
+                )}
+
+                {product.salePrice && (
+                  <span
+                    className={styles.cardPriceSale}
+                  >{`${product.salePrice} ₸`}</span>
+                )}
               </div>
-              <div className={styles.productPriceSale}>
-                <span className={styles.percentage}>20%</span>
-              </div>
+              {product.sale && (
+                <div className={styles.productPriceSale}>
+                  <span
+                    className={styles.percentage}
+                  >{`${product.sale}%`}</span>
+                </div>
+              )}
             </div>
           </div>
         </article>
@@ -167,9 +178,9 @@ const Product = ({
                   navigate("/cart");
                 }}
               >
-                <span className={styles.detailsCartStatusText}>
-                  Товар добавлен в корзину!
-                </span>
+                <button className={styles.detailsCartStatusText}>
+                  Перейти в корзину
+                </button>
               </div>
             ) : (
               <button
