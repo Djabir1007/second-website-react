@@ -24,7 +24,7 @@ const HeadphonesCard = ({
     (el) => el.id === card.id && el.type === card.type,
   );
 
-  const handleFavClick = () => {
+  const handleFavoriteClick = () => {
     if (isFavorite) {
       toast.info("Удалено из избранного");
     } else {
@@ -82,7 +82,7 @@ const HeadphonesCard = ({
         <button
           className={`${styles.heart} ${isFavorite ? styles.active : ""}`}
           onClick={(e) => {
-            handleFavClick();
+            handleFavoriteClick();
             e.preventDefault();
           }}
         >
