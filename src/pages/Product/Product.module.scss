@@ -87,6 +87,34 @@
   text-decoration-color: #df6464;
 }
 
+.priceWithoutSales {
+  font-weight: 600;
+  font-size: 25px;
+  color: #ffa542;
+}
+
+.cardPriceRed {
+  font-size: 25px;
+  color: #df6464;
+}
+
+.cardPriceOld {
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: line-through;
+  color: #ffce7f;
+  text-align: center;
+}
+
+.cardPriceSale {
+  font-weight: 600;
+  font-size: 20px;
+  color: #aaa;
+  text-align: center;
+  text-decoration: line-through;
+  text-decoration-color: #df6464;
+}
+
 .percentage {
   font-weight: 600;
   font-size: 20px;
@@ -153,6 +181,17 @@
 
   &:hover {
     cursor: pointer;
+    @include card-hover;
+  }
+}
+
+.detailsCartStatusText {
+  background-color: #f5f5f5;
+  font-family: inherit;
+  font-size: 16px;
+
+  &:hover {
+    color: #6c6c6c;
   }
 }
 
