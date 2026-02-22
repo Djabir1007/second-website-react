@@ -20,6 +20,7 @@ import type {
   IncreaseQty,
   DecreaseQty,
 } from "./types/cart";
+import ScrollToTop from "./layouts/ScrollToTop/ScrollToTop";
 
 function App() {
   const [favorites, setFavorites] = useState<Favorite[]>(() => {
@@ -100,6 +101,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route element={<MainLayout favorites={favorites} cart={cart} />}>
           <Route
