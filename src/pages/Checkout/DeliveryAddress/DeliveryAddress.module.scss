@@ -1,0 +1,163 @@
+@use "@basestyles/base/mixins.scss" as *;
+
+.address {
+  background-color: white;
+  max-width: 445px;
+  width: 100%;
+  padding: 23px 31px 32px 38px;
+  border-radius: 30px;
+
+  &:hover {
+    @include card-hover;
+    cursor: auto;
+  }
+}
+
+.addressContainer {
+  max-width: 376px;
+  width: 100%;
+}
+
+.addressDelivery {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.deliveryTitle {
+  font-weight: 600;
+  font-size: 17px;
+  color: #000;
+}
+
+.deliveryPrice {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}
+
+.addressMap {
+  height: 146px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  max-width: 375px;
+  width: 100%;
+}
+
+.addressForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.addressInfo {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.infoImg {
+  margin-right: 12px;
+}
+
+.infoText {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}
+
+.addressWrapper {
+  display: flex;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.input {
+  @include input-style;
+  width: 100%;
+}
+
+.citySelect {
+  appearance: none;
+}
+
+.isPlaceholder {
+  color: #838383;
+}
+
+.cityInputBtn {
+  background-color: #d6d6d6;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+
+.arrowMain {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  pointer-events: none;
+}
+
+.cityInputImg {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+
+.streetInputImg {
+  position: absolute;
+  right: 14px;
+  bottom: 13px;
+}
+
+.addressRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.addressRowItem {
+  position: relative;
+}
+
+.houseInput {
+  @include input-style;
+  max-width: 176px;
+  width: 100%;
+}
+
+.houseInputImg {
+  position: absolute;
+  right: 14px;
+  bottom: 13px;
+}
+
+.entranceInput {
+  @include input-style;
+  max-width: 176px;
+  width: 100%;
+}
+
+.entranceInputImg {
+  position: absolute;
+  right: 14px;
+  bottom: 13px;
+}
+
+.addressFlat {
+  display: flex;
+  position: relative;
+  width: 50%;
+}
+
+.flatInput {
+  @include input-style;
+  max-width: 170px;
+  width: 100%;
+}
+
+.flatInputImg {
+  position: absolute;
+  right: 31px;
+  bottom: 13px;
+}

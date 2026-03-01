@@ -1,0 +1,40 @@
+@use "@basestyles/base/mixins.scss" as *;
+
+.recipientPhone {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 13px;
+  padding-right: 14px;
+  border-radius: 30px;
+  margin-bottom: 28px;
+
+  &:hover {
+    @include card-hover;
+    cursor: auto;
+  }
+}
+
+.recipientPhoneTitle {
+  font-weight: 600;
+  font-size: 17px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.recipientPhoneInfo {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.recipientPhoneValue {
+  max-width: 100%;
+  width: 100%;
+  @include input-style;
+}
+
+.editIcon {
+  position: absolute;
+  right: 14px;
+  bottom: 13px;
+}

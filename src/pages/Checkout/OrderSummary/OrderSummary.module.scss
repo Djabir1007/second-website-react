@@ -1,0 +1,51 @@
+@use "@basestyles/base/mixins.scss" as *;
+
+.orderCard {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 13px;
+  padding-right: 14px;
+  border-radius: 30px;
+  margin-bottom: 14px;
+
+  &:hover {
+    @include card-hover;
+    cursor: auto;
+  }
+}
+
+.orderNameTitle {
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 25px;
+}
+
+.orderRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.orderQty {
+  position: absolute;
+}
+
+.orderLabel {
+  margin-left: 34px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}
+
+.orderValue {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}

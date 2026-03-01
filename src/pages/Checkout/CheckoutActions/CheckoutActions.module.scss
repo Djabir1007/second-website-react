@@ -1,0 +1,15 @@
+.submitBtn {
+  max-width: 100%;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+  background-color: #101010;
+  padding: 14px 0;
+  border-radius: 10px;
+
+  &:hover {
+    box-shadow: 0 0 20px 0 rgba(67, 216, 84, 0.25);
+  }
+}
