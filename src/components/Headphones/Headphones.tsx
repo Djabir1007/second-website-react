@@ -1,13 +1,9 @@
-// Components
 import HeadphonesCard from "./HeadphonesCard/HeadphonesCard";
 
-// Data
 import headphonesCardData from "./HeadphonesCard/headphonesCardData";
 
-// Types
 import type { Favorite, ToggleFavorite } from "@/types/favorite";
 
-// Styles
 import styles from "./Headphones.module.scss";
 
 type HeadphonesProps = {

@@ -1,6 +1,8 @@
 import { useRef } from "react";
-import styles from "./PaymentSection.module.scss";
+
 import { visaIcon, checkIcon, promoCode, arrowRightIcon } from "@/assets/img";
+
+import styles from "./PaymentSection.module.scss";
 
 const PaymentSection = () => {
   const focusInput = useRef<HTMLInputElement | null>(null);

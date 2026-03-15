@@ -1,23 +1,16 @@
-// React
 import { useEffect, useRef, useState } from "react";
 
-// Router
 import { Link } from "react-router-dom";
 
-// Styles
 import styles from "./Header.module.scss";
 
-// Components
 import Logo from "../Logo/Logo";
 import HeaderList from "./HeaderList/HeaderList";
 
-// Data
 import headerListData from "./HeaderList/headerListData";
 
-// Assets
 import { basket, heart, phone, dropdownArrow, chevronDown } from "@/assets/img";
 
-// types
 import type { Favorite } from "@/types/favorite";
 import type { CartItem } from "@/types/cart";
 

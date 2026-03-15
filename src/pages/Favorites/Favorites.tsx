@@ -1,8 +1,8 @@
 import FavoritesSection from "./FavoritesSection/FavoritesSection";
 
-import styles from "./Favorites.module.scss";
-
 import type { Favorite, ToggleFavorite } from "@/types/favorite";
+
+import styles from "./Favorites.module.scss";
 
 type FavoritesProps = {
   favorites: Favorite[];

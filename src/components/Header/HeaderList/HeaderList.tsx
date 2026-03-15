@@ -1,10 +1,7 @@
-// Router
 import { Link } from "react-router-dom";
 
-// Styles
 import styles from "./headerList.module.scss";
 
-// Types
 import type { HeaderModel } from "./headerListData";
 
 type HeaderListProps = Pick<HeaderModel, "model">;

@@ -1,4 +1,3 @@
-// Types
 import type { FooterSocialsModel } from "./footerSocialsData";
 
 type FooterSocialsProps = Pick<FooterSocialsModel, "link" | "icon" | "alt">;

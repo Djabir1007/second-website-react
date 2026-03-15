@@ -1,4 +1,3 @@
-// Assets
 import { glassCase, siliconeCase, leatherCase } from "@/assets/img";
 
 export interface CoversCardModel {

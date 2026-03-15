@@ -1,10 +1,7 @@
-// Components
 import CoversCard from "./CoversCard/CoversCard";
 
-// Data
 import coversCardData from "./CoversCard/coversCardData";
 
-// Styles
 import styles from "./Covers.module.scss";
 
 const Covers = () => {

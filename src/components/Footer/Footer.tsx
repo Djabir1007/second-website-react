@@ -1,18 +1,14 @@
-// Components
 import Logo from "../Logo/Logo";
 import FooterLink from "./FooterLink/FooterLink";
 import FooterLanguage from "./FooterLanguage/FooterLanguage";
 import FooterSocials from "./FooterSocials/FooterSocials";
 
-// Data
 import footerLinkData from "./FooterLink/footerLinkData";
 import footerLanguageData from "./FooterLanguage/footerLanguageData";
 import footerSocialsData from "./FooterSocials/footerSocialsData";
 
-// Assets
 import { languageIcon } from "@/assets/img";
 
-// Styles
 import styles from "./Footer.module.scss";
 
 const Footer = () => {

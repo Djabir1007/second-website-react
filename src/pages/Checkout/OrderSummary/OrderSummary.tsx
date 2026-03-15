@@ -1,8 +1,8 @@
-import styles from "./OrderSummary.module.scss";
-
 import { calculateTotalSum } from "@/utils/cartUtils";
 
 import type { CartItem } from "@/types/cart";
+
+import styles from "./OrderSummary.module.scss";
 
 type OrderSummaryProps = {
   cart: CartItem[];

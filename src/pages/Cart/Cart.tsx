@@ -1,8 +1,6 @@
-// Components
 import EmptyCart from "./EmptyCart/EmptyCart";
 import CartAdd from "./CartAdd/CartAdd";
 
-// Types
 import type {
   CartItem,
   RemoveCart,
@@ -10,7 +8,6 @@ import type {
   DecreaseQty,
 } from "@/types/cart";
 
-//Styles
 import styles from "./Cart.module.scss";
 
 type CartProps = {

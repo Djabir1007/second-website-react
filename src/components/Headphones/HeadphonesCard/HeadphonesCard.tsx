@@ -1,13 +1,10 @@
-// Router
 import { Link } from "react-router-dom";
 
 import { toast } from "react-toastify";
 
-// Types
 import type { Favorite, ToggleFavorite } from "@/types/favorite";
 import type { HeadphonesCardModel } from "./headphonesCardData";
 
-// Styles
 import styles from "./HeadphonesCard.module.scss";
 
 type HeadphonesCardProps = HeadphonesCardModel & {

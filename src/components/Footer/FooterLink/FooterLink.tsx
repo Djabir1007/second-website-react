@@ -1,10 +1,7 @@
-// React
 import { Link } from "react-router-dom";
 
-// Styles
 import styles from "./FooterLink.module.scss";
 
-// Types
 import type { FooterLinkModel } from "./footerLinkData";
 
 type FooterLinkProps = Pick<FooterLinkModel, "href" | "text">;

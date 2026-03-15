@@ -2,10 +2,8 @@ import { Link } from "react-router-dom";
 
 import { toast } from "react-toastify";
 
-// Assets
 import { deleteItem, delivery, deliveryChoice } from "@/assets/img";
 
-// Types
 import type {
   CartItem,
   RemoveCart,
@@ -19,7 +17,6 @@ import {
   calculateDelivery,
 } from "@/utils/cartUtils";
 
-// Styles
 import styles from "./CartAdd.module.scss";
 
 type CartAddProps = {

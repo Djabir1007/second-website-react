@@ -1,23 +1,16 @@
-// React
-import { useEffect, useRef } from "react";
-
 import { useParams, useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
 
-// Components
 import ProductImg from "./ProductImg/ProductImg";
 import ProductList from "./ProductList/ProductList";
 
-// Data
 import productImgData from "./ProductImg/productImgData";
 import productListData from "./ProductList/productListData";
 import headphonesCardData from "@/components/Headphones/HeadphonesCard/headphonesCardData";
 
-// Assets
 import { addToCartIcon, productBrandLogo } from "@/assets/img";
 
-// Types
 import type {
   ToggleCart,
   CartItem,
@@ -27,7 +20,6 @@ import type {
 
 import type { ToggleFavorite, Favorite } from "@/types/favorite";
 
-// Styles
 import styles from "./Product.module.scss";
 
 type ProductProps = {
