@@ -1,0 +1,7 @@
+@use "@basestyles/base/mixins.scss" as *;
+
+.input {
+  max-width: 100%;
+  width: 100%;
+  @include input-style;
+}
