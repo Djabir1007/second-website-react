@@ -1,30 +1,14 @@
+import { useState } from "react";
+
 import { addressLabel, citySelection, editIcon } from "@/assets/img";
 
 import styles from "./DeliveryAddress.module.scss";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { useState } from "react";
-
-type User = {
-  id: number;
-  address: { city: string };
-};
+import { useGetCities } from "./hooks/useGetCities";
 
 const DeliveryAddress = () => {
   const [selectedCity, setSelectedCity] = useState("");
 
-  const { data: cities } = useQuery({
-    queryKey: ["cities"],
-    queryFn: async () => {
-      const { data } = await axios.get<User[]>(
-        "https://jsonplaceholder.typicode.com/users",
-      );
-      return data.map((u) => ({
-        id: u.id,
-        city: u.address.city,
-      }));
-    },
-  });
+  const { data: cities } = useGetCities();
 
   const handleChange = (value: string) => {
     setSelectedCity(value);
