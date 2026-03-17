@@ -6,6 +6,7 @@
   width: 100%;
   padding: 23px 31px 32px 38px;
   border-radius: 30px;
+  max-height: 549px;
 
   &:hover {
     @include card-hover;
