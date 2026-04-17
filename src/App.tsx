@@ -12,7 +12,7 @@ import Product from "./pages/Product/Product";
 import NotFound from "./pages/NotFound/NotFound";
 import Checkout from "./pages/Checkout/Checkout";
 
-import type { Favorite, ToggleFavorite, FavoriteType } from "./types/favorite";
+import type { Favorite, ToggleFavorite } from "./types/favorite";
 import type {
   CartItem,
   ToggleCart,
