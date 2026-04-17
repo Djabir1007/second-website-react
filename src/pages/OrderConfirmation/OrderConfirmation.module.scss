@@ -1,0 +1,15 @@
+.orderConfirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95px;
+  background-color: #fff;
+  border-radius: 30px;
+  margin: 19px auto 0;
+  max-width: 730px;
+}
+
+.orderConfirmationText {
+  font-weight: 600;
+  font-size: 17px;
+}
