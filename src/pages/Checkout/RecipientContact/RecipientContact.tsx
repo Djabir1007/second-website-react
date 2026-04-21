@@ -8,6 +8,7 @@ import PhoneInput from "@/components/PhoneInput/PhoneInput";
 import type { CheckoutFormValues } from "@/types/checkoutForm";
 import styles from "./RecipientContact.module.scss";
 import { editIcon } from "@/assets/img";
+import { useTranslation } from "react-i18next";
 
 type RecipientContactProps = {
   control: Control<CheckoutFormValues>;
@@ -20,19 +21,26 @@ const RecipientContact = ({
   setFocus,
   errors,
 }: RecipientContactProps) => {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.recipientPhone}>
-      <h3 className={styles.recipientPhoneTitle}>Номер получателя</h3>
+      <h3 className={styles.recipientPhoneTitle}>
+        {t("checkout.recipientContact.title")}
+      </h3>
       <div className={styles.recipientPhoneForm}>
         <div className={styles.recipientPhoneInfo}>
           <Controller
             name="phone"
             control={control}
             rules={{
-              required: "Введите номер телефона",
+              required: t("checkout.recipientContact.errors.required"),
               validate: (value) => {
                 const digits = value.replace(/\D/g, "");
-                return digits.length === 11 || "Введите номер полностью";
+                return (
+                  digits.length === 11 ||
+                  t("checkout.recipientContact.errors.invalid")
+                );
               },
             }}
             render={({ field }) => (
@@ -48,7 +56,10 @@ const RecipientContact = ({
             type="button"
             onClick={() => setFocus("phone")}
           >
-            <img src={editIcon} alt="Номер телефона" />
+            <img
+              src={editIcon}
+              alt={t("checkout.recipientContact.alt.editPhone")}
+            />
           </button>
         </div>
         {errors.phone?.message && (

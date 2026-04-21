@@ -14,12 +14,15 @@ import type { CartItem } from "@/types/cart";
 import type { CheckoutFormValues } from "@/types/checkoutForm";
 import styles from "./Checkout.module.scss";
 import OrderConfirmation from "../OrderConfirmation/OrderConfirmation";
+import { useTranslation } from "react-i18next";
 
 type CheckoutProps = {
   cart: CartItem[];
 };
 
 const Checkout = ({ cart }: CheckoutProps) => {
+  const { t } = useTranslation();
+
   const [orderNumber, setOrderNumber] = useState<number | null>(null);
 
   const {
@@ -61,7 +64,7 @@ const Checkout = ({ cart }: CheckoutProps) => {
 
   return (
     <>
-      <h2 className={styles.title}>Оформление заказа</h2>
+      <h2 className={styles.title}>{t("checkout.title")}</h2>
       <section className={styles.checkout}>
         <form
           className={styles.form}

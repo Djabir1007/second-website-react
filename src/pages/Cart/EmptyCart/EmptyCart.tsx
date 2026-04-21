@@ -6,19 +6,22 @@ import { cart } from "@/assets/img";
 
 // Styles
 import styles from "./EmptyCart.module.scss";
+import { useTranslation } from "react-i18next";
 
 const EmptyCart = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.flex}>
       <div className={styles.icon}>
-        <img src={cart} alt="Корзина" />
+        <img src={cart} alt={t("cart.empty.alt")} />
       </div>
       <div className={styles.content}>
-        <h2 className={styles.title}>Корзина пуста</h2>
-        <p className={styles.desc}>Но это никогда не поздно исправить :)</p>
+        <h2 className={styles.title}>{t("cart.empty.title")}</h2>
+        <p className={styles.desc}>{t("cart.empty.desc")}</p>
       </div>
       <Link className={styles.btn} to={"/"}>
-        В каталог товаров
+        {t("cart.empty.button")}
       </Link>
     </div>
   );

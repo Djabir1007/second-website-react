@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import styles from "./OrderConfirmation.module.scss";
 
 type OrderConfirmationProps = {
@@ -5,10 +6,14 @@ type OrderConfirmationProps = {
 };
 
 const OrderConfirmation = ({ orderNumber }: OrderConfirmationProps) => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.orderConfirmation}>
       <span className={styles.orderConfirmationText}>
-        Номер вашего заказа {`№${orderNumber}`}, с Вами свяжется наш менеджер.
+        {t("checkout.orderConfirmation.text", {
+          orderNumber: `№${orderNumber}`,
+        })}
       </span>
     </div>
   );

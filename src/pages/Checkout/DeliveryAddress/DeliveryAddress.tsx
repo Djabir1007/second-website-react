@@ -12,6 +12,7 @@ import { addressLabel, citySelection, editIcon } from "@/assets/img";
 import type { CheckoutFormValues } from "@/types/checkoutForm";
 import styles from "./DeliveryAddress.module.scss";
 import { useGetCities } from "./hooks/useGetCities";
+import { useTranslation } from "react-i18next";
 
 type DeliveryAddressProps = {
   register: UseFormRegister<CheckoutFormValues>;
@@ -26,6 +27,8 @@ const DeliveryAddress = ({
   control,
   errors,
 }: DeliveryAddressProps) => {
+  const { t } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
   const boxRef = useRef<HTMLDivElement | null>(null);
 
@@ -51,7 +54,9 @@ const DeliveryAddress = ({
     <article className={styles.address}>
       <div className={styles.addressContainer}>
         <div className={styles.addressDelivery}>
-          <h3 className={styles.deliveryTitle}>Доставка курьером</h3>
+          <h3 className={styles.deliveryTitle}>
+            {t("checkout.deliveryAddress.courierDelivery")}
+          </h3>
           <span className={styles.deliveryPrice}>499 ₸</span>
         </div>
 
@@ -65,23 +70,27 @@ const DeliveryAddress = ({
             <img
               className={styles.infoImg}
               src={addressLabel}
-              alt="Адрес доставки"
+              alt={t("checkout.deliveryAddress.alt.address")}
             />
-            <span className={styles.infoText}>Адрес доставки</span>
+            <span className={styles.infoText}>
+              {t("checkout.deliveryAddress.addressTitle")}
+            </span>
           </div>
 
           <Controller
             name="city"
             control={control}
             rules={{
-              required: "Выберите ваш город",
+              required: t("checkout.deliveryAddress.errors.cityRequired"),
             }}
             render={({ field }) => (
               <div className={styles.fieldWrapper} ref={boxRef}>
                 <div className={styles.fieldInner}>
                   <input
                     className={`${styles.input} ${styles.cityInput}`}
-                    placeholder="Город"
+                    placeholder={t(
+                      "checkout.deliveryAddress.placeholders.city",
+                    )}
                     value={field.value}
                     readOnly
                     onClick={() => setIsOpen(true)}
@@ -92,7 +101,10 @@ const DeliveryAddress = ({
                     type="button"
                     onClick={clickButton}
                   >
-                    <img src={citySelection} alt="Выбор города" />
+                    <img
+                      src={citySelection}
+                      alt={t("checkout.deliveryAddress.alt.citySelection")}
+                    />
                   </button>
                 </div>
 
@@ -129,12 +141,12 @@ const DeliveryAddress = ({
                   errors.street ? styles.inputError : ""
                 }`}
                 type="text"
-                placeholder="Улица / Район"
+                placeholder={t("checkout.deliveryAddress.placeholders.street")}
                 {...register("street", {
-                  required: "Введите улицу или район",
+                  required: t("checkout.deliveryAddress.errors.streetRequired"),
                   minLength: {
                     value: 2,
-                    message: "Минимум 2 символа",
+                    message: t("checkout.deliveryAddress.errors.minTwoSymbols"),
                   },
                 })}
               />
@@ -143,7 +155,10 @@ const DeliveryAddress = ({
                 type="button"
                 onClick={() => setFocus("street")}
               >
-                <img src={editIcon} alt="Редактировать адрес" />
+                <img
+                  src={editIcon}
+                  alt={t("checkout.deliveryAddress.alt.editAddress")}
+                />
               </button>
             </div>
             {errors.street?.message && (
@@ -159,13 +174,11 @@ const DeliveryAddress = ({
                     errors.house ? styles.inputError : ""
                   }`}
                   type="text"
-                  placeholder="Дом"
+                  placeholder={t("checkout.deliveryAddress.placeholders.house")}
                   {...register("house", {
-                    required: "Введите номер дома",
-                    minLength: {
-                      value: 1,
-                      message: "Минимум 1 символ",
-                    },
+                    required: t(
+                      "checkout.deliveryAddress.errors.houseRequired",
+                    ),
                   })}
                 />
                 <button
@@ -173,7 +186,10 @@ const DeliveryAddress = ({
                   type="button"
                   onClick={() => setFocus("house")}
                 >
-                  <img src={editIcon} alt="Редактировать адрес" />
+                  <img
+                    src={editIcon}
+                    alt={t("checkout.deliveryAddress.alt.editAddress")}
+                  />
                 </button>
               </div>
               {errors.house?.message && (
@@ -188,13 +204,13 @@ const DeliveryAddress = ({
                     errors.entrance ? styles.inputError : ""
                   }`}
                   type="text"
-                  placeholder="Подъезд"
+                  placeholder={t(
+                    "checkout.deliveryAddress.placeholders.entrance",
+                  )}
                   {...register("entrance", {
-                    required: "Введите номер подъезда",
-                    minLength: {
-                      value: 1,
-                      message: "Минимум 1 символ",
-                    },
+                    required: t(
+                      "checkout.deliveryAddress.errors.entranceRequired",
+                    ),
                   })}
                 />
                 <button
@@ -202,7 +218,10 @@ const DeliveryAddress = ({
                   type="button"
                   onClick={() => setFocus("entrance")}
                 >
-                  <img src={editIcon} alt="Редактировать адрес" />
+                  <img
+                    src={editIcon}
+                    alt={t("checkout.deliveryAddress.alt.editAddress")}
+                  />
                 </button>
               </div>
               {errors.entrance?.message && (
@@ -218,13 +237,13 @@ const DeliveryAddress = ({
                   errors.apartment ? styles.inputError : ""
                 }`}
                 type="text"
-                placeholder="Квартира"
+                placeholder={t(
+                  "checkout.deliveryAddress.placeholders.apartment",
+                )}
                 {...register("apartment", {
-                  required: "Введите номер квартиры",
-                  minLength: {
-                    value: 1,
-                    message: "Минимум 1 символ",
-                  },
+                  required: t(
+                    "checkout.deliveryAddress.errors.apartmentRequired",
+                  ),
                 })}
               />
               <button
@@ -235,7 +254,7 @@ const DeliveryAddress = ({
                 <img
                   className={styles.flatInputImg}
                   src={editIcon}
-                  alt="Редактировать адрес"
+                  alt={t("checkout.deliveryAddress.alt.editAddress")}
                 />
               </button>
             </div>

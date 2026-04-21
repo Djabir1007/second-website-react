@@ -18,6 +18,7 @@ import {
 } from "@/utils/cartUtils";
 
 import styles from "./CartAdd.module.scss";
+import { useTranslation } from "react-i18next";
 
 type CartAddProps = {
   cart: CartItem[];
@@ -32,13 +33,15 @@ const CartAdd = ({
   increaseQty,
   decreaseQty,
 }: CartAddProps) => {
+  const { t } = useTranslation();
+
   const total = calculateTotal(cart);
   const deliverys = calculateDelivery(cart);
   const totalSum = calculateTotalSum(cart);
 
   return (
     <>
-      <h2 className={styles.title}>Корзина</h2>
+      <h2 className={styles.title}>{t("cart.title")}</h2>
       <div className={styles.flex}>
         <div className={styles.cards}>
           <div className={styles.content}>
@@ -49,10 +52,10 @@ const CartAdd = ({
                     className={styles.deleteBtn}
                     onClick={() => {
                       removeCart(el.id, el.type);
-                      toast.info("Удалено из корзины");
+                      toast.info(t("common.toast.removedFromCart"));
                     }}
                   >
-                    <img src={deleteItem} alt="удалить товар" />
+                    <img src={deleteItem} alt={t("cart.alt.deleteItem")} />
                   </button>
                 </div>
                 <div className={styles.cardInfo}>
@@ -60,7 +63,7 @@ const CartAdd = ({
                     <img
                       className={styles.cardImage}
                       src={el.img}
-                      alt="наушники"
+                      alt={t("cart.alt.productImage")}
                     />
                   </div>
                   <div className={styles.cardName}>
@@ -74,7 +77,7 @@ const CartAdd = ({
                       className={styles.counterBtn}
                       onClick={() => {
                         if (el.qty === 1) {
-                          toast.info("Удалено из корзины");
+                          toast.info(t("common.toast.removedFromCart"));
                         }
                         decreaseQty(el.id, el.type);
                       }}
@@ -102,7 +105,9 @@ const CartAdd = ({
           </div>
           <article className={styles.delivery}>
             <div className={styles.deliveryHeader}>
-              <h2 className={styles.deliveryTitle}>Доставка</h2>
+              <h2 className={styles.deliveryTitle}>
+                {t("cart.delivery.title")}
+              </h2>
             </div>
 
             <iframe
@@ -114,10 +119,15 @@ const CartAdd = ({
 
             <div className={styles.deliveryInfo}>
               <div className={styles.deliveryChoice}>
-                <img src={delivery} alt="" />
-                <p className={styles.deliveryDesc}>Доставка курьером</p>
+                <img src={delivery} alt={t("cart.alt.deliveryIcon")} />
+                <p className={styles.deliveryDesc}>
+                  {t("cart.delivery.courier")}
+                </p>
                 <button className={styles.deliveryBtn}>
-                  <img src={deliveryChoice} alt="" />
+                  <img
+                    src={deliveryChoice}
+                    alt={t("cart.alt.deliveryChoice")}
+                  />
                 </button>
               </div>
               <div className={styles.deliveryPrices}>
@@ -129,12 +139,14 @@ const CartAdd = ({
         <div className={styles.summary}>
           <div className={styles.summaryContent}>
             <div className={styles.summaryFlex}>
-              <span className={styles.summaryResult}>ИТОГО</span>
+              <span className={styles.summaryResult}>
+                {t("cart.summary.total")}
+              </span>
               <span className={styles.summaryPrice}>{`${totalSum} ₸`}</span>
             </div>
             <Link to="/checkout">
               <button className={styles.summaryBtn}>
-                Перейти к оформлению
+                {t("cart.summary.checkout")}
               </button>
             </Link>
           </div>

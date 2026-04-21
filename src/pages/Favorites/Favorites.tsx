@@ -3,6 +3,7 @@ import FavoritesSection from "./FavoritesSection/FavoritesSection";
 import type { Favorite, ToggleFavorite } from "@/types/favorite";
 
 import styles from "./Favorites.module.scss";
+import { useTranslation } from "react-i18next";
 
 type FavoritesProps = {
   favorites: Favorite[];
@@ -10,6 +11,8 @@ type FavoritesProps = {
 };
 
 const Favorites = ({ favorites, toggleFavorite }: FavoritesProps) => {
+  const { t } = useTranslation();
+
   return (
     <>
       {!!favorites.length ? (
@@ -19,7 +22,7 @@ const Favorites = ({ favorites, toggleFavorite }: FavoritesProps) => {
         />
       ) : (
         <div className={styles.favoritesInfo}>
-          <h1 className={styles.infoTitle}>В Избранном ничего нет!</h1>
+          <h1 className={styles.infoTitle}>{t("favorites.empty")}</h1>
         </div>
       )}
     </>
