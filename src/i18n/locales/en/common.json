@@ -1,0 +1,219 @@
+{
+  "header": {
+    "choosePhoneModel": "Choose phone model",
+    "phoneIconAlt": "Phone icon",
+    "dropdownArrowAlt": "Open model list",
+    "favoritesAlt": "Favorites",
+    "cartAlt": "Cart",
+    "brandArrowAlt": "Open brand model list"
+  },
+
+  "logo": {
+    "alt": "logo"
+  },
+
+  "hero": {
+    "accessoriesFor": "Accessories for",
+    "iphone13ProMaxAlt": "iPhone 13 Pro Max"
+  },
+
+  "covers": {
+    "title": "Cases",
+    "cards": {
+      "glass": {
+        "alt": "Glass case",
+        "desc": "Glass"
+      },
+      "silicone": {
+        "alt": "Silicone case",
+        "desc": "Silicone"
+      },
+      "leather": {
+        "alt": "Leather case",
+        "desc": "Leather"
+      }
+    }
+  },
+
+  "headphones": {
+    "title": "Headphones",
+    "wirelessTitle": "Wireless headphones",
+    "cards": {
+      "defaultAlt": "Headphones",
+      "ratingAlt": "Rating",
+      "appleAlt": "Apple product"
+    }
+  },
+
+  "footer": {
+    "socials": {
+      "vk": "VKontakte",
+      "instagram": "Instagram",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp"
+    },
+    "links": {
+      "favorites": "Favorites",
+      "cart": "Cart",
+      "contacts": "Contacts"
+    },
+    "terms": "Terms of Service",
+    "languageSelector": "Language selection"
+  },
+
+  "product": {
+    "details": {
+      "title": "Description and specifications",
+      "noiseCancellation": "Active noise cancellation:",
+      "weight": "Weight:",
+      "waterProtection": "Water resistance:",
+      "cableLength": "Cable length:",
+      "packageContents": "Package contents:",
+      "caseMaterial": "Case material:",
+      "microphone": "Microphone:",
+      "purpose": "Purpose:",
+      "callControl": "Answer/end call:",
+      "connector": "Headphone connector:",
+      "volumeControl": "Volume control:",
+      "mountType": "Mount type:",
+      "headphoneType": "Headphone type:",
+      "connectionType": "Connection type:",
+      "frequencyRange": "Frequency range:",
+      "sensitivity": "Sensitivity:"
+    },
+    "values": {
+      "yes": "Yes",
+      "no": "No",
+      "headphones": "Headphones",
+      "plasticRubber": "Plastic, rubber",
+      "wiredHeadphones": "Wired headphones",
+      "withoutMount": "Without mount",
+      "earbuds": "Earbuds",
+      "wired": "Wired",
+      "weight10g": "10 g",
+      "cableLength12m": "1.2 m",
+      "frequencyRange20_20000": "20 Hz - 20000 Hz",
+      "sensitivity109db": "109 dB"
+    },
+    "images": {
+      "main": "Main product image",
+      "gallery": "Product image"
+    },
+    "notFound": "Product not found!",
+    "categories": {
+      "headphones": "Headphones",
+      "wireless": "Wireless headphones"
+    },
+    "actions": {
+      "goToCart": "Go to cart",
+      "buy": "Buy",
+      "addToCart": "Add to cart"
+    },
+    "alt": {
+      "brandLogo": "Brand logo",
+      "addToCart": "Add to cart"
+    }
+  },
+
+  "favorites": {
+    "title": "Favorites",
+    "empty": "There is nothing in Favorites!",
+    "categories": {
+      "headphones": "Headphones",
+      "wireless": "Wireless headphones"
+    }
+  },
+
+  "cart": {
+    "title": "Cart",
+    "empty": {
+      "alt": "Cart",
+      "title": "Your cart is empty",
+      "desc": "But it's never too late to fix that :)",
+      "button": "Go to catalog"
+    },
+    "delivery": {
+      "title": "Delivery",
+      "courier": "Courier delivery"
+    },
+    "summary": {
+      "total": "TOTAL",
+      "checkout": "Proceed to checkout"
+    },
+    "alt": {
+      "deleteItem": "Remove item",
+      "productImage": "Product image",
+      "deliveryIcon": "Delivery icon",
+      "deliveryChoice": "Delivery selection"
+    }
+  },
+
+  "checkout": {
+    "title": "Checkout",
+    "deliveryAddress": {
+      "courierDelivery": "Courier delivery",
+      "addressTitle": "Delivery address",
+      "placeholders": {
+        "city": "City",
+        "street": "Street / District",
+        "house": "House",
+        "entrance": "Entrance",
+        "apartment": "Apartment"
+      },
+      "errors": {
+        "cityRequired": "Select your city",
+        "streetRequired": "Enter street or district",
+        "houseRequired": "Enter house number",
+        "entranceRequired": "Enter entrance number",
+        "apartmentRequired": "Enter apartment number",
+        "minTwoSymbols": "Minimum 2 characters"
+      },
+      "alt": {
+        "address": "Delivery address",
+        "citySelection": "City selection",
+        "editAddress": "Edit address"
+      }
+    },
+    "orderSummary": {
+      "title": "Your order",
+      "delivery": "Delivery",
+      "total": "Total"
+    },
+    "paymentSection": {
+      "title": "Payment method",
+      "method": "Invoice on kaspi.kz",
+      "placeholder": "Do you have a promo code?",
+      "alt": {
+        "visa": "Payment card",
+        "paymentMethod": "Payment method",
+        "promoCode": "Promo code",
+        "enterPromoCode": "Enter promo code"
+      }
+    },
+    "recipientContact": {
+      "title": "Recipient phone number",
+      "errors": {
+        "required": "Enter phone number",
+        "invalid": "Enter the full phone number"
+      },
+      "alt": {
+        "editPhone": "Edit phone number"
+      }
+    },
+    "actions": {
+      "submit": "Complete checkout"
+    },
+    "orderConfirmation": {
+      "text": "Your order number is {{orderNumber}}. Our manager will contact you."
+    }
+  },
+
+  "common": {
+    "toast": {
+      "addedToFavorites": "Added to favorites",
+      "removedFromFavorites": "Removed from favorites",
+      "addedToCart": "Added to cart",
+      "removedFromCart": "Removed from cart"
+    }
+  }
+}
