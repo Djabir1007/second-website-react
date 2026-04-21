@@ -3,14 +3,29 @@ import { glassCase, siliconeCase, leatherCase } from "@/assets/img";
 export interface CoversCardModel {
   id: number;
   src: string;
-  alt: string;
-  desc: string;
+  altKey: string;
+  descKey: string;
 }
 
 const coversCardData: CoversCardModel[] = [
-  { id: 1, src: glassCase, alt: "Стеклянный чехол", desc: "Стеклянные" },
-  { id: 2, src: siliconeCase, alt: "Силиконовый чехол", desc: "Силиконовые" },
-  { id: 3, src: leatherCase, alt: "Кожаный чехол", desc: "Кожаные" },
+  {
+    id: 1,
+    src: glassCase,
+    altKey: "covers.cards.glass.alt",
+    descKey: "covers.cards.glass.desc",
+  },
+  {
+    id: 2,
+    src: siliconeCase,
+    altKey: "covers.cards.silicone.alt",
+    descKey: "covers.cards.silicone.desc",
+  },
+  {
+    id: 3,
+    src: leatherCase,
+    altKey: "covers.cards.leather.alt",
+    descKey: "covers.cards.leather.desc",
+  },
 ];
 
 export default coversCardData;

@@ -13,7 +13,7 @@ export interface HeadphonesCardModel {
   id: number;
   type: "headphones" | "wireless";
   img: string;
-  alt: string;
+  altKey: string;
   title: string;
   value: number;
   price: number;
@@ -21,8 +21,9 @@ export interface HeadphonesCardModel {
   sale?: number;
   salePrice?: number;
   rating: string;
-  altStar: string;
+  altStarKey: string;
   apple?: string;
+  appleAltKey?: string;
 }
 
 const headphonesCardData: HeadphonesCardModel[] = [
@@ -30,91 +31,92 @@ const headphonesCardData: HeadphonesCardModel[] = [
     id: 1,
     type: "headphones",
     img: headphones1,
-    alt: "Наушники",
+    altKey: "headphones.cards.defaultAlt",
     title: "Apple BYZ S852I",
     value: 4.7,
     price: 2927,
     oldPrice: 3527,
     rating: star,
-    altStar: "Рейтинг",
+    altStarKey: "headphones.cards.ratingAlt",
   },
   {
     id: 2,
     type: "headphones",
     img: headphones2,
-    alt: "Наушники",
+    altKey: "headphones.cards.defaultAlt",
     title: "Apple EarPods",
     value: 4.5,
     price: 2327,
     rating: star,
-    altStar: "Рейтинг",
+    altStarKey: "headphones.cards.ratingAlt",
   },
   {
     id: 3,
     type: "headphones",
     img: headphones3,
-    alt: "Наушники",
+    altKey: "headphones.cards.defaultAlt",
     title: "Apple EarPods",
     value: 4.5,
     price: 2327,
     rating: star,
-    altStar: "Рейтинг",
+    altStarKey: "headphones.cards.ratingAlt",
   },
   {
     id: 4,
     type: "headphones",
     img: headphones1,
-    alt: "Наушники",
+    altKey: "headphones.cards.defaultAlt",
     title: "Apple BYZ S852I",
     value: 4.7,
     price: 2927,
     sale: 20,
     rating: star,
-    altStar: "Рейтинг",
+    altStarKey: "headphones.cards.ratingAlt",
     salePrice: 3527,
   },
   {
     id: 5,
     type: "headphones",
     img: headphones2,
-    alt: "Наушники",
+    altKey: "headphones.cards.defaultAlt",
     title: "Apple EarPods",
     value: 4.5,
     price: 2327,
     rating: star,
-    altStar: "Рейтинг",
+    altStarKey: "headphones.cards.ratingAlt",
   },
   {
     id: 6,
     type: "headphones",
     img: headphones3,
-    alt: "Наушники",
+    altKey: "headphones.cards.defaultAlt",
     title: "Apple EarPods",
     value: 4.5,
     price: 2327,
     rating: star,
-    altStar: "Рейтинг",
+    altStarKey: "headphones.cards.ratingAlt",
   },
   {
     id: 7,
     type: "wireless",
     img: wireless1,
-    alt: "Наушники",
+    altKey: "headphones.cards.defaultAlt",
     title: "Apple AirPods",
     rating: star,
-    altStar: "Рейтинг",
+    altStarKey: "headphones.cards.ratingAlt",
     value: 4.7,
     price: 9527,
     apple: apple,
+    appleAltKey: "headphones.cards.appleAlt",
   },
   {
     id: 8,
     type: "wireless",
     img: wireless2,
-    alt: "Наушники",
+    altKey: "headphones.cards.defaultAlt",
     title: "GERLAX GH-04",
     rating: star,
-    altStar: "Рейтинг",
+    altStarKey: "headphones.cards.ratingAlt",
     value: 4.7,
     price: 6527,
   },
@@ -122,10 +124,10 @@ const headphonesCardData: HeadphonesCardModel[] = [
     id: 9,
     type: "wireless",
     img: wireless3,
-    alt: "Наушники",
+    altKey: "headphones.cards.defaultAlt",
     title: "BOROFONE BO4",
     rating: star,
-    altStar: "Рейтинг",
+    altStarKey: "headphones.cards.ratingAlt",
     value: 4.7,
     price: 7527,
   },
