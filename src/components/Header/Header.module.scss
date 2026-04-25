@@ -7,7 +7,7 @@
 .flex {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
 }
 
 .content {
@@ -19,6 +19,7 @@
   display: flex;
   gap: 15px;
   cursor: pointer;
+  align-items: center;
 }
 
 .listWrapper {
@@ -63,8 +64,8 @@
   background-color: #ffa542;
   padding: 0 5px;
   position: absolute;
-  bottom: 10px;
-  right: 40px;
+  bottom: 13px;
+  left: 10px;
 }
 
 .btnCartValue {
@@ -75,7 +76,7 @@
   background-color: #ffa542;
   padding: 0 5px;
   position: absolute;
-  bottom: 10px;
+  bottom: 13px;
   left: 58px;
 }
 

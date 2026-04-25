@@ -11,7 +11,14 @@ import HeaderList from "./HeaderList/HeaderList";
 
 import headerListData from "./HeaderList/headerListData";
 
-import { basket, heart, phone, dropdownArrow, chevronDown } from "@/assets/img";
+import {
+  basket,
+  heart,
+  phone,
+  dropdownArrow,
+  chevronDown,
+  accountIcon,
+} from "@/assets/img";
 
 import type { Favorite } from "@/types/favorite";
 import type { CartItem } from "@/types/cart";
@@ -126,20 +133,25 @@ function Header({ favorites, cart }: HeaderProps) {
           </div>
         </div>
         <div className={styles.btn}>
-          <div className={styles.btnHeartWrapper}>
-            <Link className={styles.btnHeart} to="/favorites">
+          <div>
+            <Link to="/favorites">
               <img src={heart} alt={t("header.favoritesAlt")} />
               {favorites.length > 0 && (
                 <span className={styles.btnHeartValue}>{favorites.length}</span>
               )}
             </Link>
           </div>
-          <div className={styles.btnHeartWrapper}>
-            <Link className={styles.btnBasket} to="/cart">
+          <div>
+            <Link to="/cart">
               <img src={basket} alt={t("header.cartAlt")} />
               {cart.length > 0 && (
                 <button className={styles.btnCartValue}>{cart.length}</button>
               )}
+            </Link>
+          </div>
+          <div>
+            <Link to="/auth">
+              <img src={accountIcon} alt={t("header.cartAlt")} />
             </Link>
           </div>
         </div>
