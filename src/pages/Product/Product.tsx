@@ -21,6 +21,7 @@ import type {
 import type { ToggleFavorite, Favorite } from "@/types/favorite";
 
 import styles from "./Product.module.scss";
+import { useTranslation } from "react-i18next";
 
 type ProductProps = {
   toggleCart: ToggleCart;
@@ -39,6 +40,8 @@ const Product = ({
   toggleFavorite,
   favorites,
 }: ProductProps) => {
+  const { t } = useTranslation();
+
   const { id, type } = useParams();
 
   const navigate = useNavigate();
@@ -57,7 +60,7 @@ const Product = ({
   );
 
   if (!product) {
-    return <h1 className={styles.favorites}> Такого товара нет!</h1>;
+    return <h1 className={styles.favorites}>{t("product.notFound")}</h1>;
   }
 
   const cartItem = cart.find(
@@ -70,9 +73,9 @@ const Product = ({
 
   const handleFavClick = () => {
     if (isFavorite) {
-      toast.info("Удалено из избранного");
+      toast.info(t("common.toast.removedFromFavorites"));
     } else {
-      toast.success("Добавлено в избранное");
+      toast.success(t("common.toast.addedToFavorites"));
     }
   };
 
@@ -80,7 +83,9 @@ const Product = ({
     <>
       <section className={styles.product}>
         <h2 className={styles.productTitle}>
-          {product.type === "headphones" ? "Наушники" : "Беспроводные наушники"}
+          {product.type === "headphones"
+            ? t("product.categories.headphones")
+            : t("product.categories.wireless")}
         </h2>
         <article className={styles.productCard}>
           <div className={styles.productElements}>
@@ -100,19 +105,17 @@ const Product = ({
                 <path d="M10.001 1.52898C12.35 -0.58002 15.98 -0.51002 18.243 1.75698C20.505 4.02498 20.583 7.63698 18.479 9.99298L9.999 18.485L1.52101 9.99298C-0.582994 7.63698 -0.503994 4.01898 1.75701 1.75698C4.02201 -0.50702 7.64501 -0.58302 10.001 1.52898Z" />
               </svg>
             </button>
-            <img src={productBrandLogo} alt="" />
+            <img src={productBrandLogo} alt={t("product.alt.brandLogo")} />
           </div>
           <div className={styles.productGrid}>
             {productImgData.map((el) => {
-              return <ProductImg key={el.id} img={el.img} />;
+              return <ProductImg key={el.id} img={el.img} altKey={el.altKey} />;
             })}
           </div>
           <div className={styles.productContent}>
             <h2 className={styles.productName}>{product.title}</h2>
             <div className={styles.productPrices}>
               <div className={styles.productPrice}>
-                {/* <span className={styles.priceNow}>2 927 ₸</span>
-                <span className={styles.priceOld}>3 527 ₸</span> */}
                 <span
                   className={`${styles.priceWithoutSales} ${product.id === 4 ? styles.cardPriceRed : ""}`}
                 >
@@ -146,7 +149,9 @@ const Product = ({
         <div className={styles.detailsFlex}>
           <div className={styles.detailsContent}>
             <div className={styles.detailsTitleBlock}>
-              <h3 className={styles.detailsTitle}>Описание и характеристики</h3>
+              <h3 className={styles.detailsTitle}>
+                {t("product.details.title")}
+              </h3>
             </div>
             <div className={styles.detailsListBlock}>
               <ul className={styles.detailsList}>
@@ -154,8 +159,9 @@ const Product = ({
                   return (
                     <ProductList
                       key={el.id}
-                      description={el.description}
+                      descriptionKey={el.descriptionKey}
                       characteristic={el.characteristic}
+                      characteristicKey={el.characteristicKey}
                     />
                   );
                 })}
@@ -171,14 +177,14 @@ const Product = ({
                 }}
               >
                 <button className={styles.detailsCartStatusText}>
-                  Перейти в корзину
+                  {t("product.actions.goToCart")}
                 </button>
               </div>
             ) : (
               <button
                 className={styles.detailsBtn}
                 onClick={() => {
-                  toast.success("Добавлено в корзину");
+                  toast.success(t("common.toast.addedToCart"));
                   toggleCart(
                     product.id,
                     product.type,
@@ -189,7 +195,7 @@ const Product = ({
                   navigate("/cart");
                 }}
               >
-                Купить
+                {t("product.actions.buy")}
               </button>
             )}
 
@@ -199,7 +205,7 @@ const Product = ({
                   className={`${styles.counterBtn} `}
                   onClick={() => {
                     if (cartItem.qty === 1) {
-                      toast.info("Удалено из корзины");
+                      toast.info(t("common.toast.removedFromCart"));
                     }
                     decreaseQty(product.id, product.type);
                   }}
@@ -220,7 +226,7 @@ const Product = ({
               <button
                 className={styles.detailsBtn}
                 onClick={() => {
-                  toast.success("Добавлено в корзину");
+                  toast.success(t("common.toast.addedToCart"));
                   toggleCart(
                     product.id,
                     product.type,
@@ -230,8 +236,8 @@ const Product = ({
                   );
                 }}
               >
-                <img src={addToCartIcon} alt="добавить в корзину" />
-                добавить в корзину
+                <img src={addToCartIcon} alt={t("product.alt.addToCart")} />
+                {t("product.actions.addToCart")}
               </button>
             )}
           </div>

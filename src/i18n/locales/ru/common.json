@@ -1,0 +1,220 @@
+{
+  "header": {
+    "choosePhoneModel": "Выбрать модель телефона",
+    "phoneIconAlt": "Иконка телефона",
+    "dropdownArrowAlt": "Открыть список моделей",
+    "favoritesAlt": "Избранное",
+    "cartAlt": "Корзина",
+    "brandArrowAlt": "Открыть список моделей бренда"
+  },
+
+  "logo": {
+    "alt": "Логотип"
+  },
+
+  "hero": {
+    "accessoriesFor": "Аксессуары для",
+    "phoneAlt": "Айфон 13 Про Макс"
+  },
+
+  "covers": {
+    "title": "Чехлы",
+    "cards": {
+      "glass": {
+        "alt": "Стеклянный чехол",
+        "desc": "Стеклянные"
+      },
+      "silicone": {
+        "alt": "Силиконовый чехол",
+        "desc": "Силиконовые"
+      },
+      "leather": {
+        "alt": "Кожаный чехол",
+        "desc": "Кожаные"
+      }
+    }
+  },
+
+  "headphones": {
+    "title": "Наушники",
+    "wirelessTitle": "Беспроводные наушники",
+    "cards": {
+      "defaultAlt": "Наушники",
+      "ratingAlt": "Рейтинг",
+      "appleAlt": "Продукция Apple"
+    }
+  },
+
+  "footer": {
+    "socials": {
+      "vk": "ВКонтакте",
+      "instagram": "Инстаграм",
+      "telegram": "Телеграм",
+      "whatsapp": "Ватсап"
+    },
+    "links": {
+      "favorites": "Избранное",
+      "cart": "Корзина",
+      "contacts": "Контакты"
+    },
+    "terms": "Условия сервиса",
+    "languageSelector": "Выбор языка"
+  },
+
+  "product": {
+    "details": {
+      "title": "Описание и характеристики",
+      "noiseCancellation": "Активное шумоподавление:",
+      "weight": "Вес:",
+      "waterProtection": "Влагозащита:",
+      "cableLength": "Длина кабеля:",
+      "packageContents": "Комплектация:",
+      "caseMaterial": "Материал корпуса:",
+      "microphone": "Микрофон:",
+      "purpose": "Назначение:",
+      "callControl": "Ответить/закончить разговор:",
+      "connector": "Разъем наушников:",
+      "volumeControl": "Регулировка громкости:",
+      "mountType": "Тип крепления:",
+      "headphoneType": "Тип наушников:",
+      "connectionType": "Тип подключения:",
+      "frequencyRange": "Частотный диапазон:",
+      "sensitivity": "Чувствительность:"
+    },
+    "values": {
+      "yes": "Да",
+      "no": "Нет",
+      "headphones": "Наушники",
+      "plasticRubber": "Пластик, резина",
+      "wiredHeadphones": "Проводные наушники",
+      "withoutMount": "Без крепления",
+      "earbuds": "Вкладыши ('таблетки')",
+      "wired": "Проводное",
+      "weight10g": "10 гр",
+      "cableLength12m": "1.2 м",
+      "frequencyRange20_20000": "20 Гц - 20000 Гц",
+      "sensitivity109db": "109 дБ"
+    },
+    "images": {
+      "main": "Главное изображение товара",
+      "gallery": "Изображение товара"
+    },
+    "notFound": "Такого товара нет!",
+    "categories": {
+      "headphones": "Наушники",
+      "wireless": "Беспроводные наушники"
+    },
+    "actions": {
+      "goToCart": "Перейти в корзину",
+      "buy": "Купить",
+      "addToCart": "Добавить в корзину"
+    },
+    "alt": {
+      "brandLogo": "Логотип бренда",
+      "addToCart": "Добавить в корзину"
+    }
+  },
+
+  "favorites": {
+    "title": "Избранное",
+    "empty": "В Избранном ничего нет!",
+    "categories": {
+      "headphones": "Наушники",
+      "wireless": "Беспроводные наушники"
+    }
+  },
+
+  "cart": {
+    "title": "Корзина",
+    "empty": {
+      "alt": "Корзина",
+      "title": "Корзина пуста",
+      "desc": "Но это никогда не поздно исправить :)",
+      "button": "В каталог товаров"
+    },
+    "delivery": {
+      "title": "Доставка",
+      "courier": "Доставка курьером"
+    },
+    "summary": {
+      "total": "ИТОГО",
+      "checkout": "Перейти к оформлению"
+    },
+    "alt": {
+      "deleteItem": "Удалить товар",
+      "productImage": "Изображение товара",
+      "deliveryIcon": "Иконка доставки",
+      "deliveryChoice": "Выбор доставки"
+    }
+  },
+
+  "checkout": {
+    "title": "Оформление заказа",
+    "deliveryAddress": {
+      "courierDelivery": "Доставка курьером",
+      "addressTitle": "Адрес доставки",
+      "placeholders": {
+        "city": "Город",
+        "street": "Улица / Район",
+        "house": "Дом",
+        "entrance": "Подъезд",
+        "apartment": "Квартира"
+      },
+      "errors": {
+        "cityRequired": "Выберите ваш город",
+        "streetRequired": "Введите улицу или район",
+        "houseRequired": "Введите номер дома",
+        "entranceRequired": "Введите номер подъезда",
+        "apartmentRequired": "Введите номер квартиры",
+        "minTwoSymbols": "Минимум 2 символа",
+        "minOneSymbol": "Минимум 1 символ"
+      },
+      "alt": {
+        "address": "Адрес доставки",
+        "citySelection": "Выбор города",
+        "editAddress": "Редактировать адрес"
+      }
+    },
+    "orderSummary": {
+      "title": "Ваш заказ",
+      "delivery": "Доставка",
+      "total": "К оплате"
+    },
+    "paymentSection": {
+      "title": "Способ оплаты",
+      "method": "Счет на kaspi.kz",
+      "placeholder": "Есть промокод?",
+      "alt": {
+        "visa": "Платежная карта",
+        "paymentMethod": "Способ оплаты",
+        "promoCode": "Промокод",
+        "enterPromoCode": "Введите промокод"
+      }
+    },
+    "recipientContact": {
+      "title": "Номер получателя",
+      "errors": {
+        "required": "Введите номер телефона",
+        "invalid": "Введите номер полностью"
+      },
+      "alt": {
+        "editPhone": "Редактировать номер телефона"
+      }
+    },
+    "actions": {
+      "submit": "Закончить оформление"
+    },
+    "orderConfirmation": {
+      "text": "Номер вашего заказа {{orderNumber}}, с Вами свяжется наш менеджер."
+    }
+  },
+
+  "common": {
+    "toast": {
+      "addedToFavorites": "Добавлено в избранное",
+      "removedFromFavorites": "Удалено из избранного",
+      "addedToCart": "Добавлено в корзину",
+      "removedFromCart": "Удалено из корзины"
+    }
+  }
+}

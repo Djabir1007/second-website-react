@@ -1,38 +1,91 @@
 export interface ProductListModel {
   id: number;
-  description: string;
-  characteristic: string;
+  descriptionKey: string;
+  characteristicKey?: string;
+  characteristic?: string;
 }
 
 const productListData: ProductListModel[] = [
-  { id: 1, description: "Активное шумоподавление:", characteristic: "Нет" },
-  { id: 2, description: "Вес:", characteristic: "10 гр" },
-  { id: 3, description: "Влагозащита:", characteristic: "Нет" },
-  { id: 4, description: "Длина кабеля:", characteristic: "1.2 м" },
-  { id: 5, description: "Комплектация:", characteristic: "Наушники" },
+  {
+    id: 1,
+    descriptionKey: "product.details.noiseCancellation",
+    characteristicKey: "product.values.no",
+  },
+  {
+    id: 2,
+    descriptionKey: "product.details.weight",
+    characteristicKey: "product.values.weight10g",
+  },
+  {
+    id: 3,
+    descriptionKey: "product.details.waterProtection",
+    characteristicKey: "product.values.no",
+  },
+  {
+    id: 4,
+    descriptionKey: "product.details.cableLength",
+    characteristicKey: "product.values.cableLength12m",
+  },
+  {
+    id: 5,
+    descriptionKey: "product.details.packageContents",
+    characteristicKey: "product.values.headphones",
+  },
   {
     id: 6,
-    description: "Материал корпуса:",
-    characteristic: "Пластик, резина",
+    descriptionKey: "product.details.caseMaterial",
+    characteristicKey: "product.values.plasticRubber",
   },
-  { id: 7, description: "Микрофон:", characteristic: "Да" },
-  { id: 8, description: "Назначение:", characteristic: "Проводные наушники" },
-  { id: 9, description: "Ответить/закончить разговор:", characteristic: "Да" },
-  { id: 10, description: "Разъем наушников:", characteristic: "Lightning" },
-  { id: 11, description: "Регулировка громкости:", characteristic: "Да" },
-  { id: 12, description: "Тип крепления:", characteristic: "Без крепления" },
+  {
+    id: 7,
+    descriptionKey: "product.details.microphone",
+    characteristicKey: "product.values.yes",
+  },
+  {
+    id: 8,
+    descriptionKey: "product.details.purpose",
+    characteristicKey: "product.values.wiredHeadphones",
+  },
+  {
+    id: 9,
+    descriptionKey: "product.details.callControl",
+    characteristicKey: "product.values.yes",
+  },
+  {
+    id: 10,
+    descriptionKey: "product.details.connector",
+    characteristic: "Lightning",
+  },
+  {
+    id: 11,
+    descriptionKey: "product.details.volumeControl",
+    characteristicKey: "product.values.yes",
+  },
+  {
+    id: 12,
+    descriptionKey: "product.details.mountType",
+    characteristicKey: "product.values.withoutMount",
+  },
   {
     id: 13,
-    description: "Тип наушников:",
-    characteristic: "Вкладыши ('таблетки')",
+    descriptionKey: "product.details.headphoneType",
+    characteristicKey: "product.values.earbuds",
   },
-  { id: 14, description: "Тип подключения:", characteristic: "Проводное" },
+  {
+    id: 14,
+    descriptionKey: "product.details.connectionType",
+    characteristicKey: "product.values.wired",
+  },
   {
     id: 15,
-    description: "Частотный диапазон:",
-    characteristic: "20 Гц - 20000 Гц",
+    descriptionKey: "product.details.frequencyRange",
+    characteristicKey: "product.values.frequencyRange20_20000",
   },
-  { id: 16, description: "Чувствительность:", characteristic: "109 дБ" },
+  {
+    id: 16,
+    descriptionKey: "product.details.sensitivity",
+    characteristicKey: "product.values.sensitivity109db",
+  },
 ];
 
 export default productListData;

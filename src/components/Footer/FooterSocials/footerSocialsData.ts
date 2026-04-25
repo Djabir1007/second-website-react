@@ -4,7 +4,7 @@ export interface FooterSocialsModel {
   id: number;
   link: string;
   icon: string;
-  alt: string;
+  altKey: string;
 }
 
 const footerSocialsData: FooterSocialsModel[] = [
@@ -12,25 +12,25 @@ const footerSocialsData: FooterSocialsModel[] = [
     id: 1,
     link: "https://vk.com/",
     icon: vk,
-    alt: "Вконтакте",
+    altKey: "footer.socials.vk",
   },
   {
     id: 2,
     link: "https://www.instagram.com/",
     icon: instagram,
-    alt: "Инстаграм",
+    altKey: "footer.socials.instagram",
   },
   {
     id: 3,
     link: "https://web.telegram.org/",
     icon: telegram,
-    alt: "Телеграм",
+    altKey: "footer.socials.telegram",
   },
   {
     id: 4,
     link: "https://api.whatsapp.com/",
     icon: whatsapp,
-    alt: "Ватсапп",
+    altKey: "footer.socials.whatsapp",
   },
 ];
 

@@ -15,6 +15,11 @@
   }
 }
 
+.recipientPhoneForm {
+  display: flex;
+  flex-direction: column;
+}
+
 .recipientPhoneTitle {
   font-weight: 600;
   font-size: 17px;
@@ -24,7 +29,6 @@
 
 .recipientPhoneInfo {
   position: relative;
-  margin-bottom: 10px;
 }
 
 .recipientPhoneValue {
@@ -33,8 +37,16 @@
   @include input-style;
 }
 
-.editIcon {
+.editBtn {
   position: absolute;
   right: 14px;
   bottom: 13px;
+  background-color: #d6d6d6;
+}
+
+.textError {
+  margin-left: 6px;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #ff4d4f;
 }

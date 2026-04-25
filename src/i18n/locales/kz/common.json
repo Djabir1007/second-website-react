@@ -1,0 +1,220 @@
+{
+  "header": {
+    "choosePhoneModel": "Телефон моделін таңдаңыз",
+    "phoneIconAlt": "Телефон белгішесі",
+    "dropdownArrowAlt": "Үлгілер тізімін ашу",
+    "favoritesAlt": "Таңдаулылар",
+    "cartAlt": "Себет",
+    "brandArrowAlt": "Бренд үлгілерінің тізімін ашу"
+  },
+
+  "logo": {
+    "alt": "логотипі"
+  },
+
+  "hero": {
+    "accessoriesFor": "Арналған аксессуарлар",
+    "iphone13ProMaxAlt": "iPhone 13 Pro Max"
+  },
+
+  "covers": {
+    "title": "Қаптар",
+    "cards": {
+      "glass": {
+        "alt": "Шыны қап",
+        "desc": "Шыны"
+      },
+      "silicone": {
+        "alt": "Силикон қап",
+        "desc": "Силикон"
+      },
+      "leather": {
+        "alt": "Былғары қап",
+        "desc": "Былғары"
+      }
+    }
+  },
+
+  "headphones": {
+    "title": "Құлаққаптар",
+    "wirelessTitle": "Сымсыз құлаққаптар",
+    "cards": {
+      "defaultAlt": "Құлаққаптар",
+      "ratingAlt": "Рейтинг",
+      "appleAlt": "Apple өнімі"
+    }
+  },
+
+  "footer": {
+    "socials": {
+      "vk": "ВКонтакте",
+      "instagram": "Инстаграм",
+      "telegram": "Телеграм",
+      "whatsapp": "Уотсап"
+    },
+    "links": {
+      "favorites": "Таңдаулылар",
+      "cart": "Себет",
+      "contacts": "Байланыстар"
+    },
+    "terms": "Қызмет көрсету шарттары",
+    "languageSelector": "Тілді таңдау"
+  },
+
+  "product": {
+    "details": {
+      "title": "Сипаттамасы мен ерекшеліктері",
+      "noiseCancellation": "Белсенді шуды басу:",
+      "weight": "Салмағы:",
+      "waterProtection": "Ылғалдан қорғау:",
+      "cableLength": "Кабель ұзындығы:",
+      "packageContents": "Жинақ құрамы:",
+      "caseMaterial": "Корпус материалы:",
+      "microphone": "Микрофон:",
+      "purpose": "Мақсаты:",
+      "callControl": "Қоңырауға жауап беру/аяқтау:",
+      "connector": "Құлаққап жалғағышы:",
+      "volumeControl": "Дыбыс деңгейін реттеу:",
+      "mountType": "Бекіту түрі:",
+      "headphoneType": "Құлаққап түрі:",
+      "connectionType": "Қосылу түрі:",
+      "frequencyRange": "Жиілік диапазоны:",
+      "sensitivity": "Сезімталдығы:"
+    },
+    "values": {
+      "yes": "Иә",
+      "no": "Жоқ",
+      "headphones": "Құлаққаптар",
+      "plasticRubber": "Пластик, резеңке",
+      "wiredHeadphones": "Сымды құлаққаптар",
+      "withoutMount": "Бекітусіз",
+      "earbuds": "Құлақ ішіне салынатын",
+      "wired": "Сымды",
+      "weight10g": "10 г",
+      "cableLength12m": "1.2 м",
+      "frequencyRange20_20000": "20 Гц - 20000 Гц",
+      "sensitivity109db": "109 дБ"
+    },
+    "images": {
+      "main": "Тауардың негізгі суреті",
+      "gallery": "Тауар суреті"
+    },
+    "notFound": "Мұндай тауар жоқ!",
+    "categories": {
+      "headphones": "Құлаққаптар",
+      "wireless": "Сымсыз құлаққаптар"
+    },
+    "actions": {
+      "goToCart": "Себетке өту",
+      "buy": "Сатып алу",
+      "addToCart": "Себетке қосу"
+    },
+    "alt": {
+      "brandLogo": "Бренд логотипі",
+      "addToCart": "Себетке қосу"
+    }
+  },
+
+  "favorites": {
+    "title": "Таңдаулылар",
+    "empty": "Таңдаулыларда ештеңе жоқ!",
+    "categories": {
+      "headphones": "Құлаққаптар",
+      "wireless": "Сымсыз құлаққаптар"
+    }
+  },
+
+  "cart": {
+    "title": "Себет",
+    "empty": {
+      "alt": "Себет",
+      "title": "Себет бос",
+      "desc": "Бірақ оны түзетуге ешқашан кеш емес :)",
+      "button": "Тауарлар каталогына"
+    },
+    "delivery": {
+      "title": "Жеткізу",
+      "courier": "Курьер арқылы жеткізу"
+    },
+    "summary": {
+      "total": "ЖАЛПЫ",
+      "checkout": "Рәсімдеуге өту"
+    },
+    "alt": {
+      "deleteItem": "Тауарды жою",
+      "productImage": "Тауар суреті",
+      "deliveryIcon": "Жеткізу белгішесі",
+      "deliveryChoice": "Жеткізуді таңдау"
+    }
+  },
+
+  "checkout": {
+    "title": "Тапсырысты рәсімдеу",
+    "deliveryAddress": {
+      "courierDelivery": "Курьермен жеткізу",
+      "addressTitle": "Жеткізу мекенжайы",
+      "placeholders": {
+        "city": "Қала",
+        "street": "Көше / Аудан",
+        "house": "Үй",
+        "entrance": "Кіреберіс",
+        "apartment": "Пәтер"
+      },
+      "errors": {
+        "cityRequired": "Қалаңызды таңдаңыз",
+        "streetRequired": "Көше немесе ауданды енгізіңіз",
+        "houseRequired": "Үй нөмірін енгізіңіз",
+        "entranceRequired": "Кіреберіс нөмірін енгізіңіз",
+        "apartmentRequired": "Пәтер нөмірін енгізіңіз",
+        "minTwoSymbols": "Кемінде 2 таңба",
+        "minOneSymbol": "Кемінде 1 таңба"
+      },
+      "alt": {
+        "address": "Жеткізу мекенжайы",
+        "citySelection": "Қаланы таңдау",
+        "editAddress": "Мекенжайды өңдеу"
+      }
+    },
+    "orderSummary": {
+      "title": "Сіздің тапсырысыңыз",
+      "delivery": "Жеткізу",
+      "total": "Төлеуге"
+    },
+    "paymentSection": {
+      "title": "Төлем тәсілі",
+      "method": "kaspi.kz шоты",
+      "placeholder": "Промокод бар ма?",
+      "alt": {
+        "visa": "Төлем картасы",
+        "paymentMethod": "Төлем тәсілі",
+        "promoCode": "Промокод",
+        "enterPromoCode": "Промокодты енгізіңіз"
+      }
+    },
+    "recipientContact": {
+      "title": "Алушының телефон нөмірі",
+      "errors": {
+        "required": "Телефон нөмірін енгізіңіз",
+        "invalid": "Телефон нөмірін толық енгізіңіз"
+      },
+      "alt": {
+        "editPhone": "Телефон нөмірін өңдеу"
+      }
+    },
+    "actions": {
+      "submit": "Рәсімдеуді аяқтау"
+    },
+    "orderConfirmation": {
+      "text": "Тапсырысыңыздың нөмірі {{orderNumber}}, сізбен менеджеріміз хабарласады."
+    }
+  },
+
+  "common": {
+    "toast": {
+      "addedToFavorites": "Таңдаулыларға қосылды",
+      "removedFromFavorites": "Таңдаулылардан өшірілді",
+      "addedToCart": "Себетке қосылды",
+      "removedFromCart": "Себеттен өшірілді"
+    }
+  }
+}

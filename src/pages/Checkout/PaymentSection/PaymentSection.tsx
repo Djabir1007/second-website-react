@@ -1,22 +1,41 @@
-import { useRef } from "react";
+import { UseFormRegister, UseFormSetFocus } from "react-hook-form";
 
 import { visaIcon, checkIcon, promoCode, arrowRightIcon } from "@/assets/img";
 
-import styles from "./PaymentSection.module.scss";
+import type { CheckoutFormValues } from "@/types/checkoutForm";
 
-const PaymentSection = () => {
-  const focusInput = useRef<HTMLInputElement | null>(null);
+import styles from "./PaymentSection.module.scss";
+import { useTranslation } from "react-i18next";
+
+type PaymentSectionProps = {
+  register: UseFormRegister<CheckoutFormValues>;
+  setFocus: UseFormSetFocus<CheckoutFormValues>;
+};
+
+const PaymentSection = ({ register, setFocus }: PaymentSectionProps) => {
+  const { t } = useTranslation();
 
   return (
     <section className={styles.payment}>
-      <h3 className={styles.paymentTitle}>Способ оплаты</h3>
+      <h3 className={styles.paymentTitle}>
+        {t("checkout.paymentSection.title")}
+      </h3>
       <div className={styles.paymentMethods}>
         <div className={styles.paymentMethod}>
-          <img className={styles.paymentIcon} src={visaIcon} alt="visa" />
-          <span className={styles.paymentText}>Счет на kaspi.kz</span>
+          <img
+            className={styles.paymentIcon}
+            src={visaIcon}
+            alt={t("checkout.paymentSection.alt.visa")}
+          />
+          <span className={styles.paymentText}>
+            {t("checkout.paymentSection.method")}
+          </span>
         </div>
-        <button className={styles.paymentBtn}>
-          <img src={checkIcon} alt="Способ оплаты" />
+        <button className={styles.paymentBtn} type="button">
+          <img
+            src={checkIcon}
+            alt={t("checkout.paymentSection.alt.paymentMethod")}
+          />
         </button>
       </div>
       <div className={styles.promoCode}>
@@ -24,22 +43,24 @@ const PaymentSection = () => {
           <img
             className={styles.promoCodeIcon}
             src={promoCode}
-            alt="Промокод"
+            alt={t("checkout.paymentSection.alt.promoCode")}
           />
           <input
             className={styles.promoCodeValue}
             type="text"
-            placeholder="Есть промокод?"
-            ref={focusInput}
+            placeholder={t("checkout.paymentSection.placeholder")}
+            {...register("promocode")}
           />
         </div>
         <button
+          type="button"
           className={styles.promoCodeBtn}
-          onClick={() => {
-            focusInput.current?.focus();
-          }}
+          onClick={() => setFocus("promocode")}
         >
-          <img src={arrowRightIcon} alt="" />
+          <img
+            src={arrowRightIcon}
+            alt={t("checkout.paymentSection.alt.enterPromoCode")}
+          />
         </button>
       </div>
     </section>

@@ -6,7 +6,7 @@
   width: 100%;
   padding: 23px 31px 32px 38px;
   border-radius: 30px;
-  max-height: 549px;
+  height: 555px;
 
   &:hover {
     @include card-hover;
@@ -66,14 +66,29 @@
   color: #000;
 }
 
-.addressWrapper {
+.fieldWrapper {
   display: flex;
-  position: relative;
+  flex-direction: column;
+  width: 100%;
   margin-bottom: 10px;
+  position: relative;
+}
+
+.fieldInner {
+  position: relative;
+  width: 100%;
 }
 
 .input {
   @include input-style;
+  width: 100%;
+}
+
+.cityInput {
+  cursor: pointer;
+}
+
+.streetInput {
   width: 100%;
 }
 
@@ -85,80 +100,107 @@
   color: #838383;
 }
 
-.cityInputBtn {
+.addressCityBtn {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
   background-color: #d6d6d6;
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
+  transition: transform 0.3s ease;
 }
 
-.arrowMain {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  pointer-events: none;
+.arrowOpen {
+  transform: rotate(180deg);
 }
 
-.cityInputImg {
+.dropdown {
+  margin-top: 5px;
+  padding: 6px 0;
   position: absolute;
-  right: 16px;
-  bottom: 16px;
+  z-index: 1;
+  width: 100%;
+  top: 26px;
+  border-radius: 0px 0px 15px 15px;
+  background-color: #d6d6d6;
+  max-height: 185px;
+  overflow-y: auto;
 }
 
-.streetInputImg {
+.dropdownItem {
+  padding-left: 14px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  cursor: pointer;
+
+  &:hover {
+    color: #ffa542;
+  }
+}
+
+.inputBtn {
   position: absolute;
   right: 14px;
   bottom: 13px;
+  background-color: #d6d6d6;
 }
 
 .addressRow {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 13px;
-}
-
-.addressRowItem {
-  position: relative;
+  gap: 30px;
+  margin-bottom: 10px;
 }
 
 .houseInput {
   @include input-style;
-  max-width: 176px;
   width: 100%;
 }
 
-.houseInputImg {
+.inputHouseBtn {
   position: absolute;
   right: 14px;
   bottom: 13px;
+  background-color: #d6d6d6;
 }
 
 .entranceInput {
   @include input-style;
-  max-width: 176px;
   width: 100%;
 }
 
-.entranceInputImg {
+.entranceInputBtn {
   position: absolute;
   right: 14px;
   bottom: 13px;
+  background-color: #d6d6d6;
 }
 
-.addressFlat {
-  display: flex;
-  position: relative;
-  width: 50%;
+.fieldWrapperFlat {
+  max-width: 173px;
+  width: 100%;
 }
 
 .flatInput {
   @include input-style;
-  max-width: 170px;
   width: 100%;
 }
 
-.flatInputImg {
+.inputFlatBtn {
   position: absolute;
-  right: 31px;
+  right: 14px;
   bottom: 13px;
+  background-color: #d6d6d6;
+}
+
+.flatInputImg {
+  display: block;
+}
+
+.textError {
+  margin-left: 6px;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #ff4d4f;
+}
+
+.inputError {
+  border: 1px solid #ff4d4f;
 }

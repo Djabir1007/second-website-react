@@ -1,13 +1,13 @@
 export interface FooterLinkModel {
   id: number;
   href: string;
-  text: string;
+  textKey: string;
 }
 
 const footerLinkData: FooterLinkModel[] = [
-  { id: 1, href: "/favorites", text: "Избранное" },
-  { id: 2, href: "/cart", text: "Корзина" },
-  { id: 3, href: "/", text: "Контакты" },
+  { id: 1, href: "/favorites", textKey: "footer.links.favorites" },
+  { id: 2, href: "/cart", textKey: "footer.links.cart" },
+  { id: 3, href: "/", textKey: "footer.links.contacts" },
 ];
 
 export default footerLinkData;

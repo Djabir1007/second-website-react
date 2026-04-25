@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 import { Link } from "react-router-dom";
 
+import { useTranslation } from "react-i18next";
+
 import styles from "./Header.module.scss";
 
 import Logo from "../Logo/Logo";
@@ -20,6 +22,7 @@ type HeaderProps = {
 };
 
 function Header({ favorites, cart }: HeaderProps) {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeBrandId, setActiveBrandId] = useState<number | null>(null);
   const boxRef = useRef<HTMLDivElement | null>(null);
@@ -54,7 +57,7 @@ function Header({ favorites, cart }: HeaderProps) {
               <img
                 className={styles.phoneIcon}
                 src={phone}
-                alt="Телефонный иконка"
+                alt={t("header.phoneIconAlt")}
               />
             </a>
             <div
@@ -63,14 +66,16 @@ function Header({ favorites, cart }: HeaderProps) {
               onClick={handleToggle}
             >
               <div className={styles.wrapperHeader}>
-                <p className={styles.wrapperDesc}>Выбрать модель телефона</p>
+                <p className={styles.wrapperDesc}>
+                  {t("header.choosePhoneModel")}
+                </p>
                 <button className={styles.listWrapperItemBtn}>
                   <img
                     className={`${styles.arrowMain} ${
                       isOpen ? styles.arrowOpen : ""
                     }`}
                     src={dropdownArrow}
-                    alt="галочка"
+                    alt={t("header.dropdownArrowAlt")}
                   />
                 </button>
               </div>
@@ -102,7 +107,7 @@ function Header({ favorites, cart }: HeaderProps) {
                               isActive ? styles.arrowOpen : ""
                             }`}
                             src={chevronDown}
-                            alt=""
+                            alt={t("header.brandArrowAlt")}
                           />
                         </button>
 
@@ -123,7 +128,7 @@ function Header({ favorites, cart }: HeaderProps) {
         <div className={styles.btn}>
           <div className={styles.btnHeartWrapper}>
             <Link className={styles.btnHeart} to="/favorites">
-              <img src={heart} alt="Избранное" />
+              <img src={heart} alt={t("header.favoritesAlt")} />
               {favorites.length > 0 && (
                 <span className={styles.btnHeartValue}>{favorites.length}</span>
               )}
@@ -131,7 +136,7 @@ function Header({ favorites, cart }: HeaderProps) {
           </div>
           <div className={styles.btnHeartWrapper}>
             <Link className={styles.btnBasket} to="/cart">
-              <img src={basket} alt="Корзина" />
+              <img src={basket} alt={t("header.cartAlt")} />
               {cart.length > 0 && (
                 <button className={styles.btnCartValue}>{cart.length}</button>
               )}

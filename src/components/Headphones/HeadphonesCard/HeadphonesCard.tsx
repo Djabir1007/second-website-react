@@ -6,6 +6,7 @@ import type { Favorite, ToggleFavorite } from "@/types/favorite";
 import type { HeadphonesCardModel } from "./headphonesCardData";
 
 import styles from "./HeadphonesCard.module.scss";
+import { useTranslation } from "react-i18next";
 
 type HeadphonesCardProps = HeadphonesCardModel & {
   favorites: Favorite[];
@@ -17,15 +18,17 @@ const HeadphonesCard = ({
   toggleFavorite,
   ...card
 }: HeadphonesCardProps) => {
+  const { t } = useTranslation();
+
   const isFavorite = favorites.some(
     (el) => el.id === card.id && el.type === card.type,
   );
 
   const handleFavoriteClick = () => {
     if (isFavorite) {
-      toast.info("Удалено из избранного");
+      toast.info(t("common.toast.removedFromFavorites"));
     } else {
-      toast.success("Добавлено в избранное");
+      toast.success(t("common.toast.addedToFavorites"));
     }
 
     toggleFavorite(card.id, card.type);
@@ -36,7 +39,11 @@ const HeadphonesCard = ({
       <Link to={`/product/${card.type}/${card.id}`}>
         <div className={styles.cardContent}>
           <div className={styles.cardImage}>
-            <img className={styles.cardImg} src={card.img} alt={card.alt} />
+            <img
+              className={styles.cardImg}
+              src={card.img}
+              alt={t(card.altKey)}
+            />
           </div>
           <div className={styles.cardInfo}>
             <div className={styles.cardInfoLeft}>
@@ -45,7 +52,7 @@ const HeadphonesCard = ({
                 <img
                   className={styles.cardRatingStar}
                   src={card.rating}
-                  alt={card.altStar}
+                  alt={t(card.altStarKey)}
                 />
                 <span className={styles.cardRatingValue}>{card.value}</span>
               </div>
@@ -92,9 +99,9 @@ const HeadphonesCard = ({
             <path d="M10.001 1.52898C12.35 -0.58002 15.98 -0.51002 18.243 1.75698C20.505 4.02498 20.583 7.63698 18.479 9.99298L9.999 18.485L1.52101 9.99298C-0.582994 7.63698 -0.503994 4.01898 1.75701 1.75698C4.02201 -0.50702 7.64501 -0.58302 10.001 1.52898Z" />
           </svg>
         </button>
-        {card.apple && (
+        {card.apple && card.appleAltKey && (
           <button className={styles.apple}>
-            <img src={card.apple} alt="Продукция apple" />
+            <img src={card.apple} alt={t(card.appleAltKey)} />
           </button>
         )}
       </Link>
