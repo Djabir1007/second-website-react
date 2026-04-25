@@ -1,0 +1,52 @@
+.submitButton {
+  display: block;
+  width: 100%;
+  background-color: #ffa542;
+  color: #fff;
+  padding: 15px 0;
+  border: none;
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 15px;
+  &:hover {
+    background-color: #ff9500;
+  }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.dividerLine {
+  height: 1px;
+  flex: 1;
+  background-color: #d6d6d6;
+}
+
+.dividerText {
+  font-size: 14px;
+  color: #838383;
+}
+
+.secondaryButton {
+  width: 100%;
+  background-color: #ffffff;
+  color: #000;
+  padding: 15px 0;
+  border: 1px solid #d6d6d6;
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 15px;
+  &:hover {
+    background-color: #f8f8f8;
+  }
+}
