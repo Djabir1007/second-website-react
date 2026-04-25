@@ -7,6 +7,7 @@ type AuthInputProps = {
   type: string;
   rightIcon?: string;
   rightAlt?: string;
+  isLast?: boolean;
 };
 
 const AuthInput = ({
@@ -16,9 +17,10 @@ const AuthInput = ({
   type,
   rightIcon,
   rightAlt,
+  isLast,
 }: AuthInputProps) => {
   return (
-    <div className={styles.formGroup}>
+    <div className={`${styles.formGroup} ${isLast ? styles.lastInput : ""}`}>
       <button className={styles.formIconButton} type="button">
         <img src={icon} alt={alt} />
       </button>
