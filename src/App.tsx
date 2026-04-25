@@ -21,6 +21,9 @@ import type {
   DecreaseQty,
 } from "./types/cart";
 import ScrollToTop from "./layouts/ScrollToTop/ScrollToTop";
+import Auth from "./pages/Auth/Auth";
+import ForgotPassword from "./pages/Auth/ForgotPassword/ForgotPassword";
+import RegisterForm from "./pages/Auth/RegisterForm/RegisterForm";
 
 function App() {
   const [favorites, setFavorites] = useState<Favorite[]>(() => {
@@ -144,6 +147,9 @@ function App() {
             }
           />
           <Route path="/checkout" element={<Checkout cart={cart} />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/register" element={<RegisterForm />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
