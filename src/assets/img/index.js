@@ -37,6 +37,7 @@ import heart from "./header/heart.svg";
 import phone from "./header/Phone.svg";
 import logo from "./header/QPICK.svg";
 import dropdownArrow from "./header/tick.svg";
+import accountIcon from "./header/account-icon.svg";
 
 // headphones
 
@@ -69,6 +70,13 @@ import productBrandLogo from "./product/product-logo.svg";
 import wireless1 from "./wireless/wireless.png";
 import wireless2 from "./wireless/wireless-2.png";
 import wireless3 from "./wireless/wireless-3.png";
+
+// loginForm
+import contactIcon from "./loginForm/contact-icon.svg";
+import lockIcon from "./loginForm/lock-icon.svg";
+import eyeIcon from "./loginForm/eye-icon.svg";
+import nameIcon from "./loginForm/name-icon.svg";
+import phoneIcon from "./loginForm/phone-icon.svg";
 
 // export
 export {
@@ -106,6 +114,7 @@ export {
   phone,
   logo,
   dropdownArrow,
+  accountIcon,
 
   //headphones
   headphones1,
@@ -133,4 +142,11 @@ export {
   wireless1,
   wireless2,
   wireless3,
+
+  // loginForm
+  contactIcon,
+  lockIcon,
+  eyeIcon,
+  nameIcon,
+  phoneIcon,
 };
