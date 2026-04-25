@@ -1,0 +1,41 @@
+.register {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 120px;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.registerForm {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.registerFormTitle {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.registerFormAgreement {
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.registerFormCheckbox {
+  width: 18px;
+  cursor: pointer;
+}
+
+.registerFormAgreementText {
+  color: #838383;
+}
