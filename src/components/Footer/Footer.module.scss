@@ -12,7 +12,8 @@
 
 .info {
   display: flex;
-  gap: 175px;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .infoList {
@@ -25,12 +26,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 190px;
 }
 
 .termsDesc {
   display: block;
   font-size: 17px;
   color: #000;
+  word-break: break-all;
 
   &:hover {
     @include text-hover;
