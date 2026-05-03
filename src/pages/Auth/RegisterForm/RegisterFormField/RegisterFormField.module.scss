@@ -1,0 +1,40 @@
+.formGroup {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.formIconButton {
+  position: absolute;
+  background-color: #d6d6d6;
+  top: 13px;
+  left: 16px;
+}
+
+.formInput {
+  width: 100%;
+  padding: 14px 0 13px 44px;
+  border-radius: 15px;
+  border: none;
+  background-color: #d6d6d6;
+  font-size: 15px;
+  outline: none;
+}
+
+.passwordButton {
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  background-color: #d6d6d6;
+}
+
+.lastInput {
+  margin-bottom: 5px;
+}
+
+.textError {
+  margin-top: 2px;
+  margin-left: 6px;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #ff4d4f;
+}

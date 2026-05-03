@@ -28,7 +28,7 @@
   display: flex;
   gap: 15px;
   cursor: pointer;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .registerFormCheckbox {
@@ -38,4 +38,16 @@
 
 .registerFormAgreementText {
   color: #838383;
+}
+
+.serverError {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: #ffecec;
+  color: #d93025;
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
 }
