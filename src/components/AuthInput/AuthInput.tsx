@@ -1,4 +1,6 @@
+import { LoginFormValues } from "@/pages/Auth/authForm";
 import styles from "./AuthInput.module.scss";
+import { UseFormRegister } from "react-hook-form";
 
 type AuthInputProps = {
   icon: string;
