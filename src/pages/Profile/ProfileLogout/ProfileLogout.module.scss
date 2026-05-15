@@ -1,0 +1,63 @@
+.profileLogout {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  padding: 24px 32px;
+  border: none;
+  border-radius: 18px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 18px rgb(0 0 0 / 5%);
+  cursor: pointer;
+  text-align: left;
+}
+
+.profileLogoutIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  color: #ff5c1a;
+  font-size: 28px;
+}
+
+.profileLogoutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profileLogoutTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1c1c27;
+}
+
+.profileLogoutText {
+  font-size: 15px;
+  color: #838383;
+}
+
+.profileLogoutArrow {
+  color: #838383;
+  font-size: 34px;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .profileLogout {
+    grid-template-columns: 48px 1fr auto;
+    gap: 14px;
+    padding: 20px 18px;
+  }
+
+  .profileLogoutIcon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+}
