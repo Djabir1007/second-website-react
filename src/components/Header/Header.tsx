@@ -18,21 +18,29 @@ import {
   dropdownArrow,
   chevronDown,
   accountIcon,
+  lightTheme,
+  darkTheme,
 } from "@/assets/img";
 
 import type { Favorite } from "@/types/favorite";
 import type { CartItem } from "@/types/cart";
+import type { Theme } from "@/types/theme";
 
 type HeaderProps = {
   favorites: Favorite[];
   cart: CartItem[];
+  theme: Theme;
+  toggleTheme: () => void;
 };
 
-function Header({ favorites, cart }: HeaderProps) {
+function Header({ favorites, cart, toggleTheme, theme }: HeaderProps) {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeBrandId, setActiveBrandId] = useState<number | null>(null);
   const boxRef = useRef<HTMLDivElement | null>(null);
+
+  const accessToken = localStorage.getItem("accessToken");
+  const profilePath = accessToken ? "/profile" : "/auth";
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -150,9 +158,26 @@ function Header({ favorites, cart }: HeaderProps) {
             </Link>
           </div>
           <div>
-            <Link to="/auth">
+            <Link to={profilePath}>
               <img src={accountIcon} alt={t("header.cartAlt")} />
             </Link>
+          </div>
+          <div>
+            <button onClick={toggleTheme} type="button">
+              {theme === "light" ? (
+                <img
+                  src={lightTheme}
+                  alt={t("header.cartAlt")}
+                  className={styles.lightTheme}
+                />
+              ) : (
+                <img
+                  src={darkTheme}
+                  alt={t("header.cartAlt")}
+                  className={styles.darkTheme}
+                />
+              )}
+            </button>
           </div>
         </div>
       </div>
