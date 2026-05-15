@@ -39,6 +39,9 @@ import logo from "./header/QPICK.svg";
 import dropdownArrow from "./header/tick.svg";
 import accountIcon from "./header/account-icon.svg";
 
+import lightTheme from "./header/light-theme.svg";
+import darkTheme from "./header/dark-theme.svg";
+
 // headphones
 
 import headphones1 from "./headphones/headphones.png";
@@ -115,6 +118,8 @@ export {
   logo,
   dropdownArrow,
   accountIcon,
+  lightTheme,
+  darkTheme,
 
   //headphones
   headphones1,
