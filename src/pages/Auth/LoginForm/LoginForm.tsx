@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import styles from "./LoginForm.module.scss";
 
@@ -9,9 +9,11 @@ import { loginFormFields } from "./loginFormFields";
 import { useForm } from "react-hook-form";
 import { LoginFormValues } from "../authForm";
 import LoginFormField from "./LoginFormField/LoginFormField";
-import { loginUser } from "@/api/auth";
+
 import { useState } from "react";
 import axios from "axios";
+
+import { useLogin } from "../hooks/useLogin";
 
 type ServerErrorResponse = {
   message: string;
@@ -19,6 +21,8 @@ type ServerErrorResponse = {
 
 const LoginForm = () => {
   const [serverError, setServerError] = useState<string | null>(null);
+  const loginMutation = useLogin();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -32,18 +36,24 @@ const LoginForm = () => {
     },
   });
 
-  const handleLoginSubmit = async (data: LoginFormValues) => {
-    try {
-      const result = await loginUser(data);
-      setServerError(null);
-      console.log(result);
-    } catch (error) {
-      if (axios.isAxiosError<ServerErrorResponse>(error)) {
-        setServerError(error.response?.data.message ?? "Ошибка входа");
-      } else {
-        setServerError("Ошибка входа");
-      }
-    }
+  const handleLoginSubmit = (data: LoginFormValues) => {
+    loginMutation.mutate(data, {
+      onSuccess: (result) => {
+        setServerError(null);
+
+        localStorage.setItem("accessToken", result.accessToken);
+        localStorage.setItem("user", JSON.stringify(result.user));
+
+        navigate("/profile");
+      },
+      onError: (error) => {
+        if (axios.isAxiosError<ServerErrorResponse>(error)) {
+          setServerError(error.response?.data.message ?? "Ошибка входа");
+        } else {
+          setServerError("Ошибка входа");
+        }
+      },
+    });
   };
 
   return (
