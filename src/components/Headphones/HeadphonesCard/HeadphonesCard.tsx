@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
 
@@ -19,6 +19,7 @@ const HeadphonesCard = ({
   ...card
 }: HeadphonesCardProps) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const isFavorite = favorites.some(
     (el) => el.id === card.id && el.type === card.type,
@@ -86,8 +87,15 @@ const HeadphonesCard = ({
         <button
           className={`${styles.heart} ${isFavorite ? styles.active : ""}`}
           onClick={(e) => {
-            handleFavoriteClick();
             e.preventDefault();
+            const accessToken = localStorage.getItem("accessToken");
+
+            if (!accessToken) {
+              navigate("/auth");
+              return;
+            }
+
+            handleFavoriteClick();
           }}
         >
           <svg
