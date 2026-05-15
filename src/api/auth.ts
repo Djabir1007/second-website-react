@@ -15,6 +15,24 @@ type RegisterResponse = {
 type LoginResponse = {
   message: string;
   user: AuthUser;
+  accessToken: string;
+};
+
+type ProfileResponse = {
+  message: string;
+  user: AuthUser;
+};
+
+export const getProfile = async (
+  accessToken: string,
+): Promise<ProfileResponse> => {
+  const response = await axios.get("http://localhost:4000/api/auth/profile", {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+
+  return response.data;
 };
 
 export const registerUser = async (
