@@ -7,8 +7,26 @@ html {
 
 body {
   font-family: $font-main;
-  background-color: $color-bg;
-  color: $color-text;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.theme-light {
+  --color-bg: #eaeaea;
+  --color-text: #1c1c27;
+  --color-title: #838383;
+  --color-card: #ffffff;
+  --color-price: #ffa542;
+  --color-border: #dfdfdf;
+}
+
+.theme-dark {
+  --color-bg: #121212;
+  --color-text: #f5f5f5;
+  --color-title: #a8a8a8;
+  --color-card: #1e1e1e;
+  --color-price: #ffa542;
+  --color-border: #333333;
 }
 
 .container {
