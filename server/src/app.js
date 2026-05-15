@@ -1,6 +1,9 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const { getUsers, addUser } = require("../data/users");
 
@@ -9,6 +12,34 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
+
+const authMiddleware = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader) {
+    return res.status(401).json({
+      message: "Пользователь не авторизован",
+    });
+  }
+
+  const token = authHeader.split(" ")[1];
+
+  if (!token) {
+    return res.status(401).json({
+      message: "Пользователь не авторизован",
+    });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_ACCESS_SECRET);
+    req.user = decoded;
+    next();
+  } catch (error) {
+    return res.status(401).json({
+      message: "Недействительный токен",
+    });
+  }
+};
 
 app.get("/", (req, res) => {
   res.json({ message: "Server is running" });
@@ -122,8 +153,38 @@ app.post("/api/auth/login", async (req, res) => {
     email: existingUser.email,
   };
 
+  const accessToken = jwt.sign(
+    { email: existingUser.email },
+    process.env.JWT_ACCESS_SECRET,
+    { expiresIn: process.env.JWT_ACCESS_EXPIRES_IN },
+  );
+
   res.status(200).json({
     message: "Вы успешно вошли в аккаунт!",
+    user: userWithoutPassword,
+    accessToken: accessToken,
+  });
+});
+
+app.get("/api/auth/profile", authMiddleware, (req, res) => {
+  const existingUser = getUsers().find(
+    (registeredUser) => registeredUser.email === req.user.email,
+  );
+
+  if (!existingUser) {
+    return res.status(404).json({
+      message: "Пользователь не найден",
+    });
+  }
+
+  const userWithoutPassword = {
+    fullName: existingUser.fullName,
+    email: existingUser.email,
+    phone: existingUser.phone,
+  };
+
+  res.status(200).json({
+    message: "Профиль пользователя получен",
     user: userWithoutPassword,
   });
 });
