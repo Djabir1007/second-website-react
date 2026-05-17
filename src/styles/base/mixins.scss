@@ -1,5 +1,5 @@
 @mixin block-title {
-  color: #838383;
+  color: var(--color-block-title);
   margin-bottom: 20px;
   font-weight: 600;
   font-size: 20px;
@@ -24,14 +24,14 @@
 @mixin card-title {
   font-weight: 600;
   font-size: 17px;
-  color: #1c1c27;
+  color: var(--color-text);
   margin-bottom: 25px;
 }
 
 @mixin card-rating {
   font-weight: 600;
   font-size: 17px;
-  color: #838383;
+  color: var(--color-card-rating);
 }
 
 @mixin card-rating-star {
@@ -47,7 +47,7 @@
   position: absolute;
   top: 14px;
   border: none;
-  background-color: #fff;
+  background-color: var(--color-card-svg);
   cursor: pointer;
   left: 22px;
 }

@@ -3,10 +3,11 @@
 .languageItem {
   flex: 1;
   font-size: 15px;
-  color: #101010;
+  color: var(--color-text);
   background-color: #fff;
   font-family: inherit;
   font-weight: 500;
+  background-color: var(--color-footer-bg);
 
   &:hover {
     @include language-hover;

@@ -27,7 +27,7 @@
 }
 
 .listWrapperItemBtn {
-  background-color: #eaeaea;
+  background-color: var(--color-model-button-bg);
 }
 
 .wrapperHeader {
@@ -129,5 +129,5 @@
 }
 
 .darkTheme {
-  background-color: #121212;
+  background-color: #1f1f1f;
 }
