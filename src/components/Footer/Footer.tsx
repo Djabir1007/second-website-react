@@ -11,14 +11,19 @@ import { languageIcon } from "@/assets/img";
 
 import styles from "./Footer.module.scss";
 import { useTranslation } from "react-i18next";
+import { Theme } from "@/types/theme";
 
-const Footer = () => {
+type FooterProps = {
+  theme: Theme;
+};
+
+const Footer = ({ theme }: FooterProps) => {
   const { t } = useTranslation();
 
   return (
     <footer className={styles.footer}>
       <div className={styles.flex}>
-        <Logo />
+        <Logo theme={theme} />
         <div className={styles.info}>
           <div className={styles.infoList}>
             {footerLinkData.map((el) => {

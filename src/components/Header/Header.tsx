@@ -62,7 +62,7 @@ function Header({ favorites, cart, toggleTheme, theme }: HeaderProps) {
     <header className={styles.header}>
       <div className={styles.flex}>
         <div className={styles.content}>
-          <Logo />
+          <Logo theme={theme} />
           <div className={styles.list}>
             <a
               className={styles.phoneLink}
