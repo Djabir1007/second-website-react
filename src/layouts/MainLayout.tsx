@@ -5,20 +5,33 @@ import Footer from "@/components/Footer/Footer";
 
 import type { Favorite } from "@/types/favorite";
 import type { CartItem } from "@/types/cart";
+import type { Theme } from "@/types/theme";
 
 type MainLayoutProps = {
   favorites: Favorite[];
   cart: CartItem[];
+  theme: Theme;
+  toggleTheme: () => void;
 };
 
-const MainLayout = ({ favorites, cart }: MainLayoutProps) => {
+const MainLayout = ({
+  favorites,
+  cart,
+  toggleTheme,
+  theme,
+}: MainLayoutProps) => {
   return (
     <div className="container">
-      <Header favorites={favorites} cart={cart} />
+      <Header
+        favorites={favorites}
+        cart={cart}
+        toggleTheme={toggleTheme}
+        theme={theme}
+      />
       <main>
         <Outlet />
       </main>
-      <Footer />
+      <Footer theme={theme} />
     </div>
   );
 };

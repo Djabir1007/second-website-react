@@ -1,14 +1,23 @@
 import { Link } from "react-router-dom";
 
-import { logo } from "@/assets/img";
+import { logo, lightLogo } from "@/assets/img";
 import { useTranslation } from "react-i18next";
+import type { Theme } from "@/types/theme";
 
-const Logo = () => {
+type LogoProps = {
+  theme: Theme;
+};
+
+const Logo = ({ theme }: LogoProps) => {
   const { t } = useTranslation();
 
   return (
     <Link to="/">
-      <img src={logo} alt={t("logo.alt")} />
+      {theme === "light" ? (
+        <img src={logo} alt={t("logo.alt")} />
+      ) : (
+        <img src={lightLogo} alt={t("logo.alt")} />
+      )}
     </Link>
   );
 };

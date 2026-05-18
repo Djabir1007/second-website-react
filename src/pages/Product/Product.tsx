@@ -79,6 +79,17 @@ const Product = ({
     }
   };
 
+  const requireAuth = (): boolean => {
+    const accessToken = localStorage.getItem("accessToken");
+
+    if (accessToken) {
+      return true;
+    }
+
+    navigate("/auth");
+    return false;
+  };
+
   return (
     <>
       <section className={styles.product}>
@@ -92,6 +103,9 @@ const Product = ({
             <button
               className={`${styles.productHeart} ${isFavorite ? styles.active : ""}`}
               onClick={() => {
+                if (requireAuth() === false) {
+                  return;
+                }
                 handleFavClick();
                 toggleFavorite(product.id, product.type);
               }}
@@ -184,6 +198,10 @@ const Product = ({
               <button
                 className={styles.detailsBtn}
                 onClick={() => {
+                  if (requireAuth() === false) {
+                    return;
+                  }
+
                   toast.success(t("common.toast.addedToCart"));
                   toggleCart(
                     product.id,
@@ -226,6 +244,9 @@ const Product = ({
               <button
                 className={styles.detailsBtn}
                 onClick={() => {
+                  if (requireAuth() === false) {
+                    return;
+                  }
                   toast.success(t("common.toast.addedToCart"));
                   toggleCart(
                     product.id,

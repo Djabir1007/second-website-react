@@ -7,7 +7,7 @@
   align-items: center;
   max-width: 100%;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--color-card);
   border-radius: 30px;
   padding: 25px;
 
@@ -22,6 +22,6 @@
 
 .cardDesc {
   font-weight: 600;
-  color: $color-text;
+  color: var(--color-text);
   text-align: center;
 }

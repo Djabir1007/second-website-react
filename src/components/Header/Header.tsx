@@ -11,21 +11,36 @@ import HeaderList from "./HeaderList/HeaderList";
 
 import headerListData from "./HeaderList/headerListData";
 
-import { basket, heart, phone, dropdownArrow, chevronDown } from "@/assets/img";
+import {
+  basket,
+  heart,
+  phone,
+  dropdownArrow,
+  chevronDown,
+  accountIcon,
+  lightTheme,
+  darkTheme,
+} from "@/assets/img";
 
 import type { Favorite } from "@/types/favorite";
 import type { CartItem } from "@/types/cart";
+import type { Theme } from "@/types/theme";
 
 type HeaderProps = {
   favorites: Favorite[];
   cart: CartItem[];
+  theme: Theme;
+  toggleTheme: () => void;
 };
 
-function Header({ favorites, cart }: HeaderProps) {
+function Header({ favorites, cart, toggleTheme, theme }: HeaderProps) {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeBrandId, setActiveBrandId] = useState<number | null>(null);
   const boxRef = useRef<HTMLDivElement | null>(null);
+
+  const accessToken = localStorage.getItem("accessToken");
+  const profilePath = accessToken ? "/profile" : "/auth";
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -47,7 +62,7 @@ function Header({ favorites, cart }: HeaderProps) {
     <header className={styles.header}>
       <div className={styles.flex}>
         <div className={styles.content}>
-          <Logo />
+          <Logo theme={theme} />
           <div className={styles.list}>
             <a
               className={styles.phoneLink}
@@ -126,21 +141,43 @@ function Header({ favorites, cart }: HeaderProps) {
           </div>
         </div>
         <div className={styles.btn}>
-          <div className={styles.btnHeartWrapper}>
-            <Link className={styles.btnHeart} to="/favorites">
+          <div>
+            <Link to="/favorites">
               <img src={heart} alt={t("header.favoritesAlt")} />
               {favorites.length > 0 && (
                 <span className={styles.btnHeartValue}>{favorites.length}</span>
               )}
             </Link>
           </div>
-          <div className={styles.btnHeartWrapper}>
-            <Link className={styles.btnBasket} to="/cart">
+          <div>
+            <Link to="/cart">
               <img src={basket} alt={t("header.cartAlt")} />
               {cart.length > 0 && (
                 <button className={styles.btnCartValue}>{cart.length}</button>
               )}
             </Link>
+          </div>
+          <div>
+            <Link to={profilePath}>
+              <img src={accountIcon} alt={t("header.cartAlt")} />
+            </Link>
+          </div>
+          <div>
+            <button onClick={toggleTheme} type="button">
+              {theme === "light" ? (
+                <img
+                  src={lightTheme}
+                  alt={t("header.cartAlt")}
+                  className={styles.lightTheme}
+                />
+              ) : (
+                <img
+                  src={darkTheme}
+                  alt={t("header.cartAlt")}
+                  className={styles.darkTheme}
+                />
+              )}
+            </button>
           </div>
         </div>
       </div>

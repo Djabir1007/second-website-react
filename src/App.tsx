@@ -20,7 +20,12 @@ import type {
   IncreaseQty,
   DecreaseQty,
 } from "./types/cart";
+import type { Theme } from "./types/theme";
 import ScrollToTop from "./layouts/ScrollToTop/ScrollToTop";
+import Auth from "./pages/Auth/Auth";
+import ForgotPassword from "./pages/Auth/ForgotPassword/ForgotPassword";
+import RegisterForm from "./pages/Auth/RegisterForm/RegisterForm";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   const [favorites, setFavorites] = useState<Favorite[]>(() => {
@@ -33,6 +38,20 @@ function App() {
     return saved ? JSON.parse(saved) : [];
   });
 
+  const [theme, setTheme] = useState<Theme>(() => {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+      return savedTheme;
+    }
+
+    if (savedTheme === "dark") {
+      return savedTheme;
+    }
+
+    return "light";
+  });
+
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
@@ -40,6 +59,20 @@ function App() {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  useEffect(() => {
+    if (theme === "light") {
+      document.body.classList.add("theme-light");
+      document.body.classList.remove("theme-dark");
+    } else {
+      document.body.classList.add("theme-dark");
+      document.body.classList.remove("theme-light");
+    }
+  }, [theme]);
 
   const toggleFavorite: ToggleFavorite = (id, type) => {
     setFavorites((prev) => {
@@ -99,11 +132,33 @@ function App() {
     });
   };
 
+  const clearUserData = () => {
+    setCart([]);
+    setFavorites([]);
+  };
+
+  const toggleTheme = (): void => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
   return (
     <>
       <ScrollToTop />
       <Routes>
-        <Route element={<MainLayout favorites={favorites} cart={cart} />}>
+        <Route
+          element={
+            <MainLayout
+              favorites={favorites}
+              cart={cart}
+              toggleTheme={toggleTheme}
+              theme={theme}
+            />
+          }
+        >
           <Route
             path="/"
             element={
@@ -144,6 +199,13 @@ function App() {
             }
           />
           <Route path="/checkout" element={<Checkout cart={cart} />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/register" element={<RegisterForm />} />
+          <Route
+            path="/profile"
+            element={<Profile clearUserData={clearUserData} />}
+          />
         </Route>
 
         <Route path="*" element={<NotFound />} />

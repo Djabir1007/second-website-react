@@ -1,0 +1,115 @@
+.profileCard {
+  width: 100%;
+  padding: 32px 36px 28px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 18px rgb(0 0 0 / 5%);
+  margin-bottom: 15px;
+}
+
+.profileCardTop {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.profileCardAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+  height: 104px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #ff9f1c;
+  color: #ffffff;
+  font-size: 52px;
+  font-weight: 700;
+}
+
+.profileCardUser {
+  flex-grow: 1;
+}
+
+.profileCardName {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1c1c27;
+}
+
+.profileCardEmail,
+.profileCardPhone {
+  margin: 0;
+  font-size: 18px;
+  color: #777777;
+}
+
+.profileCardEmail {
+  margin-bottom: 6px;
+}
+
+.profileCardInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileCardInfoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 84px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.profileCardInfoItem:last-child {
+  border-bottom: none;
+}
+
+.profileCardInfoLabel {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 18px;
+  color: #1c1c27;
+}
+
+.profileCardInfoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  font-size: 22px;
+}
+
+.profileCardInfoValue {
+  font-size: 18px;
+  color: #555555;
+}
+
+@media (max-width: 768px) {
+  .profileCard {
+    padding: 24px 18px;
+  }
+
+  .profileCardTop {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profileCardEditButton {
+    width: 100%;
+  }
+
+  .profileCardInfoItem {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 0;
+  }
+}

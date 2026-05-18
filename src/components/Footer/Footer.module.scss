@@ -1,7 +1,7 @@
 @use "@basestyles/base/mixins.scss" as *;
 
 .footer {
-  background-color: #fff;
+  background-color: var(--color-footer-bg);
   border-radius: 30px 30px 0 0;
   padding: 30px;
 }
@@ -12,7 +12,8 @@
 
 .info {
   display: flex;
-  gap: 175px;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .infoList {
@@ -25,12 +26,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 190px;
 }
 
 .termsDesc {
   display: block;
   font-size: 17px;
-  color: #000;
+  color: var(--color-text);
+  word-break: break-all;
 
   &:hover {
     @include text-hover;
@@ -42,7 +45,7 @@
 }
 
 .languageBtn {
-  background-color: #fff;
+  background-color: var(--color-footer-bg);
 }
 
 .social {
